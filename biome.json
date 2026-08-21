@@ -1,0 +1,66 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"assist": {
+		"enabled": true
+	},
+	"vcs": {
+		"enabled": false,
+		"clientKind": "git",
+		"useIgnoreFile": false
+	},
+	"files": {
+		"ignoreUnknown": false
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 110,
+		"indentWidth": 2,
+		"bracketSpacing": true,
+		"formatWithErrors": false,
+		"attributePosition": "auto",
+		"lineEnding": "lf"
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"performance": {
+				"recommended": true
+			},
+			"recommended": true,
+			"complexity": {
+				"noUselessFragments": "error",
+				"useLiteralKeys": "off",
+				"noForEach": "off"
+			},
+			"a11y": {
+				"noSvgWithoutTitle": "off",
+				"recommended": true
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "off",
+				"recommended": true
+			},
+			"correctness": {
+				"noUnusedImports": "error",
+				"noUnusedVariables": "error",
+				"useExhaustiveDependencies": "off",
+				"recommended": true
+			},
+			"style": {
+				"noNonNullAssertion": "error",
+				"useImportType": "error",
+				"recommended": true
+			},
+			"suspicious": {
+				"noArrayIndexKey": "error",
+				"recommended": true
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double"
+		}
+	}
+}
