@@ -1,5 +1,12 @@
-export default function Home() {
-	const user: string = "Siavash";
-	console.log(user);
-	return <div>HOME</div>;
+"use client";
+import { Button, Center } from "@mantine/core";
+
+export default function Page() {
+	return (
+		<Center>
+			<Button size={"xl"} color={"green"}>
+				Home
+			</Button>
+		</Center>
+	);
 }
