@@ -1,6 +1,7 @@
 import "@mantine/core/styles.css";
 
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from "@mantine/core";
+import { NextIntlClientProvider } from "next-intl";
 import { QueryProvider } from "@/providers/query-provider";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -11,7 +12,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</head>
 			<body>
 				<QueryProvider>
-					<MantineProvider>{children}</MantineProvider>
+					<MantineProvider>
+						<NextIntlClientProvider>{children}</NextIntlClientProvider>
+					</MantineProvider>
 				</QueryProvider>
 			</body>
 		</html>
