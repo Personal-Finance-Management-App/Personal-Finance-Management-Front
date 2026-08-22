@@ -1,14 +1,18 @@
 "use client";
 
-import { Center, Flex, Loader, Text, Title } from "@mantine/core";
+import { Button, Center, Flex, Loader, Text, Title } from "@mantine/core";
 import { useTranslations } from "next-intl";
-import { useUsersQueryData } from "@/app/panel/users/hooks/index.hooks";
+import { useUsersQueryApi } from "@/app/panel/users/hooks/index.hooks";
 
 export default function UsersComponent() {
-	const t = useTranslations("Users");
-	const usersData = useUsersQueryData();
+	const t = useTranslations();
+	const { getUsersListQueryData, postCreateUserMutationData } = useUsersQueryApi();
 
-	if (usersData.isPending || usersData.isFetching || usersData.isLoading) {
+	if (
+		getUsersListQueryData.isPending ||
+		getUsersListQueryData.isFetching ||
+		getUsersListQueryData.isLoading
+	) {
 		return (
 			<Center>
 				<Loader />
@@ -16,13 +20,27 @@ export default function UsersComponent() {
 		);
 	}
 
+	const createUsers = () => {
+		postCreateUserMutationData
+			.mutateAsync({
+				userName: "test-1",
+				name: "test",
+				email: "test@gmail.com",
+				phoneNumber: "123",
+				age: 1,
+			})
+			.then(() => getUsersListQueryData.refetch());
+	};
+
 	return (
 		<Center mt={"lg"}>
 			{
 				<Flex direction={"column"} rowGap={"20px"}>
-					<Title>{`${t("users")} ${t("list")}`}</Title>
 					<Title>{t("usersList")}</Title>
-					{usersData.data?.map((user) => (
+					<Button onClick={createUsers} loading={postCreateUserMutationData.isPending}>
+						Create User
+					</Button>
+					{getUsersListQueryData.data?.map((user) => (
 						<Flex key={user.id} columnGap={"xl"}>
 							<Flex gap={"xs"}>
 								<Text fw={"bolder"}>Name:</Text>

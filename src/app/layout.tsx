@@ -1,21 +1,30 @@
+"use server";
 import "@mantine/core/styles.css";
-
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from "@mantine/core";
 import { NextIntlClientProvider } from "next-intl";
+import { EnvProvider } from "@/providers/EnvProvider";
 import { QueryProvider } from "@/providers/query-provider";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+	const baseUrl = process.env["BASE_URL"];
+
+	if (!baseUrl) {
+		throw new Error("BASE_URL environment variable is not defined");
+	}
+
 	return (
 		<html lang="en" {...mantineHtmlProps}>
 			<head>
 				<ColorSchemeScript />
 			</head>
 			<body>
-				<QueryProvider>
-					<MantineProvider>
-						<NextIntlClientProvider>{children}</NextIntlClientProvider>
-					</MantineProvider>
-				</QueryProvider>
+				<MantineProvider>
+					<EnvProvider envs={{ baseUrl }}>
+						<QueryProvider>
+							<NextIntlClientProvider>{children}</NextIntlClientProvider>
+						</QueryProvider>
+					</EnvProvider>
+				</MantineProvider>
 			</body>
 		</html>
 	);
