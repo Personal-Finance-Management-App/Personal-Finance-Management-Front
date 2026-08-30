@@ -1,4 +1,3 @@
-"use server";
 import "@mantine/core/styles.css";
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from "@mantine/core";
 import { NextIntlClientProvider } from "next-intl";
