@@ -1,5 +1,22 @@
 {
 	"transactions": [],
-	"users": [],
+	"users": [
+		{
+			"userName": "test-1",
+			"name": "test",
+			"email": "test@gmail.com",
+			"phoneNumber": "123",
+			"age": 1,
+			"id": "zWUOytd9AVw"
+		},
+		{
+			"userName": "test-1",
+			"name": "test",
+			"email": "test@gmail.com",
+			"phoneNumber": "123",
+			"age": 1,
+			"id": "BoLuo0nuLxA"
+		}
+	],
 	"$schema": "./node_modules/json-server/schema.json"
 }

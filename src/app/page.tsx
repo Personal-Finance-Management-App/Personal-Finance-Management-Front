@@ -1,15 +1,16 @@
 "use client";
-import { Button, Center } from "@mantine/core";
+import { Center } from "@mantine/core";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 export default function Page() {
-	const t = useTranslations("Root");
+	const t = useTranslations("");
 
 	return (
 		<Center>
-			<Button size={"xl"} color={"green"}>
+			<Link href="panel/overview" color={"green"}>
 				{t("welcomeToFinance")}
-			</Button>
+			</Link>
 		</Center>
 	);
 }
