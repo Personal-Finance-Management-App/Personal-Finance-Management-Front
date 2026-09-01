@@ -13,18 +13,21 @@ import {
 	useMantineColorScheme,
 } from "@mantine/core";
 import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import AuthButton from "@/app/panel/components/layout/Header/authButton";
 import { useCurrentPage, useDataRange } from "@/app/panel/components/layout/Header/index.hooks";
 import Sidebar from "@/app/panel/components/layout/Sidebar";
 
 export default function Header() {
+	const t = useTranslations("Layout");
 	const [opened, setOpened] = useState(false);
 	const currentPage = useCurrentPage();
 	const { dateRange, setDateRange, dateLabel } = useDataRange();
 	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 	return (
 		<Flex
+			mx={{ sm: "xl" }}
 			h="100%"
 			align="center"
 			justify="space-between"
@@ -50,18 +53,18 @@ export default function Header() {
 						</Text>
 					</Box>
 
-					<Text fw={700} size="xl" c="layout.4" className="hidden sm:block">
-						FinFlow
+					<Text fw={700} size="xl" c="layout.5" className="hidden sm:block">
+						{t("FinFlow")}
 					</Text>
 				</Group>
 
 				<Stack ml={{ base: "xs", sm: "sm" }} gap={2} miw={0}>
 					<Text className={"text-lg! sm:text-2xl! "} fw={700}>
-						{currentPage.title}
+						{t(currentPage.title)}
 					</Text>
 
 					<Text className={"text-sm! sm:text-lg! "} c="dimmed">
-						{currentPage.description}, {dateLabel}
+						{t(currentPage.description)}, {dateLabel}
 					</Text>
 				</Stack>
 			</Flex>
@@ -71,19 +74,18 @@ export default function Header() {
 				<Drawer
 					styles={{
 						title: {
-							color: "var(--mantine-color-layout-4)",
+							color: "var(--mantine-color-layout-5)",
 							fontSize: "24px",
 							fontWeight: 700,
 						},
 					}}
 					opened={opened}
 					onClose={() => setOpened(false)}
-					title="FinFlow"
+					title={t("FinFlow")}
 					hiddenFrom="sm"
 				>
 					<Stack gap="md">
 						<Sidebar />
-
 						<Stack gap="xs">
 							<AuthButton />
 						</Stack>
@@ -100,10 +102,10 @@ export default function Header() {
 					value={dateRange}
 					onChange={(value) => setDateRange(value ?? "this-month")}
 					data={[
-						{ value: "this-month", label: "This month" },
-						{ value: "last-month", label: "Last month" },
-						{ value: "this-year", label: "This year" },
-						{ value: "last-year", label: "Last year" },
+						{ value: "this-month", label: t("ThisMonth") },
+						{ value: "last-month", label: t("LastMonth") },
+						{ value: "this-year", label: t("ThisYear") },
+						{ value: "last-year", label: t("LastYear") },
 					]}
 				/>
 				<ActionIcon onClick={toggleColorScheme} variant="filled" size="lg" color={"layout"}>

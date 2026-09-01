@@ -1,5 +1,13 @@
 {
-	"Users": {
-		"usersList": "لیست کاربران"
+	"Layout": {
+		"FinFlow": "فاین فلو",
+		"SignUp": "ثبت نامََ",
+		"SignIn": "ورود",
+		"ThisMonth": "ماه جاری",
+		"LastMonth": "ماه گذشته",
+		"ThisYear": "سال جاری",
+		"LastYear": "سال گذشته",
+		"Overview": "نمای کلی",
+		"Your complete financial picture": "تصویری کامل از وضعیت مالی شما"
 	}
 }

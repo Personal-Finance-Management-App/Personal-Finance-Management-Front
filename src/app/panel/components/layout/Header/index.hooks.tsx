@@ -1,5 +1,7 @@
 "use client";
+
 import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 import { useState } from "react";
 import { headerConfig } from "@/app/panel/config/headerConfig";
 
@@ -12,11 +14,12 @@ export function useCurrentPage() {
 }
 
 export function useDataRange() {
+	const locale = useLocale();
 	const [dateRange, setDateRange] = useState("this-month");
 	const currentDate = new Date();
-	const currentMonth = currentDate.toLocaleString("en-US", { month: "long" });
+	const currentMonth = currentDate.toLocaleString(locale, { month: "long" });
 	const currentYear = currentDate.getFullYear();
-	const previousMonth = new Date(currentYear, currentDate.getMonth() - 1).toLocaleString("en-US", {
+	const previousMonth = new Date(currentYear, currentDate.getMonth() - 1).toLocaleString(locale, {
 		month: "long",
 	});
 	const previousYear = currentYear - 1;
