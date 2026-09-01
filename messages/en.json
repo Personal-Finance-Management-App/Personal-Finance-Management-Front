@@ -8,6 +8,16 @@
 		"ThisYear": "This Year",
 		"LastYear": "Last Year",
 		"Overview": "Overview",
-		"Your complete financial picture": "Your complete financial picture"
+		"Your complete financial picture": "Your complete financial picture",
+		"Profile": "Profile",
+		"Manage your account and your personal information": "Manage your account and your personal information",
+		"Transactions": "Transactions",
+		"Track and manage all your transactions": "Track and manage all your transactions",
+		"Accounts": "Accounts",
+		"Manage your accounts and balances": "Manage your accounts and balances",
+		"Reports": "Reports",
+		"Analyze your financial activities": "Analyze your financial activities",
+		"Budgets": "Budgets",
+		"Plan and manage your spending": "Plan and manage your spending"
 	}
 }
