@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 	title: "FinFlow",
 	description: "Personal Finance Management",
 };
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 	const baseUrl = process.env["BASE_URL"];
 

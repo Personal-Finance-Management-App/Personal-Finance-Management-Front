@@ -1,13 +1,22 @@
 {
-	"Layout": {
-		"FinFlow": "فاین فلو",
-		"SignUp": "ثبت نامََ",
-		"SignIn": "ورود",
-		"ThisMonth": "ماه جاری",
-		"LastMonth": "ماه گذشته",
-		"ThisYear": "سال جاری",
-		"LastYear": "سال گذشته",
-		"Overview": "نمای کلی",
-		"Your complete financial picture": "تصویری کامل از وضعیت مالی شما"
-	}
+	"welcomeToFinance": "خوش امدید",
+	"FinFlow": "فاین فلو",
+	"SignUp": "ثبت نامََ",
+	"SignIn": "ورود",
+	"ThisMonth": "ماه جاری",
+	"LastMonth": "ماه گذشته",
+	"ThisYear": "سال جاری",
+	"LastYear": "سال گذشته",
+	"Overview": "نمای کلی",
+	"Your complete financial picture": "مروری بر وضعیت مالی شما",
+	"Profile": "پروفایل",
+	"Manage your personal information": "اطلاعات و مشخصات حساب کاربری شما",
+	"Transactions": "تراکنش ها",
+	"Track and manage all your transactions": "ثبت و پیگیری درآمدها و هزینه ها",
+	"Accounts": "حساب ها",
+	"Manage your accounts and balances": "نمایش حساب ها و موجودی های شما",
+	"Reports": "گزارشات",
+	"Analyze your financial activities": "تحلیلی بر عملکرد و روندهای مالی شما",
+	"Budgets": "بودجه بندی",
+	"Plan and manage your spending": "سازماندهی و کنترل مخارج"
 }

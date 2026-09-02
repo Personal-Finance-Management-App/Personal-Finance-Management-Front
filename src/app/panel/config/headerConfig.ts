@@ -8,19 +8,22 @@ export const headerConfig = {
 		title: "Transactions",
 		description: "Track and manage all your transactions",
 	},
+	"/panel/accounts": {
+		title: "Accounts",
+		description: "Manage your accounts and balances",
+	},
+	"/panel/reports": {
+		title: "Reports",
+		description: "Analyze your financial activities",
+	},
 
 	"/panel/budgets": {
 		title: "Budgets",
 		description: "Plan and manage your spending",
 	},
 
-	"/panel/investments": {
-		title: "Investments",
-		description: "Track your investments and portfolio",
-	},
-
 	"/panel/profile": {
 		title: "Profile",
-		description: "Manage your account and your personal information",
+		description: "Manage your personal information",
 	},
 };

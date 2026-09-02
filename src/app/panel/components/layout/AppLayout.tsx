@@ -8,7 +8,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 		<AppShell
 			header={{ height: 120 }}
 			navbar={{
-				width: 240,
+				width: 260,
 				breakpoint: "sm",
 				collapsed: {
 					mobile: true,
