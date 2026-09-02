@@ -1,12 +1,12 @@
 "use client";
 import { AppShell } from "@mantine/core";
-import Header from "@/app/components/layout/Header";
-import Sidebar from "@/app/components/layout/Sidebar";
+import Header from "@/app/panel/components/layout/Header/Header";
+import Sidebar from "@/app/panel/components/layout/Sidebar";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<AppShell
-			header={{ height: 60 }}
+			header={{ height: 120 }}
 			navbar={{
 				width: 240,
 				breakpoint: "sm",

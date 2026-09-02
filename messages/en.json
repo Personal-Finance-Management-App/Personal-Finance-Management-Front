@@ -1,6 +1,13 @@
 {
-	"welcomeToFinance": "welcome to Finance",
-	"users": "Users",
-	"list": "List",
-	"usersList": "Users List"
+	"Layout": {
+		"FinFlow": "FinFLow",
+		"SignUp": "Sign Up",
+		"SignIn": "Sign In",
+		"ThisMonth": "This Month",
+		"LastMonth": "Last Month",
+		"ThisYear": "This Year",
+		"LastYear": "Last Year",
+		"Overview": "Overview",
+		"Your complete financial picture": "Your complete financial picture"
+	}
 }
