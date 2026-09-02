@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 export default function Page() {
-	const t = useTranslations("");
+	const t = useTranslations();
 
 	return (
 		<Center>

@@ -13,21 +13,26 @@ import {
 	useMantineColorScheme,
 } from "@mantine/core";
 import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
+import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AuthButton from "@/app/panel/components/layout/Header/authButton";
 import { useCurrentPage, useDataRange } from "@/app/panel/components/layout/Header/index.hooks";
 import Sidebar from "@/app/panel/components/layout/Sidebar";
 
 export default function Header() {
-	const t = useTranslations("Layout");
+	const t = useTranslations();
 	const [opened, setOpened] = useState(false);
+	const pathname = usePathname();
 	const currentPage = useCurrentPage();
 	const { dateRange, setDateRange, dateLabel } = useDataRange();
 	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+	useEffect(() => {
+		setOpened(false);
+	}, [pathname]);
 	return (
 		<Flex
-			mx={{ sm: "xl" }}
+			mx={{ sm: "lg" }}
 			h="100%"
 			align="center"
 			justify="space-between"
@@ -47,18 +52,18 @@ export default function Header() {
 				miw={0}
 			>
 				<Group gap="md" wrap="nowrap">
-					<Box bg="layout.5" w={34} h={34} className="flex shrink-0 items-center justify-center rounded-lg ">
-						<Text fw={700} c="black">
+					<Box bg="layout.5" w={36} h={36} className="flex shrink-0 items-center justify-center rounded-lg ">
+						<Text fw={700} c="black" size={"xl"}>
 							F
 						</Text>
 					</Box>
 
-					<Text fw={700} size="xl" c="layout.5" className="hidden sm:block">
+					<Text fw={700} size={"xl"} c="layout.5" className="hidden sm:block">
 						{t("FinFlow")}
 					</Text>
 				</Group>
 
-				<Stack ml={{ base: "xs", sm: "sm" }} gap={2} miw={0}>
+				<Stack ml={{ base: "xs", sm: "xl" }} gap={2} miw={0}>
 					<Text className={"text-lg! sm:text-2xl! "} fw={700}>
 						{t(currentPage.title)}
 					</Text>
@@ -83,6 +88,9 @@ export default function Header() {
 					onClose={() => setOpened(false)}
 					title={t("FinFlow")}
 					hiddenFrom="sm"
+					transitionProps={{
+						duration: 600,
+					}}
 				>
 					<Stack gap="md">
 						<Sidebar />

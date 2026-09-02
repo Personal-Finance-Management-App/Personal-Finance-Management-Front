@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+.active {
+    color: var(--mantine-color-layout-6);
+    background-color: var(--mantine-color-gray-9);
+    padding: 10px;
+    border-left: 4px solid var(--mantine-color-layout-6);
+    font-weight: 700;
+}
+
+[data-mantine-color-scheme="light"] .active {
+    background-color: var(--mantine-color-gray-2);
+}
+
+.inactive {
+    font-size: large;
+    transition: color 200ms ease;
+}
+
+.inactive:hover {
+    color: var(--mantine-color-layout-7);
+}
+
+.active,
+.inactive {
+    transition: color 300ms ease,
+    background-color 300ms ease,
+    border-left-color 300ms ease;
+}
