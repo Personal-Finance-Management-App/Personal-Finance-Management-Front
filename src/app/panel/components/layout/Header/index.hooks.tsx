@@ -3,7 +3,9 @@
 import { usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
 import { useState } from "react";
-import { headerConfig } from "@/app/panel/config/headerConfig";
+import { headerConfig } from "@/app/panel/components/layout/Header/index.constants";
+
+type TimeRange = "this-month" | "last-month" | "last-year" | "this-year";
 
 export function useCurrentPage() {
 	const pathname = usePathname();
@@ -15,7 +17,7 @@ export function useCurrentPage() {
 
 export function useDataRange() {
 	const locale = useLocale();
-	const [dateRange, setDateRange] = useState("this-month");
+	const [dateRange, setDateRange] = useState<TimeRange>("this-month");
 	const currentDate = new Date();
 	const currentMonth = currentDate.toLocaleString(locale, { month: "long" });
 	const currentYear = currentDate.getFullYear();
@@ -24,25 +26,13 @@ export function useDataRange() {
 	});
 	const previousYear = currentYear - 1;
 
-	let dateLabel = "";
-	switch (dateRange) {
-		case "this-month":
-			dateLabel = `${currentMonth} ${currentYear}`;
-			break;
-
-		case "last-month":
-			dateLabel = `${previousMonth} ${currentYear}`;
-			break;
-
-		case "this-year":
-			dateLabel = `${currentYear}`;
-			break;
-
-		case "last-year":
-			dateLabel = `${previousYear}`;
-			break;
-	}
-
+	const getDateRange: Record<TimeRange, string> = {
+		"this-month": `${currentMonth} ${currentYear}`,
+		"last-month": `${previousMonth} ${currentYear}`,
+		"last-year": `${previousYear}`,
+		"this-year": `${currentYear}`,
+	};
+	const dateLabel = getDateRange[dateRange];
 	return {
 		dateRange,
 		setDateRange,
