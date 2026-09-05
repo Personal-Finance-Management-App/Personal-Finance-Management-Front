@@ -17,7 +17,7 @@ import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
-import AuthButton from "@/app/panel/components/layout/Header/authButton";
+import AuthButton from "@/app/panel/components/buttons/authButton";
 import { useCurrentPage, useDataRange } from "@/app/panel/components/layout/Header/index.hooks";
 import Sidebar from "@/app/panel/components/layout/Sidebar";
 
