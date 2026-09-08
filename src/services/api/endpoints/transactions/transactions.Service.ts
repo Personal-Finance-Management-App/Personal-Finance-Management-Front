@@ -11,7 +11,17 @@ export async function postCreateTransactionAPi(payload: TransactionsReq) {
 	return await httpService.post(TRANSACTION_SERVICE_PATH, payload);
 }
 
+export async function updateTransactionAPi(id: string, payload: Partial<TransactionsReq>) {
+	return await httpService.patch(`${TRANSACTION_SERVICE_PATH}/${id}`, payload);
+}
+
+export async function deleteTransactionAPi(id: string) {
+	return await httpService.delete(`${TRANSACTION_SERVICE_PATH}/${id}`);
+}
+
 export const TransactionService = {
 	getTransactionsListAPi,
 	postCreateTransactionAPi,
+	updateTransactionAPi,
+	deleteTransactionAPi,
 };

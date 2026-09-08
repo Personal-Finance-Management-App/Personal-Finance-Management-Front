@@ -31,6 +31,18 @@
 		{
 			"name": "train",
 			"id": "XdeOnNY0xGk"
+		},
+		{
+			"name": "sthst",
+			"id": "XsQAsusaYE8"
+		},
+		{
+			"name": "",
+			"id": "c6ZCy5s_Vkc"
+		},
+		{
+			"name": "dthdtr",
+			"id": "m6TcJWsrKiw"
 		}
 	],
 	"accounts": [
@@ -47,11 +59,11 @@
 		{
 			"id": "1",
 			"title": "crypto",
-			"type": "income",
+			"type": "expense",
 			"account": "parisan",
-			"category": "food",
-			"date": "2025-2-4",
-			"amount": 50
+			"category": "Transport",
+			"date": "2025-02-04",
+			"amount": 80
 		},
 		{
 			"title": "investment",
@@ -135,22 +147,13 @@
 			"id": "9874m6cI-NM"
 		},
 		{
-			"title": "rthrth",
+			"title": "sdvgseg",
 			"type": "income",
-			"category": "train",
-			"account": "rthrth",
-			"date": "2026-09-09",
-			"amount": 0,
-			"id": "Wm_hPCettD0"
-		},
-		{
-			"title": "",
-			"type": "expense",
-			"category": "train",
+			"category": "sthst",
 			"account": "",
 			"date": "",
 			"amount": 0,
-			"id": "myB3nsBkjnU"
+			"id": "fdKqKLqtS0k"
 		}
 	],
 	"users": [
