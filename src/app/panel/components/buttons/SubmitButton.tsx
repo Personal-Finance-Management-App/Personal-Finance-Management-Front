@@ -3,5 +3,10 @@ import { useTranslations } from "next-intl";
 
 export default function SubmitButton() {
 	const t = useTranslations();
-	return <Button color={"layout"}> {t("Submit")}</Button>;
+	return (
+		<Button type={"submit"} color={"layout"}>
+			{" "}
+			{t("Submit")}
+		</Button>
+	);
 }

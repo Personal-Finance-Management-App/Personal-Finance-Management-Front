@@ -1,5 +1,158 @@
 {
-	"transactions": [{}],
+	"transactionsCategories": [
+		{
+			"id": "1",
+			"name": "Food"
+		},
+		{
+			"id": "2",
+			"name": "Transport"
+		},
+		{
+			"name": "sthrsth",
+			"id": "dWEdHjdfsUg"
+		},
+		{
+			"name": "mahzad",
+			"id": "6pE3ugQgBdU"
+		},
+		{
+			"name": "siavash",
+			"id": "Fz52GmdvrnI"
+		},
+		{
+			"name": "love",
+			"id": "xX7OVweCedk"
+		},
+		{
+			"name": "member",
+			"id": "9fgKjumGQTU"
+		},
+		{
+			"name": "train",
+			"id": "XdeOnNY0xGk"
+		}
+	],
+	"accounts": [
+		{
+			"id": "1",
+			"name": "Cash"
+		},
+		{
+			"id": "2",
+			"name": "Bank Account"
+		}
+	],
+	"transactions": [
+		{
+			"id": "1",
+			"title": "crypto",
+			"type": "income",
+			"account": "parisan",
+			"category": "food",
+			"date": "2025-2-4",
+			"amount": 50
+		},
+		{
+			"title": "investment",
+			"type": "income",
+			"category": "",
+			"account": "pasargad",
+			"date": "2026-09-15",
+			"amount": 10,
+			"id": "hZcl0_9KGSE"
+		},
+		{
+			"title": "",
+			"type": "income",
+			"category": "sthrsth",
+			"account": "",
+			"date": "",
+			"amount": 0,
+			"id": "zY9Cgkd7q6k"
+		},
+		{
+			"title": "",
+			"type": "income",
+			"category": "mahzad",
+			"account": "",
+			"date": "",
+			"amount": 0,
+			"id": "r3AYpH0DpPQ"
+		},
+		{
+			"title": "",
+			"type": "income",
+			"category": "siavash",
+			"account": "",
+			"date": "",
+			"amount": 0,
+			"id": "ACqoGpuZdD4"
+		},
+		{
+			"title": "",
+			"type": "income",
+			"category": "love",
+			"account": "",
+			"date": "",
+			"amount": 0,
+			"id": "nx91OxqVU1M"
+		},
+		{
+			"title": "hello",
+			"type": "income",
+			"category": "sthrsth",
+			"account": "parsian",
+			"date": "2026-09-10",
+			"amount": 70,
+			"id": "G68mKsPcNMA"
+		},
+		{
+			"title": "ggg",
+			"type": "expense",
+			"category": "Transport",
+			"account": "ggg",
+			"date": "2026-09-01",
+			"amount": 0,
+			"id": "42dGB8NyFgI"
+		},
+		{
+			"title": "grgrg",
+			"type": "income",
+			"category": "siavash",
+			"account": "rgerg",
+			"date": "2026-09-01",
+			"amount": 0,
+			"id": "ywlM00aIRDg"
+		},
+		{
+			"title": "jjjj",
+			"type": "expense",
+			"category": "love",
+			"account": "rthrh",
+			"date": "2026-09-25",
+			"amount": 0,
+			"id": "9874m6cI-NM"
+		},
+		{
+			"title": "rthrth",
+			"type": "income",
+			"category": "train",
+			"account": "rthrth",
+			"date": "2026-09-09",
+			"amount": 0,
+			"id": "Wm_hPCettD0"
+		},
+		{
+			"title": "",
+			"type": "expense",
+			"category": "train",
+			"account": "",
+			"date": "",
+			"amount": 0,
+			"id": "myB3nsBkjnU"
+		}
+	],
 	"users": [
 		{
 			"userName": "test-1",

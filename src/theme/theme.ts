@@ -24,7 +24,7 @@ export const theme = createTheme({
 			"#ADB5BD",
 			"#868E96",
 			"#495057",
-			"#000000",
+			"#1E2329",
 		],
 	},
 });
