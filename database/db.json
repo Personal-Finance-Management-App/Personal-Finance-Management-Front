@@ -43,9 +43,21 @@
 		{
 			"name": "dthdtr",
 			"id": "m6TcJWsrKiw"
+		},
+		{
+			"name": "erg",
+			"id": "H40TRHRqy_g"
+		},
+		{
+			"name": "erger",
+			"id": "5YsACcPKrt0"
+		},
+		{
+			"name": "mine",
+			"id": "mVPCayiEKHU"
 		}
 	],
-	"accounts": [
+	"transactionsAccounts": [
 		{
 			"id": "1",
 			"name": "Cash"
@@ -53,6 +65,14 @@
 		{
 			"id": "2",
 			"name": "Bank Account"
+		},
+		{
+			"name": "parsian",
+			"id": "n2GtmsOFTUo"
+		},
+		{
+			"name": "",
+			"id": "twS_rDlgfkc"
 		}
 	],
 	"transactions": [
@@ -66,94 +86,13 @@
 			"amount": 80
 		},
 		{
-			"title": "investment",
-			"type": "income",
-			"category": "",
-			"account": "pasargad",
-			"date": "2026-09-15",
-			"amount": 10,
-			"id": "hZcl0_9KGSE"
-		},
-		{
-			"title": "",
-			"type": "income",
-			"category": "sthrsth",
-			"account": "",
-			"date": "",
-			"amount": 0,
-			"id": "zY9Cgkd7q6k"
-		},
-		{
-			"title": "",
-			"type": "income",
-			"category": "mahzad",
-			"account": "",
-			"date": "",
-			"amount": 0,
-			"id": "r3AYpH0DpPQ"
-		},
-		{
-			"title": "",
-			"type": "income",
-			"category": "siavash",
-			"account": "",
-			"date": "",
-			"amount": 0,
-			"id": "ACqoGpuZdD4"
-		},
-		{
-			"title": "",
-			"type": "income",
-			"category": "love",
-			"account": "",
-			"date": "",
-			"amount": 0,
-			"id": "nx91OxqVU1M"
-		},
-		{
-			"title": "hello",
-			"type": "income",
-			"category": "sthrsth",
-			"account": "parsian",
-			"date": "2026-09-10",
-			"amount": 70,
-			"id": "G68mKsPcNMA"
-		},
-		{
-			"title": "ggg",
+			"title": "hellooooo",
 			"type": "expense",
 			"category": "Transport",
-			"account": "ggg",
-			"date": "2026-09-01",
-			"amount": 0,
-			"id": "42dGB8NyFgI"
-		},
-		{
-			"title": "grgrg",
-			"type": "income",
-			"category": "siavash",
-			"account": "rgerg",
-			"date": "2026-09-01",
-			"amount": 0,
-			"id": "ywlM00aIRDg"
-		},
-		{
-			"title": "jjjj",
-			"type": "expense",
-			"category": "love",
-			"account": "rthrh",
-			"date": "2026-09-25",
-			"amount": 0,
-			"id": "9874m6cI-NM"
-		},
-		{
-			"title": "sdvgseg",
-			"type": "income",
-			"category": "sthst",
 			"account": "",
-			"date": "",
+			"date": "2026-09-17",
 			"amount": 0,
-			"id": "fdKqKLqtS0k"
+			"id": "l_k4qNx1TaY"
 		}
 	],
 	"users": [

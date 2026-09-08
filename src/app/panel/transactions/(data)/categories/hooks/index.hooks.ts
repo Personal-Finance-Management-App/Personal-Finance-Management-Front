@@ -12,8 +12,8 @@ export const useTransactionsCategoryQueryApi = () => {
 	const postCreateCategoryMutationData = useMutation({
 		mutationKey: ["post-create-category"],
 		mutationFn: CategoryService.postCreateTransactionCategoryAPi,
-		onSuccess: () => {
-			queryClient.invalidateQueries({ queryKey: ["get-categories-list"] });
+		onSuccess: async () => {
+			await queryClient.invalidateQueries({ queryKey: ["get-categories-list"] });
 		},
 	});
 

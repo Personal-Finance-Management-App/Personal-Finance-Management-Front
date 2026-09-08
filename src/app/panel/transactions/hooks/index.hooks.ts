@@ -13,8 +13,8 @@ export const useTransactionsQueryApi = () => {
 	const postCreateTransactionMutationData = useMutation({
 		mutationKey: ["post-create-transaction"],
 		mutationFn: TransactionService.postCreateTransactionAPi,
-		onSuccess: () => {
-			queryClient.invalidateQueries({
+		onSuccess: async () => {
+			await queryClient.invalidateQueries({
 				queryKey: ["get-transactions-list"],
 			});
 		},
@@ -24,8 +24,8 @@ export const useTransactionsQueryApi = () => {
 		mutationFn: ({ id, payload }: { id: string; payload: Partial<TransactionsReq> }) =>
 			TransactionService.updateTransactionAPi(id, payload),
 
-		onSuccess: () => {
-			queryClient.invalidateQueries({
+		onSuccess: async () => {
+			await queryClient.invalidateQueries({
 				queryKey: ["get-transactions-list"],
 			});
 		},
@@ -33,8 +33,8 @@ export const useTransactionsQueryApi = () => {
 	const deleteTransactionData = useMutation({
 		mutationKey: ["delete-transaction"],
 		mutationFn: TransactionService.deleteTransactionAPi,
-		onSuccess: () => {
-			queryClient.invalidateQueries({
+		onSuccess: async () => {
+			await queryClient.invalidateQueries({
 				queryKey: ["get-transactions-list"],
 			});
 		},

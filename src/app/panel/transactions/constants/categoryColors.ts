@@ -1,4 +1,20 @@
-export const categoryColors = ["red", "blue", "green", "orange", "violet", "cyan", "pink", "teal"];
+export const categoryColors = [
+	"red",
+	"blue",
+	"green",
+	"orange",
+	"violet",
+	"cyan",
+	"pink",
+	"teal",
+
+	"orange",
+	"lime",
+	"indigo",
+	"grape",
+	"purple",
+	"yellow",
+];
 
 export const getCategoryColor = (category: string) => {
 	let hash = 0;
