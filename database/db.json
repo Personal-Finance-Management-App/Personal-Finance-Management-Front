@@ -1,5 +1,100 @@
 {
-	"transactions": [],
+	"transactionsCategories": [
+		{
+			"id": "1",
+			"name": "Food"
+		},
+		{
+			"id": "2",
+			"name": "Transport"
+		},
+		{
+			"name": "sthrsth",
+			"id": "dWEdHjdfsUg"
+		},
+		{
+			"name": "mahzad",
+			"id": "6pE3ugQgBdU"
+		},
+		{
+			"name": "siavash",
+			"id": "Fz52GmdvrnI"
+		},
+		{
+			"name": "love",
+			"id": "xX7OVweCedk"
+		},
+		{
+			"name": "member",
+			"id": "9fgKjumGQTU"
+		},
+		{
+			"name": "train",
+			"id": "XdeOnNY0xGk"
+		},
+		{
+			"name": "sthst",
+			"id": "XsQAsusaYE8"
+		},
+		{
+			"name": "",
+			"id": "c6ZCy5s_Vkc"
+		},
+		{
+			"name": "dthdtr",
+			"id": "m6TcJWsrKiw"
+		},
+		{
+			"name": "erg",
+			"id": "H40TRHRqy_g"
+		},
+		{
+			"name": "erger",
+			"id": "5YsACcPKrt0"
+		},
+		{
+			"name": "mine",
+			"id": "mVPCayiEKHU"
+		}
+	],
+	"transactionsAccounts": [
+		{
+			"id": "1",
+			"name": "Cash"
+		},
+		{
+			"id": "2",
+			"name": "Bank Account"
+		},
+		{
+			"name": "parsian",
+			"id": "n2GtmsOFTUo"
+		},
+		{
+			"name": "",
+			"id": "twS_rDlgfkc"
+		}
+	],
+	"transactions": [
+		{
+			"id": "1",
+			"title": "crypto",
+			"type": "expense",
+			"account": "parisan",
+			"category": "Transport",
+			"date": "2025-02-04",
+			"amount": 80
+		},
+		{
+			"title": "hellooooo",
+			"type": "expense",
+			"category": "Transport",
+			"account": "",
+			"date": "2026-09-17",
+			"amount": 0,
+			"id": "l_k4qNx1TaY"
+		}
+	],
 	"users": [
 		{
 			"userName": "test-1",

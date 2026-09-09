@@ -12,23 +12,24 @@ import {
 	Text,
 	useMantineColorScheme,
 } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
-import AuthButton from "@/app/panel/components/layout/Header/authButton";
+import { useEffect } from "react";
+import AuthButton from "@/app/panel/components/buttons/authButton";
 import { useCurrentPage, useDataRange } from "@/app/panel/components/layout/Header/index.hooks";
 import Sidebar from "@/app/panel/components/layout/Sidebar";
 
 export default function Header() {
 	const t = useTranslations();
-	const [opened, setOpened] = useState(false);
+	const [opened, { close, toggle }] = useDisclosure(false);
 	const pathname = usePathname();
 	const currentPage = useCurrentPage();
 	const { dateRange, setDateRange, dateLabel } = useDataRange();
 	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 	useEffect(() => {
-		setOpened(false);
+		close();
 	}, [pathname]);
 	return (
 		<Flex
@@ -75,7 +76,7 @@ export default function Header() {
 			</Flex>
 
 			<Group gap="xs" wrap="nowrap">
-				<Burger hiddenFrom="sm" opened={opened} onClick={() => setOpened((value) => !value)} size="sm" />
+				<Burger hiddenFrom="sm" opened={opened} onClick={toggle} size="sm" />
 				<Drawer
 					styles={{
 						title: {
@@ -85,7 +86,7 @@ export default function Header() {
 						},
 					}}
 					opened={opened}
-					onClose={() => setOpened(false)}
+					onClose={close}
 					title={t("FinFlow")}
 					hiddenFrom="sm"
 					transitionProps={{

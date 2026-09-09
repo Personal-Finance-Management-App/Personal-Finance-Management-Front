@@ -17,14 +17,14 @@ export const theme = createTheme({
 		gray: [
 			"#FFFFFF",
 			"#F8F9FA",
-			"#F1F3F5",
-			"#E9ECEF",
+			"#f8f8f8",
+			"#f1f2f3",
 			"#DEE2E6",
 			"#CED4DA",
 			"#ADB5BD",
 			"#868E96",
-			"#495057",
-			"#000000",
+			"#2e2e31",
+			"#1d1d1d",
 		],
 	},
 });

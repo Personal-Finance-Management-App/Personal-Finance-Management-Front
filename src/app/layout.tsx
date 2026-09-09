@@ -4,7 +4,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { EnvProvider } from "@/providers/EnvProvider";
 import { QueryProvider } from "@/providers/query-provider";
 import "./globals.css";
+import { Notifications } from "@mantine/notifications";
 import type { Metadata } from "next";
+import "@mantine/notifications/styles.css";
 import { theme } from "@/theme/theme";
 
 export const metadata: Metadata = {
@@ -26,6 +28,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 			</head>
 			<body>
 				<MantineProvider theme={theme}>
+					<Notifications position="top-right" />
 					<EnvProvider envs={{ baseUrl }}>
 						<QueryProvider>
 							<NextIntlClientProvider>{children}</NextIntlClientProvider>

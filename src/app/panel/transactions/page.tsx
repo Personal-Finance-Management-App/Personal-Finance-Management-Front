@@ -1,5 +1,5 @@
-import TransactionsPage from "@/app/panel/transactions/index.component";
+import { TransactionPage } from "@/app/panel/transactions/index.component";
 
 export default function TransactionsMainPage() {
-	return <TransactionsPage />;
+	return <TransactionPage />;
 }
