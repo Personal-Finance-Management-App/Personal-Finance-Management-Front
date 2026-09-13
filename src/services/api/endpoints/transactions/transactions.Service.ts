@@ -1,4 +1,4 @@
-import type { TransactionsReq, TransactionsRes } from "@/services/api/models/transactions/index.types";
+import type { TransactionsReq, TransactionsRes } from "@/services/api/models/transactions/transactions.types";
 import { httpService } from "@/services/httpService";
 
 const TRANSACTION_SERVICE_PATH = "/transactions";

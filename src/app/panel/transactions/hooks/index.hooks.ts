@@ -1,8 +1,11 @@
+import { notifications } from "@mantine/notifications";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useTranslations } from "next-intl";
 import { TransactionService } from "@/services/api/endpoints/transactions/transactions.Service";
-import type { TransactionsReq } from "@/services/api/models/transactions/index.types";
+import type { TransactionsReq } from "@/services/api/models/transactions/transactions.types";
 
 export const useTransactionsQueryApi = () => {
+	const t = useTranslations();
 	const queryClient = useQueryClient();
 	const getTransactionsListQueryData = useQuery({
 		queryKey: ["get-transactions-list"],
@@ -17,6 +20,18 @@ export const useTransactionsQueryApi = () => {
 			await queryClient.invalidateQueries({
 				queryKey: ["get-transactions-list"],
 			});
+			notifications.show({
+				title: t("Success"),
+				message: t("Transaction created successfully"),
+				color: "green",
+			});
+		},
+		onError: () => {
+			notifications.show({
+				title: t("Failed"),
+				message: t("Failed to create transaction"),
+				color: "red",
+			});
 		},
 	});
 	const patchUpdateTransactionData = useMutation({
@@ -28,6 +43,18 @@ export const useTransactionsQueryApi = () => {
 			await queryClient.invalidateQueries({
 				queryKey: ["get-transactions-list"],
 			});
+			notifications.show({
+				title: t("Success"),
+				message: t("Transaction updated successfully"),
+				color: "green",
+			});
+		},
+		onError: () => {
+			notifications.show({
+				title: t("Failed"),
+				message: t("Failed to update transaction"),
+				color: "red",
+			});
 		},
 	});
 	const deleteTransactionData = useMutation({
@@ -36,6 +63,18 @@ export const useTransactionsQueryApi = () => {
 		onSuccess: async () => {
 			await queryClient.invalidateQueries({
 				queryKey: ["get-transactions-list"],
+			});
+			notifications.show({
+				title: t("Deleted"),
+				message: t("Transaction deleted successfully"),
+				color: "green",
+			});
+		},
+		onError: () => {
+			notifications.show({
+				title: t("Error"),
+				message: t("Failed to delete transaction"),
+				color: "red",
 			});
 		},
 	});

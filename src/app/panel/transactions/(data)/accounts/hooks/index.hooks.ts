@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { AccountService } from "@/services/api/endpoints/transactions/transactionsAccounts/accounts.Service";
+import { AccountService } from "@/services/api/endpoints/transactionsAccounts/accounts.Service";
 
 export const useTransactionsAccountQueryApi = () => {
 	const queryClient = useQueryClient();

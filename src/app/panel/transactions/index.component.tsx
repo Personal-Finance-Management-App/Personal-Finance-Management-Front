@@ -23,7 +23,6 @@ import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 import { useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
-import { notifications } from "@mantine/notifications";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -36,12 +35,12 @@ import type {
 	Transaction,
 	TransactionFormValues,
 	TransactionsReq,
-} from "@/services/api/models/transactions/index.types";
+} from "@/services/api/models/transactions/transactions.types";
 
 export function TransactionPage() {
 	const t = useTranslations("");
 	const [editTransaction, setEditTransaction] = useState<Transaction | null>();
-	const [opened, { open, close }] = useDisclosure(false);
+	const [modalOpened, modalHandler] = useDisclosure(false);
 	const {
 		patchUpdateTransactionData,
 		deleteTransactionData,
@@ -129,37 +128,22 @@ export function TransactionPage() {
 			amount: values.amount,
 		};
 
-		try {
-			if (editTransaction) {
-				await patchUpdateTransactionData.mutateAsync({
-					id: editTransaction.id,
-					payload,
-				});
-			} else {
-				await getCategoryId(values.category);
-				await getAccountId(values.account);
-				await postCreateTransactionMutationData.mutateAsync(payload);
-			}
-
-			notifications.show({
-				title: t("Success"),
-				message: editTransaction
-					? t("Transaction updated successfully")
-					: t("Transaction created successfully"),
-				color: "green",
+		if (editTransaction) {
+			await patchUpdateTransactionData.mutateAsync({
+				id: editTransaction.id,
+				payload,
 			});
-
-			form.reset();
-			setEditTransaction(null);
-			close();
-		} catch {
-			notifications.show({
-				title: t("Failed"),
-				message: editTransaction ? t("Failed to update transaction") : t("Failed to create transaction"),
-				color: "red",
-			});
+		} else {
+			await getCategoryId(values.category);
+			await getAccountId(values.account);
+			await postCreateTransactionMutationData.mutateAsync(payload);
 		}
+
+		form.reset();
+		setEditTransaction(null);
+		modalHandler.close();
 	};
+
 	const handleEdit = (transaction: Transaction) => {
 		setEditTransaction(transaction);
 
@@ -172,7 +156,7 @@ export function TransactionPage() {
 			amount: transaction.amount,
 		});
 
-		open();
+		modalHandler.open();
 	};
 	return (
 		<>
@@ -183,7 +167,7 @@ export function TransactionPage() {
 					onClick={() => {
 						setEditTransaction(null);
 						form.reset();
-						open();
+						modalHandler.open();
 					}}
 					mb={"xl"}
 					mt={"xl"}
@@ -193,8 +177,8 @@ export function TransactionPage() {
 			</Group>
 			<Modal
 				title={editTransaction ? t("Edit Transaction") : t("Add Transaction")}
-				opened={opened}
-				onClose={close}
+				opened={modalOpened}
+				onClose={modalHandler.close}
 			>
 				{" "}
 				<form onSubmit={form.onSubmit(handleSubmit)}>
@@ -330,22 +314,7 @@ export function TransactionPage() {
 											<IconTrash
 												color="light-dark(var(--mantine-color-red-6), var(--mantine-color-red-5) )"
 												onClick={() => {
-													deleteTransactionData.mutate(transaction.id, {
-														onSuccess: () => {
-															notifications.show({
-																title: t("Deleted"),
-																message: t("Transaction deleted successfully"),
-																color: "green",
-															});
-														},
-														onError: () => {
-															notifications.show({
-																title: t("Error"),
-																message: t("Failed to delete transaction"),
-																color: "red",
-															});
-														},
-													});
+													deleteTransactionData.mutate(transaction.id);
 												}}
 												size={20}
 											></IconTrash>
