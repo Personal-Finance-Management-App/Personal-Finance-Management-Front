@@ -10,7 +10,10 @@ import {
 	useTransactionsCategoryQueryApi,
 	useTransactionsQueryApi,
 } from "@/app/panel/transactions/index.hooks";
-import type { TransactionFormValues, TransactionsReq } from "@/services/api/models/transactions/index.types";
+import type {
+	TransactionFormValues,
+	TransactionsReq,
+} from "@/services/api/models/transactions/transactions.types";
 import type { Disclosure } from "@/types/GeneralService.types";
 
 type Props = {

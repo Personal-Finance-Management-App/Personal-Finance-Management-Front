@@ -113,35 +113,8 @@
 			"category": "arash",
 			"account": "Cash",
 			"date": "2026-09-13",
-			"amount": 1231231222222111,
+			"amount": 26,
 			"id": "kZzx4hU-DdQ"
-		},
-		{
-			"title": "sfgdfgdfg",
-			"type": "income",
-			"category": "mahzad",
-			"account": "Bank Account",
-			"date": "2026-09-13",
-			"amount": 0,
-			"id": "p2HttO3J29c"
-		},
-		{
-			"title": "eeee",
-			"type": "income",
-			"category": "Transport",
-			"account": "Cash",
-			"date": "2026-09-13",
-			"amount": 23423423,
-			"id": "7eJOcs1pnzY"
-		},
-		{
-			"title": "rrrr",
-			"type": "income",
-			"category": "Transport",
-			"account": "Bank Account",
-			"date": "2026-09-13",
-			"amount": 0,
-			"id": "cgh_ajx3w-g"
 		}
 	],
 	"users": [

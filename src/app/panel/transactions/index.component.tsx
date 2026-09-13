@@ -15,7 +15,6 @@ import {
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 import { useDisclosure } from "@mantine/hooks";
-import { notifications } from "@mantine/notifications";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -132,22 +131,7 @@ export function TransactionPage() {
 											<IconTrash
 												color="light-dark(var(--mantine-color-red-6), var(--mantine-color-red-5) )"
 												onClick={() => {
-													deleteTransactionData.mutate(transaction.id, {
-														onSuccess: () => {
-															notifications.show({
-																title: t("Deleted"),
-																message: t("Transaction deleted successfully"),
-																color: "green",
-															});
-														},
-														onError: () => {
-															notifications.show({
-																title: t("Error"),
-																message: t("Failed to delete transaction"),
-																color: "red",
-															});
-														},
-													});
+													deleteTransactionData.mutate(transaction.id);
 												}}
 												size={20}
 											></IconTrash>
