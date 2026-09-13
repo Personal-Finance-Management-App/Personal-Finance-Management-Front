@@ -2,7 +2,6 @@ export type Transaction = {
 	id: string;
 	title: string;
 	type: "income" | "expense";
-
 	date: string;
 	amount: number;
 	category: string;
@@ -17,5 +16,7 @@ export type TransactionFormValues = {
 	amount: number;
 };
 export type TransactionsRes = Transaction[];
+
+export type TransactionsByIdRes = Transaction;
 
 export type TransactionsReq = Omit<Transaction, "id">;

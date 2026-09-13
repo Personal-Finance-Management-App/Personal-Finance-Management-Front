@@ -1,12 +1,14 @@
+import { HEADER_CONFIG_ENUM } from "@/app/panel/components/layout/Header/index.enum";
+
 export const headerConfig = {
 	"/panel/overview": {
 		title: "Overview",
-		description: "Your complete financial picture",
+		description: HEADER_CONFIG_ENUM.YOUR_COMPLETE_FINANCIAL_PICTURE,
 	},
 
 	"/panel/transactions": {
 		title: "Transactions",
-		description: "Track and manage all your transactions",
+		description: HEADER_CONFIG_ENUM.TRACK_AND_MANAGE_ALL_YOUR_TRANSACTIONS,
 	},
 	"/panel/accounts": {
 		title: "Accounts",

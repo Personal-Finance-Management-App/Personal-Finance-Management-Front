@@ -8,7 +8,7 @@
 	"ThisYear": "This Year",
 	"LastYear": "Last Year",
 	"Overview": "Overview",
-	"Your complete financial picture": "Your complete financial picture",
+	"yourCompleteFinancialPicture": "Your complete financial picture",
 	"Profile": "Profile",
 	"Manage your personal information": "Manage your personal information",
 	"Transactions": "Transactions",
@@ -56,7 +56,7 @@
 	"Select or type a Account": "Select or type a Account",
 	"Error": "Error",
 	"Select or type a category": "Select or type a category",
-	"Add a new transaction": "Add a new transaction",
+	"AddNewTransaction": "Add a new transaction",
 	"Transaction created successfully": "Transaction created successfully",
 	"Date is required": "Date is required"
 }

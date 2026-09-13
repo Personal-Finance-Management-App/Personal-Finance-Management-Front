@@ -1,74 +1,36 @@
 "use client";
 import {
-	Autocomplete,
-	Box,
 	Button,
 	Center,
+	Flex,
 	Group,
 	Loader,
 	Modal,
-	NumberInput,
 	Paper,
 	ScrollArea,
 	SegmentedControl,
-	Select,
 	Table,
 	Text,
-	TextInput,
 } from "@mantine/core";
-import { DatePickerInput } from "@mantine/dates";
-
-import dayjs from "dayjs";
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
-import { useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
 import { notifications } from "@mantine/notifications";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import SubmitButton from "@/app/panel/components/buttons/SubmitButton";
-import { useTransactionsAccountQueryApi } from "@/app/panel/transactions/(data)/accounts/hooks/index.hooks";
-import { useTransactionsCategoryQueryApi } from "@/app/panel/transactions/(data)/categories/hooks/index.hooks";
-import { getCategoryColor } from "@/app/panel/transactions/constants/categoryColors";
-import { useTransactionsQueryApi } from "@/app/panel/transactions/hooks/index.hooks";
-import type {
-	Transaction,
-	TransactionFormValues,
-	TransactionsReq,
-} from "@/services/api/models/transactions/index.types";
+import TransactionCategory from "@/app/panel/transactions/components/transactionCategory";
+import TransactionForm from "@/app/panel/transactions/index.form";
+import { useTransactionsQueryApi } from "@/app/panel/transactions/index.hooks";
 
 export function TransactionPage() {
 	const t = useTranslations("");
-	const [editTransaction, setEditTransaction] = useState<Transaction | null>();
-	const [opened, { open, close }] = useDisclosure(false);
-	const {
-		patchUpdateTransactionData,
-		deleteTransactionData,
-		getTransactionsListQueryData,
-		postCreateTransactionMutationData,
-	} = useTransactionsQueryApi();
-	const { postCreateCategoryMutationData, getTransactionsCategoryListQueryData } =
-		useTransactionsCategoryQueryApi();
-	const { postCreateAccountMutationData, getTransactionsAccountListQueryData } =
-		useTransactionsAccountQueryApi();
-	const [filter, setFilter] = useState<"all" | "income" | "expense">("all");
-	const form = useForm<TransactionFormValues>({
-		initialValues: {
-			title: "",
-			type: "income",
-			category: "",
-			account: "",
-			date: null,
-			amount: 0,
-		},
-		validate: {
-			title: (value) => (value.trim() ? null : t("Title is required")),
+	const [transactionId, setTransactionId] = useState<string | undefined>();
+	const [modalOpened, modalHandler] = useDisclosure(false);
+	const { deleteTransactionData, getTransactionsListQueryData } = useTransactionsQueryApi();
 
-			category: (value) => (value.trim() ? null : t("Category is required")),
-			date: (value) => (value ? null : t("Date is required")),
-		},
-	});
+	const [filter, setFilter] = useState<"all" | "income" | "expense">("all");
+
 	if (
 		getTransactionsListQueryData.isPending ||
 		getTransactionsListQueryData.isFetching ||
@@ -84,166 +46,22 @@ export function TransactionPage() {
 
 	const filteredTransactions =
 		filter === "all" ? transactions : transactions.filter((transaction) => transaction.type === filter);
-	const getCategoryId = async (categoryName: string) => {
-		const categories = getTransactionsCategoryListQueryData.data ?? [];
 
-		const existingCategory = categories.find(
-			(category) => category.name.toLowerCase() === categoryName.trim().toLowerCase(),
-		);
-
-		if (existingCategory) {
-			return existingCategory.id;
-		}
-
-		const response = await postCreateCategoryMutationData.mutateAsync({
-			name: categoryName.trim(),
-		});
-
-		return response.data.id;
-	};
-	const getAccountId = async (AccountName: string) => {
-		const categories = getTransactionsAccountListQueryData.data ?? [];
-
-		const existingAccount = categories.find(
-			(account) => account.name.toLowerCase() === AccountName.trim().toLowerCase(),
-		);
-
-		if (existingAccount) {
-			return existingAccount.id;
-		}
-
-		const response = await postCreateAccountMutationData.mutateAsync({
-			name: AccountName.trim(),
-		});
-
-		return response.data.id;
-	};
-
-	const handleSubmit = async (values: TransactionFormValues) => {
-		const payload: TransactionsReq = {
-			title: values.title,
-			type: values.type,
-			category: values.category,
-			account: values.account,
-			date: values.date ? dayjs(values.date).format("YYYY-MM-DD") : "",
-			amount: values.amount,
-		};
-
-		try {
-			if (editTransaction) {
-				await patchUpdateTransactionData.mutateAsync({
-					id: editTransaction.id,
-					payload,
-				});
-			} else {
-				await getCategoryId(values.category);
-				await getAccountId(values.account);
-				await postCreateTransactionMutationData.mutateAsync(payload);
-			}
-
-			notifications.show({
-				title: t("Success"),
-				message: editTransaction
-					? t("Transaction updated successfully")
-					: t("Transaction created successfully"),
-				color: "green",
-			});
-
-			form.reset();
-			setEditTransaction(null);
-			close();
-		} catch {
-			notifications.show({
-				title: t("Failed"),
-				message: editTransaction ? t("Failed to update transaction") : t("Failed to create transaction"),
-				color: "red",
-			});
-		}
-	};
-	const handleEdit = (transaction: Transaction) => {
-		setEditTransaction(transaction);
-
-		form.setValues({
-			title: transaction.title,
-			type: transaction.type,
-			category: transaction.category,
-			account: transaction.account,
-			date: dayjs(transaction.date).toDate(),
-			amount: transaction.amount,
-		});
-
-		open();
-	};
 	return (
 		<>
-			<Group justify={"center"} align={"center"}>
-				{" "}
-				<Button
-					color={"layout"}
-					onClick={() => {
-						setEditTransaction(null);
-						form.reset();
-						open();
-					}}
-					mb={"xl"}
-					mt={"xl"}
-				>
-					{t("Add a new transaction")}
+			<Flex justify={"center"} align={"center"}>
+				<Button color={"layout"} onClick={modalHandler.open} mb={"xl"} mt={"xl"}>
+					{t("AddNewTransaction")}
 				</Button>
-			</Group>
+			</Flex>
 			<Modal
-				title={editTransaction ? t("Edit Transaction") : t("Add Transaction")}
-				opened={opened}
-				onClose={close}
+				withCloseButton={false}
+				closeOnClickOutside={false}
+				onClose={modalHandler.close}
+				title={transactionId ? t("Edit Transaction") : t("Add Transaction")}
+				opened={modalOpened}
 			>
-				{" "}
-				<form onSubmit={form.onSubmit(handleSubmit)}>
-					<TextInput label={t("Title")} placeholder={t("title place")} {...form.getInputProps("title")} />{" "}
-					<Select
-						label={t("Type")}
-						placeholder={t("Pick a type")}
-						data={[
-							{ value: "income", label: t("Income") },
-							{ value: "expense", label: t("Expense") },
-						]}
-						{...form.getInputProps("type")}
-					></Select>{" "}
-					<Autocomplete
-						label={t("Category")}
-						placeholder={t("Select or type a category")}
-						data={getTransactionsCategoryListQueryData.data?.map((category) => category.name) ?? []}
-						{...form.getInputProps("category")}
-					/>{" "}
-					<Autocomplete
-						label={t("Account")}
-						placeholder={t("Select or type a Account")}
-						data={getTransactionsAccountListQueryData.data?.map((account) => account.name) ?? []}
-						{...form.getInputProps("account")}
-					/>
-					<DatePickerInput
-						label={t("Select a Date")}
-						placeholder={t("Select a Date")}
-						{...form.getInputProps("date")}
-						presets={[
-							{ value: dayjs().subtract(1, "day").format("YYYY-MM-DD"), label: t("Yesterday") },
-							{ value: dayjs().format("YYYY-MM-DD"), label: t("Today") },
-							{ value: dayjs().add(1, "day").format("YYYY-MM-DD"), label: t("Tomorrow") },
-
-							{ value: dayjs().subtract(1, "month").format("YYYY-MM-DD"), label: t("LastMonth") },
-							{ value: dayjs().subtract(1, "year").format("YYYY-MM-DD"), label: t("LastYear") },
-						]}
-					/>
-					<NumberInput
-						mt={"sm"}
-						label={t("Amount")}
-						placeholder={t("amount place")}
-						{...form.getInputProps("amount")}
-					/>
-					<Group justify={"flex-end"} mt={"sm"}>
-						{" "}
-						<SubmitButton loading={postCreateTransactionMutationData.isPending} />
-					</Group>
-				</form>
+				<TransactionForm id={transactionId} modalHandler={modalHandler} setTransactionId={setTransactionId} />
 			</Modal>
 			<Paper
 				mx={{ base: "sm", sm: "lg" }}
@@ -301,23 +119,7 @@ export function TransactionPage() {
 										</Text>
 									</Table.Td>
 									<Table.Td>
-										<Box
-											w={100}
-											px={"sm"}
-											py={4}
-											bg="light-dark(var(--mantine-color-gray-4), var(--mantine-color-gray-8))"
-											style={{ borderRadius: "10px" }}
-										>
-											<Group gap={6} wrap="nowrap">
-												<Box
-													w={7}
-													h={7}
-													bg={getCategoryColor(transaction.category)}
-													style={{ borderRadius: "50%" }}
-												/>
-												{transaction.category}
-											</Group>
-										</Box>
+										<TransactionCategory category={transaction.category} />
 									</Table.Td>
 									<Table.Td fw={"bold"}>{transaction.account}</Table.Td>
 									<Table.Td>{transaction.date}</Table.Td>
@@ -351,9 +153,12 @@ export function TransactionPage() {
 											></IconTrash>
 											<IconEdit
 												color="light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4) )"
-												onClick={() => handleEdit(transaction)}
+												onClick={() => {
+													modalHandler.open();
+													setTransactionId(transaction.id);
+												}}
 												size={20}
-											></IconEdit>{" "}
+											></IconEdit>
 										</Group>
 									</Table.Td>
 								</Table.Tr>
