@@ -2,7 +2,7 @@ import type {
 	CategoriesReq,
 	CategoriesRes,
 	Category,
-} from "@/services/api/models/transactions/transactionsCategories/index.types";
+} from "@/services/api/models/transactions/transactionsCategory.types";
 import { httpService } from "@/services/httpService";
 
 const TRANSACTION_CATEGORY_SERVICE_PATH = "/transactionsCategories";
