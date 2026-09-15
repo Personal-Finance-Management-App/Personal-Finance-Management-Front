@@ -9,112 +9,153 @@
 			"name": "Transport"
 		},
 		{
-			"name": "sthrsth",
-			"id": "dWEdHjdfsUg"
+			"id": "3",
+			"name": "Shopping"
 		},
 		{
-			"name": "mahzad",
-			"id": "6pE3ugQgBdU"
+			"id": "4",
+			"name": "Bills & Utilities"
 		},
 		{
-			"name": "siavash",
-			"id": "Fz52GmdvrnI"
+			"id": "5",
+			"name": "Entertainment"
 		},
 		{
-			"name": "love",
-			"id": "xX7OVweCedk"
+			"id": "6",
+			"name": "Health"
 		},
 		{
-			"name": "member",
-			"id": "9fgKjumGQTU"
+			"id": "7",
+			"name": "Education"
 		},
 		{
-			"name": "train",
-			"id": "XdeOnNY0xGk"
+			"id": "8",
+			"name": "Travel"
 		},
 		{
-			"name": "sthst",
-			"id": "XsQAsusaYE8"
+			"id": "9",
+			"name": "Housing"
 		},
 		{
-			"name": "",
-			"id": "c6ZCy5s_Vkc"
+			"id": "10",
+			"name": "Subscriptions"
 		},
 		{
-			"name": "dthdtr",
-			"id": "m6TcJWsrKiw"
+			"id": "11",
+			"name": "Salary"
 		},
 		{
-			"name": "erg",
-			"id": "H40TRHRqy_g"
+			"id": "12",
+			"name": "Freelance"
 		},
 		{
-			"name": "erger",
-			"id": "5YsACcPKrt0"
+			"id": "13",
+			"name": "Investment"
 		},
 		{
-			"name": "mine",
-			"id": "mVPCayiEKHU"
+			"id": "14",
+			"name": "Gift"
+		},
+		{
+			"id": "15",
+			"name": "Personal Care"
+		},
+		{
+			"id": "16",
+			"name": "Exercise"
+		},
+		{
+			"id": "17",
+			"name": "Donations"
+		},
+		{
+			"id": "18",
+			"name": "Fees & Charges"
+		},
+		{
+			"id": "19",
+			"name": "Taxes"
+		},
+		{
+			"id": "20",
+			"name": "Internet & Phone"
+		},
+		{
+			"id": "21",
+			"name": "Rent"
+		},
+		{
+			"id": "22",
+			"name": "Other"
 		}
 	],
 	"transactionsAccounts": [
 		{
 			"id": "1",
-			"name": "Cash"
+			"name": "Cash",
+			"options": []
 		},
 		{
 			"id": "2",
-			"name": "Bank Account"
-		},
-		{
-			"name": "parsian",
-			"id": "n2GtmsOFTUo"
-		},
-		{
-			"name": "",
-			"id": "twS_rDlgfkc"
-		},
-		{
 			"name": "Bank Account",
-			"id": "KrnYfxTeXYo"
+			"options": ["Mellat", "Parsian", "Tejarat", "Saman", "Pasargad", "Melli"]
+		},
+		{
+			"id": "3",
+			"name": "Credit Card",
+			"options": ["Visa", "Mastercard", "American Express"]
+		},
+		{
+			"id": "4",
+			"name": "Debit Card",
+			"options": ["Visa Debit", "Mastercard Debit", "Maestro"]
+		},
+		{
+			"id": "5",
+			"name": "Digital Wallet",
+			"options": ["PayPal", "Venmo", "Apple Pay", "Google Pay"]
+		},
+		{
+			"id": "6",
+			"name": "Cryptocurrency",
+			"options": ["Bitcoin", "Ethereum", "USDT", "BNB", "Solana"]
+		},
+		{
+			"id": "7",
+			"name": "Investment Account",
+			"options": ["Stock Portfolio", "ETF", "Mutual Funds"]
+		},
+		{
+			"id": "8",
+			"name": "Savings Account",
+			"options": ["Mellat", "Parsian", "Tejarat", "Saman"]
+		},
+		{
+			"id": "9",
+			"name": "Loan",
+			"options": ["Personal Loan", "Car Loan", "Home Loan", "Student Loan"]
 		}
 	],
 	"transactions": [
 		{
-			"id": "1",
-			"title": "crypto-sass",
+			"title": "hello",
 			"type": "expense",
-			"account": "parisan",
-			"category": "Transport",
-			"date": "2025-02-04",
-			"amount": 80
+			"category": "Salary",
+			"account": "Digital Wallet",
+			"accountOption": "Apple Pay",
+			"date": "2026-09-08",
+			"amount": 2700,
+			"id": "5Cm-wNTnl5k"
 		},
 		{
-			"title": "mahzad",
+			"title": "drg",
 			"type": "income",
-			"category": "sthrsth",
-			"account": "",
+			"category": "Food",
+			"account": "Credit Card",
+			"accountOption": "Mastercard",
 			"date": "2026-09-01",
-			"amount": 0,
-			"id": "Dm9mfYACZnY"
-		},
-		{
-			"title": "www",
-			"type": "expense",
-			"category": "siavash",
-			"account": "Bank Account",
-			"date": "2026-09-13",
-			"amount": 0,
-			"id": "0NGgiIDJTwQ"
-		},
-		{
-			"title": "test-01",
-			"type": "income",
-			"category": "arash",
-			"account": "Cash",
-			"date": "2026-09-13",
-			"amount": 26,
-			"id": "kZzx4hU-DdQ"
+			"amount": 710,
+			"id": "HgSqSL2kOG0"
 		}
 	],
 	"users": [

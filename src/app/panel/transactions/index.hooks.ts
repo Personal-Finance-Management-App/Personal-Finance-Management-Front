@@ -29,14 +29,14 @@ export const useTransactionsQueryApi = () => {
 			});
 			notifications.show({
 				title: t("Success"),
-				message: t("Transaction created successfully"),
+				message: t("TransactionCreatedSuccessfully"),
 				color: "green",
 			});
 		},
 		onError: () => {
 			notifications.show({
 				title: t("Failed"),
-				message: t("Failed to create transaction"),
+				message: t("FailedToCreateTransaction"),
 				color: "red",
 			});
 		},
@@ -51,14 +51,14 @@ export const useTransactionsQueryApi = () => {
 			});
 			notifications.show({
 				title: t("Success"),
-				message: t("Transaction updated successfully"),
+				message: t("TransactionUpdatedSuccessfully"),
 				color: "green",
 			});
 		},
 		onError: () => {
 			notifications.show({
 				title: t("Failed"),
-				message: t("Failed to update transaction"),
+				message: t("FailedToUpdateTransaction"),
 				color: "red",
 			});
 		},
@@ -72,14 +72,14 @@ export const useTransactionsQueryApi = () => {
 			});
 			notifications.show({
 				title: t("Deleted"),
-				message: t("Transaction deleted successfully"),
+				message: t("TransactionDeletedSuccessfully"),
 				color: "green",
 			});
 		},
 		onError: () => {
 			notifications.show({
 				title: t("Error"),
-				message: t("Failed to delete transaction"),
+				message: t("FailedToDeleteTransaction"),
 				color: "red",
 			});
 		},

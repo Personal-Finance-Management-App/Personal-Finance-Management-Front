@@ -6,12 +6,14 @@ export type Transaction = {
 	amount: number;
 	category: string;
 	account: string;
+	accountOption: string;
 };
 export type TransactionFormValues = {
 	title: string;
 	type: "income" | "expense";
 	category: string;
 	account: string;
+	accountOption: string;
 	date: Date | null;
 	amount: number;
 };

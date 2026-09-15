@@ -12,20 +12,20 @@ export const headerConfig = {
 	},
 	"/panel/accounts": {
 		title: "Accounts",
-		description: "Manage your accounts and balances",
+		description: HEADER_CONFIG_ENUM.MANAGE_YOUR_ACCOUNTS_AND_BALANCES,
 	},
 	"/panel/reports": {
 		title: "Reports",
-		description: "Analyze your financial activities",
+		description: HEADER_CONFIG_ENUM.ANALYZE_YOUR_FINANCIAL_ACTIVITIES,
 	},
 
 	"/panel/budgets": {
 		title: "Budgets",
-		description: "Plan and manage your spending",
+		description: HEADER_CONFIG_ENUM.PLAN_AND_MANAGE_YOUR_SPENDING,
 	},
 
 	"/panel/profile": {
 		title: "Profile",
-		description: "Manage your personal information",
+		description: HEADER_CONFIG_ENUM.MANAGE_YOUR_PERSONAL_INFORMATION,
 	},
 };

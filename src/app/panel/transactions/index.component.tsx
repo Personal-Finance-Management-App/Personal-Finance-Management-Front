@@ -57,7 +57,7 @@ export function TransactionPage() {
 				withCloseButton={false}
 				closeOnClickOutside={false}
 				onClose={modalHandler.close}
-				title={transactionId ? t("Edit Transaction") : t("Add Transaction")}
+				title={transactionId ? t("EditTransaction") : t("AddTransaction")}
 				opened={modalOpened}
 			>
 				<TransactionForm id={transactionId} modalHandler={modalHandler} setTransactionId={setTransactionId} />
@@ -120,7 +120,12 @@ export function TransactionPage() {
 									<Table.Td>
 										<TransactionCategory category={transaction.category} />
 									</Table.Td>
-									<Table.Td fw={"bold"}>{transaction.account}</Table.Td>
+									<Table.Td fw={"bold"}>
+										{transaction.accountOption
+											? `${transaction.account}-${transaction.accountOption}`
+											: transaction.account}
+									</Table.Td>
+
 									<Table.Td>{transaction.date}</Table.Td>
 									<Table.Td fz={"md"} fw={"bold"} c={transaction.type === "income" ? "green" : "red.8"}>
 										{transaction.type === "income" ? `+$${transaction.amount}` : `-$${transaction.amount}`}

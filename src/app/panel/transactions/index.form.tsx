@@ -36,16 +36,21 @@ export default function TransactionForm(props: Props) {
 			type: "income",
 			category: "",
 			account: "",
+			accountOption: "",
 			date: null,
 			amount: 0,
 		},
 		validate: {
-			title: (value) => (value.trim() ? null : t("Title is required")),
-			category: (value) => (value.trim() ? null : t("Category is required")),
-			date: (value) => (value ? null : t("Date is required")),
+			title: (value) => (value.trim() ? null : t("TitleRequired")),
+			category: (value) => (value.trim() ? null : t("CategoryRequired")),
+			account: (value) => (value.trim() ? null : t("AccountRequired")),
+			accountOption: (value) => (value.trim() ? null : t("AccountNameRequired")),
+			date: (value) => (value ? null : t("DateRequired")),
 		},
 	});
-
+	const selectedAccount = getTransactionsAccountListQueryData.data?.find(
+		(account) => account.name === form.values.account,
+	);
 	const handleCancel = () => {
 		form.reset();
 		props.setTransactionId(undefined);
@@ -58,6 +63,7 @@ export default function TransactionForm(props: Props) {
 			type: values.type,
 			category: values.category,
 			account: values.account,
+			accountOption: values.accountOption,
 			date: values.date ? dayjs(values.date).format("YYYY-MM-DD") : "",
 			amount: values.amount,
 		};
@@ -88,6 +94,7 @@ export default function TransactionForm(props: Props) {
 					type: transactionFormData.type,
 					category: transactionFormData.category,
 					account: transactionFormData.account,
+					accountOption: transactionFormData.accountOption,
 					date: dayjs(transactionFormData.date).toDate(),
 					amount: transactionFormData.amount,
 				});
@@ -97,10 +104,11 @@ export default function TransactionForm(props: Props) {
 
 	return (
 		<form onSubmit={form.onSubmit(handleSubmit)}>
-			<TextInput label={t("Title")} placeholder={t("title place")} {...form.getInputProps("title")} />
+			<TextInput label={t("Title")} placeholder={t("TitlePlace")} {...form.getInputProps("title")} />
 			<Select
+				mt={"sm"}
 				label={t("Type")}
-				placeholder={t("Pick a type")}
+				placeholder={t("PickType")}
 				data={[
 					{ value: "income", label: t("Income") },
 					{ value: "expense", label: t("Expense") },
@@ -108,8 +116,9 @@ export default function TransactionForm(props: Props) {
 				{...form.getInputProps("type")}
 			></Select>
 			<Autocomplete
+				mt={"sm"}
 				label={t("Category")}
-				placeholder={t("Select or type a category")}
+				placeholder={t("SelectCategory")}
 				data={
 					getTransactionsCategoryListQueryData.data?.map((category) => {
 						return {
@@ -121,8 +130,9 @@ export default function TransactionForm(props: Props) {
 				{...form.getInputProps("category")}
 			/>
 			<Autocomplete
-				label={t("Account")}
-				placeholder={t("Select or type a Account")}
+				mt={"sm"}
+				label={t("AccountType")}
+				placeholder={t("SelectAccount")}
 				data={
 					getTransactionsAccountListQueryData.data?.map((account) => {
 						return {
@@ -133,14 +143,24 @@ export default function TransactionForm(props: Props) {
 				}
 				{...form.getInputProps("account")}
 			/>
+			{selectedAccount && selectedAccount.options.length > 0 && (
+				<Select
+					mt={"sm"}
+					label={t("AccountName")}
+					placeholder={t("SelectAccountName")}
+					data={selectedAccount.options}
+					{...form.getInputProps("accountOption")}
+				/>
+			)}
 			<DatePickerInput
-				label={t("Select a Date")}
-				placeholder={t("Select a Date")}
+				mt={"sm"}
+				maxDate={dayjs().toDate()}
+				label={t("SelectDate")}
+				placeholder={t("SelectDate")}
 				{...form.getInputProps("date")}
 				presets={[
 					{ value: dayjs().subtract(1, "day").format("YYYY-MM-DD"), label: t("Yesterday") },
 					{ value: dayjs().format("YYYY-MM-DD"), label: t("Today") },
-					{ value: dayjs().add(1, "day").format("YYYY-MM-DD"), label: t("Tomorrow") },
 
 					{ value: dayjs().subtract(1, "month").format("YYYY-MM-DD"), label: t("LastMonth") },
 					{ value: dayjs().subtract(1, "year").format("YYYY-MM-DD"), label: t("LastYear") },
@@ -149,12 +169,14 @@ export default function TransactionForm(props: Props) {
 			<NumberInput
 				mt={"sm"}
 				label={t("Amount")}
-				placeholder={t("amount place")}
+				placeholder={t("AmountPlace")}
 				{...form.getInputProps("amount")}
 			/>
-			<Group justify={"flex-end"} mt={"sm"}>
+			<Group justify={"space-between"} mt={"md"}>
 				<SubmitButton loading={postCreateTransactionMutationData.isPending} />
-				<Button onClick={handleCancel}>Cancel</Button>
+				<Button bg={"layout"} onClick={handleCancel}>
+					{t("Cancel")}
+				</Button>
 			</Group>
 		</form>
 	);
