@@ -1,6 +1,7 @@
 export type Account = {
 	id: string;
 	name: string;
+	options: string[];
 };
 
 export type AccountsRes = Account[];

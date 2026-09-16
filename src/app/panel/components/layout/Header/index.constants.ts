@@ -1,29 +1,31 @@
+import { HEADER_CONFIG_ENUM } from "@/app/panel/components/layout/Header/index.enum";
+
 export const headerConfig = {
 	"/panel/overview": {
 		title: "Overview",
-		description: "Your complete financial picture",
+		description: HEADER_CONFIG_ENUM.YOUR_COMPLETE_FINANCIAL_PICTURE,
 	},
 
 	"/panel/transactions": {
 		title: "Transactions",
-		description: "Track and manage all your transactions",
+		description: HEADER_CONFIG_ENUM.TRACK_AND_MANAGE_ALL_YOUR_TRANSACTIONS,
 	},
 	"/panel/accounts": {
 		title: "Accounts",
-		description: "Manage your accounts and balances",
+		description: HEADER_CONFIG_ENUM.MANAGE_YOUR_ACCOUNTS_AND_BALANCES,
 	},
 	"/panel/reports": {
 		title: "Reports",
-		description: "Analyze your financial activities",
+		description: HEADER_CONFIG_ENUM.ANALYZE_YOUR_FINANCIAL_ACTIVITIES,
 	},
 
 	"/panel/budgets": {
 		title: "Budgets",
-		description: "Plan and manage your spending",
+		description: HEADER_CONFIG_ENUM.PLAN_AND_MANAGE_YOUR_SPENDING,
 	},
 
 	"/panel/profile": {
 		title: "Profile",
-		description: "Manage your personal information",
+		description: HEADER_CONFIG_ENUM.MANAGE_YOUR_PERSONAL_INFORMATION,
 	},
 };

@@ -1,10 +1,18 @@
-import type { TransactionsReq, TransactionsRes } from "@/services/api/models/transactions/index.types";
+import type {
+	TransactionsByIdRes,
+	TransactionsReq,
+	TransactionsRes,
+} from "@/services/api/models/transactions/transactions.types";
 import { httpService } from "@/services/httpService";
 
 const TRANSACTION_SERVICE_PATH = "/transactions";
 
 export async function getTransactionsListAPi() {
 	return await httpService.get<TransactionsRes>(TRANSACTION_SERVICE_PATH);
+}
+
+export async function getTransactionsByIdAPi(id: string) {
+	return await httpService.get<TransactionsByIdRes>(`${TRANSACTION_SERVICE_PATH}/${id}`);
 }
 
 export async function postCreateTransactionAPi(payload: TransactionsReq) {
@@ -21,6 +29,7 @@ export async function deleteTransactionAPi(id: string) {
 
 export const TransactionService = {
 	getTransactionsListAPi,
+	getTransactionsByIdAPi,
 	postCreateTransactionAPi,
 	updateTransactionAPi,
 	deleteTransactionAPi,

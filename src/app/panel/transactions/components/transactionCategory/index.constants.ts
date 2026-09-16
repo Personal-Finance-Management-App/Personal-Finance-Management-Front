@@ -1,0 +1,16 @@
+export const CATEGORY_COLORS = [
+	"red",
+	"blue",
+	"green",
+	"orange",
+	"violet",
+	"cyan",
+	"pink",
+	"teal",
+	"orange",
+	"lime",
+	"indigo",
+	"grape",
+	"purple",
+	"yellow",
+];
