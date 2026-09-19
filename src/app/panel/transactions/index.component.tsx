@@ -6,6 +6,7 @@ import {
 	Group,
 	Loader,
 	Modal,
+	NumberFormatter,
 	Paper,
 	ScrollArea,
 	SegmentedControl,
@@ -128,7 +129,11 @@ export function TransactionPage() {
 
 									<Table.Td>{transaction.date}</Table.Td>
 									<Table.Td fz={"md"} fw={"bold"} c={transaction.type === "income" ? "green" : "red.8"}>
-										{transaction.type === "income" ? `+$${transaction.amount}` : `-$${transaction.amount}`}
+										<NumberFormatter
+											prefix={transaction.type === "income" ? "+$" : "$"}
+											value={transaction.type === "income" ? transaction.amount : -transaction.amount}
+											thousandSeparator
+										></NumberFormatter>
 									</Table.Td>
 									<Table.Td>
 										<Group justify="center" gap="xs" wrap="nowrap">

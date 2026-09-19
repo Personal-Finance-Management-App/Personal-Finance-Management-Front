@@ -156,6 +156,56 @@
 			"date": "2026-09-01",
 			"amount": 710,
 			"id": "HgSqSL2kOG0"
+		},
+		{
+			"title": "mahzad",
+			"type": "expense",
+			"category": "Transport",
+			"account": "Bank Account",
+			"accountOption": "Tejarat",
+			"date": "2026-09-02",
+			"amount": 700,
+			"id": "3ho5Cr8qg2o"
+		},
+		{
+			"title": "siavash",
+			"type": null,
+			"category": "Education",
+			"account": "Savings Account",
+			"accountOption": "Saman",
+			"date": "2026-09-03",
+			"amount": 7000,
+			"id": "5CoXgZjA1vA"
+		},
+		{
+			"title": "marjan",
+			"type": "income",
+			"category": "Personal Care",
+			"account": "Cryptocurrency",
+			"accountOption": "BNB",
+			"date": "2026-09-06",
+			"amount": 800,
+			"id": "ExULpXmcI28"
+		},
+		{
+			"title": "health care",
+			"type": "income",
+			"category": "Health",
+			"account": "Credit Card",
+			"accountOption": "Mastercard",
+			"date": "2026-09-16",
+			"amount": 5000,
+			"id": "krI_b7_MeY4"
+		},
+		{
+			"title": "midterm",
+			"type": "expense",
+			"category": "Freelance",
+			"account": "Bank Account",
+			"accountOption": "Saman",
+			"date": "2026-09-01",
+			"amount": 800,
+			"id": "_E0LY30i4wk"
 		}
 	],
 	"users": [
