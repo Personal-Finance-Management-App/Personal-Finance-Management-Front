@@ -1,15 +1,16 @@
 "use client";
 
-import { Box, Card, NumberFormatter, Text } from "@mantine/core";
+import { BarChart } from "@mantine/charts";
+import { Box, Grid } from "@mantine/core";
+import AccountsSummary from "@/app/panel/accounts/components/AccountsSummary";
+import AccountsCard from "@/app/panel/accounts/components/accountsCard/AccountsCard";
 import { useTransactionsQueryApi } from "@/app/panel/transactions/index.hooks";
 
 export default function AccountsPage() {
 	const { getTransactionsListQueryData } = useTransactionsQueryApi();
 
 	const accounts = getTransactionsListQueryData.data ?? [];
-
 	const accountTypes = [...new Set(accounts.map((item) => item.account))];
-
 	const groupedAccounts = accountTypes.map((accountType) => {
 		const groupedTransactions = accounts.filter((item) => item.account === accountType);
 
@@ -56,48 +57,23 @@ export default function AccountsPage() {
 	});
 
 	return (
-		<>
-			{groupedAccounts.map((account) => (
-				<Card ml="md" mr="md" mt="sm" key={account.accountType} padding="sm" withBorder>
-					<Card.Section inheritPadding px="md">
-						<Text fz="xl">{account.accountType}</Text>
-
-						<Box mt="xs">
-							<Text>
-								Income: <NumberFormatter thousandSeparator prefix="$" value={account.income} />
-							</Text>
-
-							<Text>
-								Expense: <NumberFormatter thousandSeparator prefix="$" value={account.expense} />
-							</Text>
-
-							<Text>
-								Balance: <NumberFormatter thousandSeparator prefix="$" value={account.balance} />
-							</Text>
-						</Box>
-
-						<Box mt="md">
-							{account.groupedAccountsOptionGeneral.map((option) => (
-								<Box key={option.accountOption} mt="sm">
-									<Text fw={600}>{option.accountOption}</Text>
-
-									<Text>
-										Income: <NumberFormatter thousandSeparator prefix="$" value={option.income} />
-									</Text>
-
-									<Text>
-										Expense: <NumberFormatter thousandSeparator prefix="$" value={option.expense} />
-									</Text>
-
-									<Text>
-										Balance: <NumberFormatter thousandSeparator prefix="$" value={option.balance} />
-									</Text>
-								</Box>
-							))}
-						</Box>
-					</Card.Section>
-				</Card>
-			))}
-		</>
+		<Box px="md">
+			<BarChart
+				mt="md"
+				h={250}
+				data={groupedAccounts}
+				dataKey="accountType"
+				orientation="vertical"
+				barProps={{ radius: 5 }}
+				gridAxis="none"
+				yAxisProps={{ width: 140 }}
+				getBarColor={(value) => (value < 0 ? "red.5" : "green.5")}
+				series={[{ name: "balance", color: "gray.0" }]}
+			/>{" "}
+			<Grid mt="lg">
+				<AccountsCard accounts={groupedAccounts} />
+				<AccountsSummary accounts={accounts} />
+			</Grid>
+		</Box>
 	);
 }

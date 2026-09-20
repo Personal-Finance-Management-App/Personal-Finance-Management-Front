@@ -168,16 +168,6 @@
 			"id": "3ho5Cr8qg2o"
 		},
 		{
-			"title": "siavash",
-			"type": null,
-			"category": "Education",
-			"account": "Savings Account",
-			"accountOption": "Saman",
-			"date": "2026-09-03",
-			"amount": 7000,
-			"id": "5CoXgZjA1vA"
-		},
-		{
 			"title": "marjan",
 			"type": "income",
 			"category": "Personal Care",
@@ -206,6 +196,86 @@
 			"date": "2026-09-01",
 			"amount": 800,
 			"id": "_E0LY30i4wk"
+		},
+		{
+			"title": "official",
+			"type": "expense",
+			"category": "Shopping",
+			"account": "Savings Account",
+			"accountOption": "Parsian",
+			"date": "2026-09-03",
+			"amount": 700,
+			"id": "aR4jTJZmBAw"
+		},
+		{
+			"title": "office",
+			"type": "expense",
+			"category": "Bills & Utilities",
+			"account": "Savings Account",
+			"accountOption": "Saman",
+			"date": "2026-09-02",
+			"amount": 800,
+			"id": "YFcGCp5c-ro"
+		},
+		{
+			"title": "officeee",
+			"type": "expense",
+			"category": "Subscriptions",
+			"account": "Loan",
+			"accountOption": "Home Loan",
+			"date": "2026-09-02",
+			"amount": 800,
+			"id": "P2gcJp76f9c"
+		},
+		{
+			"title": "jilo",
+			"type": "income",
+			"category": "Subscriptions",
+			"account": "Debit Card",
+			"accountOption": "Mastercard Debit",
+			"date": "2026-09-02",
+			"amount": 9000,
+			"id": "jxGElg6aO2g"
+		},
+		{
+			"title": "jeloo",
+			"type": "income",
+			"category": "Health",
+			"account": "Credit Card",
+			"accountOption": "American Express",
+			"date": "2026-09-10",
+			"amount": 700,
+			"id": "f7CJJEswD1s"
+		},
+		{
+			"title": "n;",
+			"type": "income",
+			"category": "Transport",
+			"account": "Credit Card",
+			"accountOption": "American Express",
+			"date": "2026-09-02",
+			"amount": 800,
+			"id": "zIUwYEPc9ss"
+		},
+		{
+			"title": "debit",
+			"type": "expense",
+			"category": "Internet & Phone",
+			"account": "Debit Card",
+			"accountOption": "Visa Debit",
+			"date": "2026-09-02",
+			"amount": 700,
+			"id": "hs4NDKsMWw8"
+		},
+		{
+			"title": "income",
+			"type": "income",
+			"category": "Internet & Phone",
+			"account": "Digital Wallet",
+			"accountOption": "Apple Pay",
+			"date": "2026-09-01",
+			"amount": 800,
+			"id": "3A2Ap7UeQv8"
 		}
 	],
 	"users": [

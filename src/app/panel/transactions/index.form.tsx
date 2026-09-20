@@ -109,6 +109,7 @@ export default function TransactionForm(props: Props) {
 				mt={"sm"}
 				label={t("Type")}
 				placeholder={t("PickType")}
+				allowDeselect={false}
 				data={[
 					{ value: "income", label: t("Income") },
 					{ value: "expense", label: t("Expense") },
