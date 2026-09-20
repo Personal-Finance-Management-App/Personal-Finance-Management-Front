@@ -1,67 +1,98 @@
-import { Box, Card, Divider, GridCol, NumberFormatter, ScrollArea, Text } from "@mantine/core";
+import { Box, Card, Divider, GridCol, Group, NumberFormatter, ScrollArea, Text } from "@mantine/core";
+import { useTranslations } from "next-intl";
 import type { AccountsCardProps } from "@/app/panel/accounts/components/accountsCard/index.types";
 
 export default function AccountsCard({ accounts }: AccountsCardProps) {
+	const t = useTranslations();
 	return (
 		<>
 			{" "}
-			<GridCol span={{ base: 12, md: 6 }} order={{ base: 2, md: 1 }}>
+			<GridCol span={{ base: 12, md: 7 }} order={{ base: 2, md: 1 }}>
 				<ScrollArea h={600} type="auto" offsetScrollbars>
 					{accounts.map((account) => (
-						<Card key={account.accountType} mb="md" padding="md" withBorder>
-							<Card.Section inheritPadding p="md">
-								<Text fz="xl">{account.accountType}</Text>
+						<Card
+							bg="light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))"
+							key={account.accountType}
+							mb="md"
+							padding="md"
+							withBorder
+						>
+							<Group justify="space-between">
+								<Text fw={600} fz="lg">
+									{t(account.accountType)}
+								</Text>
 
-								<Box mt="xs">
-									{account.income !== 0 && (
-										<Text>
-											Income: <NumberFormatter thousandSeparator prefix="$" value={account.income} />
+								<Text fw={600} c={account.balance < 0 ? "red.6" : "green.6"}>
+									<NumberFormatter thousandSeparator prefix="$" value={account.balance} />
+								</Text>
+							</Group>
+
+							<Group mt="md" grow>
+								{account.income !== 0 && (
+									<Box>
+										<Text size="xs" c="gray.7">
+											{t("Income")}
 										</Text>
-									)}
-
-									{account.expense !== 0 && (
-										<Text>
-											Expense: <NumberFormatter thousandSeparator prefix="$" value={account.expense} />
+										<Text fw={500}>
+											<NumberFormatter thousandSeparator prefix="$" value={account.income} />
 										</Text>
-									)}
+									</Box>
+								)}
 
-									<Text>
-										Balance:{" "}
-										<Text span c={account.balance < 0 ? "red.6" : "green.6"}>
-											<NumberFormatter thousandSeparator prefix="$" value={account.balance} />
+								{account.expense !== 0 && (
+									<Box>
+										<Text size="xs" c="gray.7">
+											{t("Expense")}
 										</Text>
-									</Text>
-								</Box>
+										<Text fw={500}>
+											<NumberFormatter thousandSeparator prefix="$" value={account.expense} />
+										</Text>
+									</Box>
+								)}
+							</Group>
 
-								<Divider my="md" />
+							<Divider my="md" />
+							{account.accountType !== "Cash" && (
+								<Text size="sm" fw={600} c="gray.7">
+									{t("Accounts")}
+								</Text>
+							)}
+							{account.accountType !== "Cash" &&
+								account.groupedAccountsOptionGeneral.map((option) => (
+									<Card
+										bg="light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))"
+										key={option.accountOption}
+										mt="sm"
+										padding="sm"
+										withBorder
+									>
+										<Group justify="space-between">
+											<Text size="sm" fw={600}>
+												{t(option.accountOption)}
+											</Text>
 
-								<Box mt="md">
-									{account.groupedAccountsOptionGeneral.map((option) => (
-										<Box key={option.accountOption} mt="sm">
-											<Text fw={600}>{option.accountOption}</Text>
+											<Text size="sm" fw={600} c={option.balance < 0 ? "red.6" : "green.6"}>
+												<NumberFormatter thousandSeparator prefix="$" value={option.balance} />
+											</Text>
+										</Group>
 
+										<Group mt="xs">
 											{option.income !== 0 && (
-												<Text>
-													Income: <NumberFormatter thousandSeparator prefix="$" value={option.income} />
+												<Text size="xs" c="gray.7">
+													{t("Income")}:{" "}
+													<NumberFormatter thousandSeparator prefix="$" value={option.income} />
 												</Text>
 											)}
 
 											{option.expense !== 0 && (
-												<Text>
-													Expense: <NumberFormatter thousandSeparator prefix="$" value={option.expense} />
+												<Text size="xs" c="gray.7">
+													{t("Expense")}:{" "}
+													<NumberFormatter thousandSeparator prefix="$" value={option.expense} />
 												</Text>
 											)}
-
-											<Text>
-												Balance:{" "}
-												<Text span c={option.balance < 0 ? "red.6" : "green.6"}>
-													<NumberFormatter thousandSeparator prefix="$" value={option.balance} />
-												</Text>
-											</Text>
-										</Box>
-									))}
-								</Box>
-							</Card.Section>
+										</Group>
+									</Card>
+								))}
 						</Card>
 					))}
 				</ScrollArea>

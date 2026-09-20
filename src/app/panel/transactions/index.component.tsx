@@ -121,10 +121,10 @@ export function TransactionPage() {
 									<Table.Td>
 										<TransactionCategory category={transaction.category} />
 									</Table.Td>
-									<Table.Td fw={"bold"}>
+									<Table.Td fw="bold">
 										{transaction.accountOption
-											? `${transaction.account}-${transaction.accountOption}`
-											: transaction.account}
+											? `${t(transaction.account)}-${t(transaction.accountOption)}`
+											: t(transaction.account)}
 									</Table.Td>
 
 									<Table.Td>{transaction.date}</Table.Td>

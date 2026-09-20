@@ -1,14 +1,15 @@
 "use client";
 
 import { BarChart } from "@mantine/charts";
-import { Box, Grid } from "@mantine/core";
+import { Box, Card, Grid } from "@mantine/core";
+import { useTranslations } from "next-intl";
 import AccountsSummary from "@/app/panel/accounts/components/AccountsSummary";
 import AccountsCard from "@/app/panel/accounts/components/accountsCard/AccountsCard";
 import { useTransactionsQueryApi } from "@/app/panel/transactions/index.hooks";
 
 export default function AccountsPage() {
 	const { getTransactionsListQueryData } = useTransactionsQueryApi();
-
+	const t = useTranslations();
 	const accounts = getTransactionsListQueryData.data ?? [];
 	const accountTypes = [...new Set(accounts.map((item) => item.account))];
 	const groupedAccounts = accountTypes.map((accountType) => {
@@ -55,22 +56,32 @@ export default function AccountsPage() {
 			groupedAccountsOptionGeneral,
 		};
 	});
-
+	const chartData = groupedAccounts.map((account) => ({
+		...account,
+		accountType: t(account.accountType),
+	}));
 	return (
 		<Box px="md">
-			<BarChart
-				mt="md"
-				h={250}
-				data={groupedAccounts}
-				dataKey="accountType"
-				orientation="vertical"
-				barProps={{ radius: 5 }}
-				gridAxis="none"
-				yAxisProps={{ width: 140 }}
-				getBarColor={(value) => (value < 0 ? "red.5" : "green.5")}
-				series={[{ name: "balance", color: "gray.0" }]}
-			/>{" "}
-			<Grid mt="lg">
+			<Card
+				bg="light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))"
+				mt={"md"}
+				mb={"md"}
+				withBorder
+			>
+				{" "}
+				<BarChart
+					h={250}
+					data={chartData}
+					dataKey="accountType"
+					orientation="vertical"
+					barProps={{ radius: 6 }}
+					gridAxis="none"
+					yAxisProps={{ width: 160 }}
+					getBarColor={(value) => (value < 0 ? "red.5" : "green.5")}
+					series={[{ name: "balance", color: "gray.0" }]}
+				/>{" "}
+			</Card>
+			<Grid mt="xl">
 				<AccountsCard accounts={groupedAccounts} />
 				<AccountsSummary accounts={accounts} />
 			</Grid>

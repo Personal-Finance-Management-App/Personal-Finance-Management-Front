@@ -1,10 +1,12 @@
-import { Card, Divider, GridCol, Group, NumberFormatter, Text } from "@mantine/core";
+import { Box, Card, Divider, GridCol, Group, NumberFormatter, Stack, Text } from "@mantine/core";
+import { useTranslations } from "next-intl";
 import type { Transaction } from "@/services/api/models/transactions/transactions.types";
 
 type AccountsSummaryProps = {
 	accounts: Transaction[];
 };
 export default function AccountsSummary({ accounts }: AccountsSummaryProps) {
+	const t = useTranslations();
 	const totalIncome = accounts
 		.filter((item) => item.type === "income")
 		.reduce((total, item) => total + item.amount, 0);
@@ -29,43 +31,93 @@ export default function AccountsSummary({ accounts }: AccountsSummaryProps) {
 		<>
 			{" "}
 			<GridCol span={{ base: 12, md: 4 }} order={{ base: 1, md: 2 }}>
-				<Group grow>
-					<Card padding="md" withBorder>
-						<Text mb={"sm"} fw={"bolder"}>
-							Financial Summary
-						</Text>{" "}
-						<Text>
-							Total Cash: <NumberFormatter thousandSeparator prefix="$" value={totalCash} />
-						</Text>{" "}
-						<Divider my="md" />
-						<Text>
-							Total Income: <NumberFormatter thousandSeparator prefix="$" value={totalIncome} />
+				<Card
+					bg="light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))"
+					padding="md"
+					withBorder
+				>
+					<Text fw={600} fz="lg">
+						{t("FinancialSummary")}
+					</Text>
+
+					<Box mt="lg">
+						<Text size="sm" c="gray.7">
+							{t("TotalBalance")}
 						</Text>
-						<Divider my="md" />
-						<Text>
-							Total Expense: <NumberFormatter thousandSeparator prefix="$" value={-totalExpense} />
+
+						<Text fz="xl" fw={700} c={totalBalance < 0 ? "red.6" : "green.6"}>
+							<NumberFormatter thousandSeparator prefix="$" value={totalBalance} />
 						</Text>
-						<Divider my="md" />
-						<Text>
-							Total Investment: <NumberFormatter thousandSeparator prefix="$" value={totalInvestment} />
-						</Text>{" "}
-						<Divider my="md" />
-						<Text>
-							Total Savings: <NumberFormatter thousandSeparator prefix="$" value={totalSaving} />
-						</Text>{" "}
-						<Divider my="md" />
-						<Text>
-							Total Debt: <NumberFormatter thousandSeparator prefix="$" value={totalDebt} />
-						</Text>
-						<Divider my="md" />
-						<Text>
-							Total Balance:{" "}
-							<Text span c={totalBalance < 0 ? "red.6" : "green.6"}>
-								<NumberFormatter thousandSeparator prefix="$" value={totalBalance} />
+					</Box>
+
+					<Divider my="md" />
+
+					<Stack gap="sm">
+						<Group justify="space-between">
+							<Text size="sm" c="gray.7">
+								{t("TotalCash")}
 							</Text>
-						</Text>
-					</Card>
-				</Group>
+
+							<Text fw={500}>
+								<NumberFormatter thousandSeparator prefix="$" value={totalCash} />
+							</Text>
+						</Group>
+
+						<Group justify="space-between">
+							<Text size="sm" c="gray.7">
+								{t("TotalIncome")}
+							</Text>
+
+							<Text fw={500}>
+								<NumberFormatter thousandSeparator prefix="$" value={totalIncome} />
+							</Text>
+						</Group>
+
+						<Group justify="space-between">
+							<Text size="sm" c="gray.7">
+								{t("TotalExpense")}
+							</Text>
+
+							<Text fw={500}>
+								<NumberFormatter thousandSeparator prefix="$" value={-totalExpense} />
+							</Text>
+						</Group>
+					</Stack>
+
+					<Divider my="md" />
+
+					<Stack gap="sm">
+						<Group justify="space-between">
+							<Text size="sm" c="gray.7">
+								{t("TotalInvestment")}
+							</Text>
+
+							<Text fw={500}>
+								<NumberFormatter thousandSeparator prefix="$" value={totalInvestment} />
+							</Text>
+						</Group>
+
+						<Group justify="space-between">
+							<Text size="sm" c="gray.7">
+								{t("TotalSavings")}
+							</Text>
+
+							<Text fw={500}>
+								<NumberFormatter thousandSeparator prefix="$" value={totalSaving} />
+							</Text>
+						</Group>
+
+						<Group justify="space-between">
+							<Text size="sm" c="gray.7">
+								{t("TotalDebt")}
+							</Text>
+
+							<Text fw={500}>
+								<NumberFormatter thousandSeparator prefix="$" value={-totalDebt} />
+							</Text>
+						</Group>
+					</Stack>
+				</Card>
 			</GridCol>
 		</>
 	);
