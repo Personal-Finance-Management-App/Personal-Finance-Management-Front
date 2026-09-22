@@ -44,7 +44,7 @@ export default function TransactionForm(props: Props) {
 			title: (value) => (value.trim() ? null : t("TitleRequired")),
 			category: (value) => (value.trim() ? null : t("CategoryRequired")),
 			account: (value) => (value.trim() ? null : t("AccountRequired")),
-			accountOption: (value) => (value.trim() ? null : t("AccountNameRequired")),
+
 			date: (value) => (value ? null : t("DateRequired")),
 		},
 	});
@@ -58,6 +58,10 @@ export default function TransactionForm(props: Props) {
 	};
 
 	const handleSubmit = async (values: TransactionFormValues) => {
+		if (selectedAccount && selectedAccount.options.length > 0 && !values.accountOption?.trim()) {
+			form.setFieldError("accountOption", t("AccountNameRequired"));
+			return;
+		}
 		const payload: TransactionsReq = {
 			title: values.title,
 			type: values.type,
@@ -109,6 +113,7 @@ export default function TransactionForm(props: Props) {
 				mt={"sm"}
 				label={t("Type")}
 				placeholder={t("PickType")}
+				allowDeselect={false}
 				data={[
 					{ value: "income", label: t("Income") },
 					{ value: "expense", label: t("Expense") },
@@ -136,7 +141,7 @@ export default function TransactionForm(props: Props) {
 				data={
 					getTransactionsAccountListQueryData.data?.map((account) => {
 						return {
-							label: account.name,
+							label: t(account.name),
 							value: account.id,
 						};
 					}) ?? []
@@ -148,7 +153,10 @@ export default function TransactionForm(props: Props) {
 					mt={"sm"}
 					label={t("AccountName")}
 					placeholder={t("SelectAccountName")}
-					data={selectedAccount.options}
+					data={selectedAccount.options.map((option) => ({
+						label: t(option),
+						value: option,
+					}))}
 					{...form.getInputProps("accountOption")}
 				/>
 			)}

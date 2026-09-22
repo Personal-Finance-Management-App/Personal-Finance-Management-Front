@@ -8,7 +8,7 @@ type Props = {
 export default function TransactionCategory(props: Props) {
 	return (
 		<Box
-			w={100}
+			w={140}
 			px={"sm"}
 			py={4}
 			bg="light-dark(var(--mantine-color-gray-4), var(--mantine-color-gray-8))"
