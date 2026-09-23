@@ -356,6 +356,16 @@
 			"date": "2026-09-02",
 			"amount": 10,
 			"id": "paJf_6SniBE"
+		},
+		{
+			"title": "jj",
+			"type": "expense",
+			"category": "Shopping",
+			"account": "Bank Account",
+			"accountOption": "Saman",
+			"date": "2026-09-03",
+			"amount": 700,
+			"id": "PGHIyZdwrLg"
 		}
 	],
 	"users": [

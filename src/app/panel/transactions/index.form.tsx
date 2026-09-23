@@ -58,7 +58,7 @@ export default function TransactionForm(props: Props) {
 	};
 
 	const handleSubmit = async (values: TransactionFormValues) => {
-		if (selectedAccount && selectedAccount.options.length > 0 && !values.accountOption?.trim()) {
+		if (selectedAccount && !!selectedAccount.options.length && !values.accountOption?.trim()) {
 			form.setFieldError("accountOption", t("AccountNameRequired"));
 			return;
 		}
