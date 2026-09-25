@@ -55,6 +55,7 @@
 	"AddNewTransaction": "Add a new transaction",
 	"TransactionCreatedSuccessfully": "Transaction created successfully",
 	"DateRequired": "Date is required",
+	"AmountRequired": "Amount is required",
 	"Cancel": "Cancel",
 	"SelectAccountName": "Select an Account name",
 	"AccountRequired": "Account type is Required",

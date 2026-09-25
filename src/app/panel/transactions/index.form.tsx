@@ -1,9 +1,10 @@
-import { Autocomplete, Button, Group, NumberInput, Select, TextInput } from "@mantine/core";
+import { Autocomplete, Group, NumberInput, Select, TextInput } from "@mantine/core";
 import { DatePickerInput } from "@mantine/dates";
 import { useForm } from "@mantine/form";
 import dayjs from "dayjs";
 import { useTranslations } from "next-intl";
 import { type Dispatch, type SetStateAction, useEffect } from "react";
+import CancelButton from "@/app/panel/components/buttons/CancelButton";
 import SubmitButton from "@/app/panel/components/buttons/SubmitButton";
 import {
 	useTransactionsAccountQueryApi,
@@ -44,8 +45,8 @@ export default function TransactionForm(props: Props) {
 			title: (value) => (value.trim() ? null : t("TitleRequired")),
 			category: (value) => (value.trim() ? null : t("CategoryRequired")),
 			account: (value) => (value.trim() ? null : t("AccountRequired")),
-
 			date: (value) => (value ? null : t("DateRequired")),
+			amount: (value) => (value > 0 ? null : t("AmountRequired")),
 		},
 	});
 	const selectedAccount = getTransactionsAccountListQueryData.data?.find(
@@ -78,12 +79,6 @@ export default function TransactionForm(props: Props) {
 				payload,
 			});
 		} else {
-			// await postCreateCategoryMutationData.mutateAsync({
-			//     name: values.category.trim(),
-			// });
-			// await postCreateAccountMutationData.mutateAsync({
-			//     name: values.account.trim(),
-			// });
 			await postCreateTransactionMutationData.mutateAsync(payload);
 		}
 		return handleCancel();
@@ -108,7 +103,12 @@ export default function TransactionForm(props: Props) {
 
 	return (
 		<form onSubmit={form.onSubmit(handleSubmit)}>
-			<TextInput label={t("Title")} placeholder={t("TitlePlace")} {...form.getInputProps("title")} />
+			<TextInput
+				withAsterisk
+				label={t("Title")}
+				placeholder={t("TitlePlace")}
+				{...form.getInputProps("title")}
+			/>
 			<Select
 				mt={"sm"}
 				label={t("Type")}
@@ -121,6 +121,7 @@ export default function TransactionForm(props: Props) {
 				{...form.getInputProps("type")}
 			></Select>
 			<Autocomplete
+				withAsterisk
 				mt={"sm"}
 				label={t("Category")}
 				placeholder={t("SelectCategory")}
@@ -135,6 +136,7 @@ export default function TransactionForm(props: Props) {
 				{...form.getInputProps("category")}
 			/>
 			<Autocomplete
+				withAsterisk
 				mt={"sm"}
 				label={t("AccountType")}
 				placeholder={t("SelectAccount")}
@@ -150,6 +152,7 @@ export default function TransactionForm(props: Props) {
 			/>
 			{selectedAccount && selectedAccount.options.length > 0 && (
 				<Select
+					withAsterisk
 					mt={"sm"}
 					label={t("AccountName")}
 					placeholder={t("SelectAccountName")}
@@ -161,6 +164,7 @@ export default function TransactionForm(props: Props) {
 				/>
 			)}
 			<DatePickerInput
+				withAsterisk
 				mt={"sm"}
 				maxDate={dayjs().toDate()}
 				label={t("SelectDate")}
@@ -175,6 +179,7 @@ export default function TransactionForm(props: Props) {
 				]}
 			/>
 			<NumberInput
+				withAsterisk
 				mt={"sm"}
 				label={t("Amount")}
 				placeholder={t("AmountPlace")}
@@ -182,9 +187,7 @@ export default function TransactionForm(props: Props) {
 			/>
 			<Group justify={"space-between"} mt={"md"}>
 				<SubmitButton loading={postCreateTransactionMutationData.isPending} />
-				<Button bg={"layout"} onClick={handleCancel}>
-					{t("Cancel")}
-				</Button>
+				<CancelButton handleCancel={handleCancel} />
 			</Group>
 		</form>
 	);

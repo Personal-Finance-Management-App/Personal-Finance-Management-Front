@@ -55,6 +55,7 @@
 	"AddNewTransaction": "ایجاد تراکنش جدید",
 	"TransactionCreatedSuccessfully": "تراکنش شما با موفقیت ایجاد شد.",
 	"DateRequired": "فیلد تاریخ الزامی است.",
+	"AmountRequired": "فیلد مبلغ الزامی است.",
 	"Cancel": "لغو",
 	"SelectAccountName": "نام حساب خود را انتخاب کنید.",
 	"AccountRequired": "نوع حساب الزامی است.",
