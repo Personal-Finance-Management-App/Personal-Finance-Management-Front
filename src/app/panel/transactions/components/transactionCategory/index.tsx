@@ -1,4 +1,5 @@
 import { Box, Group } from "@mantine/core";
+import { useTranslations } from "next-intl";
 import { getCategoryColor } from "@/app/panel/transactions/components/transactionCategory/index.helper";
 
 type Props = {
@@ -6,6 +7,7 @@ type Props = {
 };
 
 export default function TransactionCategory(props: Props) {
+	const t = useTranslations();
 	return (
 		<Box
 			w={140}
@@ -16,7 +18,7 @@ export default function TransactionCategory(props: Props) {
 		>
 			<Group gap={6} wrap="nowrap">
 				<Box w={7} h={7} bg={getCategoryColor(props.category)} style={{ borderRadius: "40%" }} />
-				{props.category}
+				{t(props.category)}
 			</Group>
 		</Box>
 	);

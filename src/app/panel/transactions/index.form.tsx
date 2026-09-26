@@ -128,7 +128,7 @@ export default function TransactionForm(props: Props) {
 				data={
 					getTransactionsCategoryListQueryData.data?.map((category) => {
 						return {
-							label: category.name,
+							label: t(category.name),
 							value: category.id,
 						};
 					}) ?? []

@@ -106,7 +106,7 @@ export default function BudgetsForm(props: Props) {
 					data={
 						getTransactionsCategoryListQueryData.data?.map((category) => {
 							return {
-								label: category.name,
+								label: t(category.name),
 								value: category.name,
 							};
 						}) ?? []
