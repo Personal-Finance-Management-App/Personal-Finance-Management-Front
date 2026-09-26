@@ -15,7 +15,7 @@ export default function TransactionCategory(props: Props) {
 			style={{ borderRadius: "10px" }}
 		>
 			<Group gap={6} wrap="nowrap">
-				<Box w={7} h={7} bg={getCategoryColor(props.category)} style={{ borderRadius: "50%" }} />
+				<Box w={7} h={7} bg={getCategoryColor(props.category)} style={{ borderRadius: "40%" }} />
 				{props.category}
 			</Group>
 		</Box>

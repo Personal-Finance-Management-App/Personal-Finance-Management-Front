@@ -106,5 +106,20 @@
 	"Personal Loan": "وام شخصی",
 	"Car Loan": "وام خودرو",
 	"Home Loan": "وام مسکن",
-	"Student Loan": "وام دانشجویی"
+	"Student Loan": "وام دانشجویی",
+	"AddBudgetButton": "افزودن بودجه جدید",
+	"categoryBudgets": "بودجه بندی دسته بندی ها",
+	"Overbudget": "بیش از بودجه به مبلغ",
+	"AlreadyExists": "قبلا ثبت شده است.",
+	"ExistsMessage": "برای این دسته بندی قبلا بودجه ثبت شده است.",
+	"BudgetAmount": "مبلغ بودجه",
+	"EnterBudgetAmount": "مبلغ بودجه را وارد کنید.",
+	"BudgetCreated": "بودجه موردنظر با موفقیت ایجاد شد.",
+	"FailedToCreateBudget": "خطا در ایجاد بودجه",
+	"BudgetUpdatedSuccessfully": "بودجه موردنظر با موفقیت ویرایش شد.",
+	"FailedToUpdateBudget": "خطا در ویرایش بودجه",
+	"BudgetDeletedSuccessfully": "بودجه موردنظر با موفقیت حذف شد.",
+	"FailedToDeleteBudget": "خطا در حذف بودجه",
+	"EditBudget": "ویرایش بودجه",
+	"AddBudget": "ایجاد بودجه"
 }

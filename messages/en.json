@@ -106,5 +106,20 @@
 	"Personal Loan": "Personal Loan",
 	"Car Loan": "Car Loan",
 	"Home Loan": "Home Loan",
-	"Student Loan": "Student Loan"
+	"Student Loan": "Student Loan",
+	"AddBudgetButton": "Add a new budget",
+	"categoryBudgets": "Category Budgets",
+	"Overbudget": "Over budget by",
+	"AlreadyExists": "Already exists",
+	"ExistsMessage": "A budget for this category has already been created.",
+	"BudgetAmount": "Budget Amount",
+	"EnterBudgetAmount": "Enter budget amount",
+	"BudgetCreated": "Budget created successfully",
+	"FailedToCreateBudget": "Failed To Create Budget",
+	"BudgetUpdatedSuccessfully": "Budget Updated Successfully",
+	"FailedToUpdateBudget": "Failed To Update Budget",
+	"BudgetDeletedSuccessfully": "Budget Deleted Successfully",
+	"FailedToDeleteBudget": "Failed To Delete Budget",
+	"EditBudget": "Edit Budget",
+	"AddBudget": "Add Budget"
 }
