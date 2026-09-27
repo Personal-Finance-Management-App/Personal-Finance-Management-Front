@@ -6,7 +6,7 @@ import { AccountService } from "@/services/api/endpoints/transactionsAccounts/ac
 import { CategoryService } from "@/services/api/endpoints/transactionsCategories/categories.Service";
 import type { TransactionsReq } from "@/services/api/models/transactions/transactions.types";
 
-export const useTransactionsQueryApi = () => {
+export const useTransactionsQueryApi = (id?: string) => {
 	const t = useTranslations();
 	const queryClient = useQueryClient();
 	const getTransactionsListQueryData = useQuery({
@@ -15,9 +15,16 @@ export const useTransactionsQueryApi = () => {
 		select: (response) => response.data,
 	});
 
-	const getTransactionsByIdQueryData = useMutation({
-		mutationKey: ["get-transactions-By-Id"],
-		mutationFn: TransactionService.getTransactionsByIdAPi,
+	const getTransactionsByIdQueryData = useQuery({
+		queryKey: ["get-transactions-By-Id", id],
+		queryFn: () => {
+			if (!id) {
+				throw new Error("ID Required");
+			}
+
+			return TransactionService.getTransactionsByIdAPi(id);
+		},
+		enabled: !!id,
 	});
 
 	const postCreateTransactionMutationData = useMutation({
@@ -45,10 +52,11 @@ export const useTransactionsQueryApi = () => {
 		mutationKey: ["patch-update-transaction"],
 		mutationFn: ({ id, payload }: { id: string; payload: Partial<TransactionsReq> }) =>
 			TransactionService.updateTransactionAPi(id, payload),
-		onSuccess: async () => {
+		onSuccess: async (_, variables) => {
 			await queryClient.invalidateQueries({
 				queryKey: ["get-transactions-list"],
 			});
+			await queryClient.invalidateQueries({ queryKey: ["get-transactions-By-Id", variables.id] });
 			notifications.show({
 				title: t("Success"),
 				message: t("TransactionUpdatedSuccessfully"),

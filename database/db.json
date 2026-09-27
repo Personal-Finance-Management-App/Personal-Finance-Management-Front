@@ -138,13 +138,13 @@
 	],
 	"transactions": [
 		{
-			"title": "hello",
+			"title": "hellooo",
 			"type": "expense",
-			"category": "Salary",
-			"account": "Digital Wallet",
-			"accountOption": "Apple Pay",
-			"date": "2026-09-08",
-			"amount": 2700,
+			"category": "Bills & Utilities",
+			"account": "Bank Account",
+			"accountOption": "Parsian",
+			"date": "2026-08-04",
+			"amount": 7000,
 			"id": "5Cm-wNTnl5k"
 		},
 		{
@@ -414,13 +414,18 @@
 		},
 		{
 			"category": "Personal Care",
-			"amount": 9000,
-			"id": "TccuYdiB-40"
+			"amount": 780,
+			"id": "p3D0elVjglE"
 		},
 		{
-			"category": "Transport",
-			"amount": 8000,
-			"id": "semQ3s1e9m8"
+			"category": "Gift",
+			"amount": 7000,
+			"id": "WxRLWKuL0SA"
+		},
+		{
+			"category": "Entertainment",
+			"amount": 20,
+			"id": "kgHOxs86SgI"
 		}
 	],
 	"$schema": "./node_modules/json-server/schema.json"

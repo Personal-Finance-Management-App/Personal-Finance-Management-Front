@@ -1,4 +1,4 @@
-import { Box, Group, Paper, Progress, Text } from "@mantine/core";
+import { Box, Group, NumberFormatter, Paper, Progress, Text } from "@mantine/core";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 import type { Dispatch, SetStateAction } from "react";
@@ -43,9 +43,10 @@ export default function BudgetsCard(props: Props) {
 				<Group mr={"lg"} justify={"space-between"} mt={"lg"}>
 					<Text c={"gray.7"}>{t("TotalSpent")}</Text>
 					<Text>
-						${totalSpent}{" "}
+						$<NumberFormatter value={totalSpent} thousandSeparator />
 						<Text component={"span"} c={"gray.7"}>
-							/ ${totalBudget}
+							/$
+							<NumberFormatter value={totalBudget} thousandSeparator />
 						</Text>
 					</Text>
 				</Group>
@@ -71,9 +72,14 @@ export default function BudgetsCard(props: Props) {
 							<Group mr={"md"}>
 								{" "}
 								<Text>
-									${getCategoryAmount(transactions, budget.category)}{" "}
+									$
+									<NumberFormatter
+										value={getCategoryAmount(transactions, budget.category)}
+										thousandSeparator
+									/>
 									<Text component="span" c={"gray.7"}>
-										/${budget.amount}
+										/$
+										<NumberFormatter value={budget.amount} thousandSeparator />
 									</Text>
 								</Text>
 								<Group justify="center" gap="xs" wrap="nowrap">
@@ -106,7 +112,11 @@ export default function BudgetsCard(props: Props) {
 						></Progress>
 						{getCategoryAmount(transactions, budget.category) > budget.amount && (
 							<Text mt={"sm"} c="red" size="sm">
-								{t("Overbudget")} ${getCategoryAmount(transactions, budget.category) - budget.amount}
+								{t("Overbudget")} $
+								<NumberFormatter
+									value={getCategoryAmount(transactions, budget.category) - budget.amount}
+									thousandSeparator
+								/>
 							</Text>
 						)}
 					</Box>
