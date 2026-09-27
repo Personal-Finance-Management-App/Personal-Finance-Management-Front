@@ -1,5 +1,6 @@
 import { Box, Card, Divider, GridCol, Group, NumberFormatter, Stack, Text } from "@mantine/core";
 import { useTranslations } from "next-intl";
+import { getAccountTotalBalances } from "@/app/panel/accounts/index.helper";
 import type { Transaction } from "@/services/api/models/transactions/transactions.types";
 
 type AccountsSummaryProps = {
@@ -7,26 +8,8 @@ type AccountsSummaryProps = {
 };
 export default function AccountsSummary({ accounts }: AccountsSummaryProps) {
 	const t = useTranslations();
-	const totalIncome = accounts
-		.filter((item) => item.type === "income")
-		.reduce((total, item) => total + item.amount, 0);
-
-	const totalExpense = accounts
-		.filter((item) => item.type === "expense")
-		.reduce((total, item) => total + item.amount, 0);
-	const totalBalance = totalIncome - totalExpense;
-	const totalCash = accounts
-		.filter((item) => item.account === "Cash")
-		.reduce((total, item) => total + item.amount, 0);
-	const totalInvestment = accounts
-		.filter((item) => item.account === "Investment Account")
-		.reduce((total, item) => total + item.amount, 0);
-	const totalDebt = accounts
-		.filter((item) => item.account === "Loan")
-		.reduce((total, item) => total + item.amount, 0);
-	const totalSaving = accounts
-		.filter((item) => item.account === "Savings Account")
-		.reduce((total, item) => total + item.amount, 0);
+	const { totalIncome, totalExpense, totalBalance, totalCash, totalInvestment, totalDebt, totalSaving } =
+		getAccountTotalBalances(accounts);
 	return (
 		<>
 			{" "}

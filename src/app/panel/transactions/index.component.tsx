@@ -139,6 +139,7 @@ export function TransactionPage() {
 										<Group justify="center" gap="xs" wrap="nowrap">
 											{" "}
 											<IconTrash
+												style={{ cursor: "pointer" }}
 												color="light-dark(var(--mantine-color-red-6), var(--mantine-color-red-5) )"
 												onClick={() => {
 													deleteTransactionData.mutate(transaction.id);
@@ -146,6 +147,7 @@ export function TransactionPage() {
 												size={20}
 											></IconTrash>
 											<IconEdit
+												style={{ cursor: "pointer" }}
 												color="light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4) )"
 												onClick={() => {
 													modalHandler.open();

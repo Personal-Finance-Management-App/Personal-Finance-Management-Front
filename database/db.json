@@ -356,6 +356,26 @@
 			"date": "2026-09-02",
 			"amount": 10,
 			"id": "paJf_6SniBE"
+		},
+		{
+			"title": "jj",
+			"type": "expense",
+			"category": "Shopping",
+			"account": "Bank Account",
+			"accountOption": "Saman",
+			"date": "2026-09-03",
+			"amount": 700,
+			"id": "PGHIyZdwrLg"
+		},
+		{
+			"title": "mmm",
+			"type": "income",
+			"category": "Taxes",
+			"account": "Debit Card",
+			"accountOption": "Mastercard Debit",
+			"date": "2026-09-02",
+			"amount": 200,
+			"id": "1hrjaGbB18I"
 		}
 	],
 	"users": [
@@ -374,6 +394,33 @@
 			"phoneNumber": "123",
 			"age": 1,
 			"id": "BoLuo0nuLxA"
+		}
+	],
+	"budgets": [
+		{
+			"category": "Shopping",
+			"amount": 7000,
+			"id": "0Zoa2OjjkHs"
+		},
+		{
+			"category": "Bills & Utilities",
+			"amount": 3700,
+			"id": "ThiUWRjEpTY"
+		},
+		{
+			"category": "Health",
+			"amount": 500,
+			"id": "LfVnaOMDOgA"
+		},
+		{
+			"category": "Personal Care",
+			"amount": 9000,
+			"id": "TccuYdiB-40"
+		},
+		{
+			"category": "Transport",
+			"amount": 8000,
+			"id": "semQ3s1e9m8"
 		}
 	],
 	"$schema": "./node_modules/json-server/schema.json"
