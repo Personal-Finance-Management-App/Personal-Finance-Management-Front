@@ -144,5 +144,10 @@
 	"Taxes": "مالیات",
 	"Internet & Phone": "اینترنت و تلفن",
 	"Rent": "اجاره",
-	"Other": "سایر"
+	"Other": "سایر",
+	"BudgetByCategory": "بودجه براساس دسته بندی",
+	"SpendingByCategory": "مخارج براساس دسته بندی",
+	"SpendingByAccount": "مخارج براساس حساب ها",
+	"IncomeByAccount": "درآمد بر اساس حساب",
+	"NoDataAvailable": "داده‌ای برای نمایش وجود ندارد."
 }

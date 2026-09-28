@@ -144,5 +144,10 @@
 	"Taxes": "Taxes",
 	"Internet & Phone": "Internet & Phone",
 	"Rent": "Rent",
-	"Other": "Other"
+	"Other": "Other",
+	"BudgetByCategory": "Budget by category",
+	"SpendingByCategory": "Spending by category",
+	"SpendingByAccount": "Spending by account",
+	"IncomeByAccount": "Income by account",
+	"NoDataAvailable": "No Data Available."
 }
