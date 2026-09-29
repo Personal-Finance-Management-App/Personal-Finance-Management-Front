@@ -19,8 +19,9 @@ type Props = {
 export default function BudgetsForm(props: Props) {
 	const t = useTranslations();
 	const { getTransactionsCategoryListQueryData } = useTransactionsCategoryQueryApi();
-	const { getBudgetsByIdAPiQueryData, postBudgetsAPiMutationData, updateBudgetsAPiData } =
-		useBudgetsQueryApi();
+	const { getBudgetsByIdAPiQueryData, postBudgetsAPiMutationData, updateBudgetsAPiData } = useBudgetsQueryApi(
+		props.budgetId,
+	);
 	const form = useForm({
 		mode: "controlled",
 		initialValues: {
@@ -84,16 +85,11 @@ export default function BudgetsForm(props: Props) {
 		return handleCancel();
 	};
 	useEffect(() => {
-		if (props.budgetId) {
-			getBudgetsByIdAPiQueryData.mutateAsync(props.budgetId).then((data) => {
-				const budgetFormData = data.data;
-				form.setValues({
-					category: budgetFormData.category,
-					amount: budgetFormData.amount,
-				});
-			});
+		const budget = getBudgetsByIdAPiQueryData.data?.data;
+		if (budget) {
+			form.setValues(budget);
 		}
-	}, [props.budgetId]);
+	}, [getBudgetsByIdAPiQueryData.data]);
 	return (
 		<>
 			{" "}

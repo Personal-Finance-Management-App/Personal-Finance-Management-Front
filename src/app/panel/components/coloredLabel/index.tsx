@@ -1,12 +1,12 @@
 import { Box, Group } from "@mantine/core";
 import { useTranslations } from "next-intl";
-import { getCategoryColor } from "@/app/panel/transactions/components/transactionCategory/index.helper";
+import { getLabelColor } from "@/app/panel/components/coloredLabel/index.helper";
 
 type Props = {
 	category: string;
 };
 
-export default function TransactionCategory(props: Props) {
+export default function ColoredLabel(props: Props) {
 	const t = useTranslations();
 	return (
 		<Box
@@ -17,7 +17,7 @@ export default function TransactionCategory(props: Props) {
 			style={{ borderRadius: "10px" }}
 		>
 			<Group gap={6} wrap="nowrap">
-				<Box w={7} h={7} bg={getCategoryColor(props.category)} style={{ borderRadius: "40%" }} />
+				<Box w={7} h={7} bg={getLabelColor(props.category)} style={{ borderRadius: "40%" }} />
 				{t(props.category)}
 			</Group>
 		</Box>

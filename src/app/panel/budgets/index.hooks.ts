@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { BudgetsService } from "@/services/api/endpoints/budgets/budgets.Service";
 import type { BudgetsReq } from "@/services/api/models/budgets/budgets.types";
 
-export const useBudgetsQueryApi = () => {
+export const useBudgetsQueryApi = (budgetId?: string) => {
 	const t = useTranslations();
 	const queryClient = useQueryClient();
 	const getBudgetsListAPiQueryData = useQuery({
@@ -13,9 +13,16 @@ export const useBudgetsQueryApi = () => {
 		select: (response) => response.data,
 	});
 
-	const getBudgetsByIdAPiQueryData = useMutation({
-		mutationKey: ["get-budgets-By-Id"],
-		mutationFn: BudgetsService.getBudgetsByIdAPi,
+	const getBudgetsByIdAPiQueryData = useQuery({
+		queryKey: ["get-budgets-By-Id", budgetId],
+		queryFn: () => {
+			if (!budgetId) {
+				throw new Error("Budget ID is required");
+			}
+
+			return BudgetsService.getBudgetsByIdAPi(budgetId);
+		},
+		enabled: !!budgetId,
 	});
 
 	const postBudgetsAPiMutationData = useMutation({
@@ -43,16 +50,23 @@ export const useBudgetsQueryApi = () => {
 		mutationKey: ["patch-update-budgets"],
 		mutationFn: ({ id, payload }: { id: string; payload: Partial<BudgetsReq> }) =>
 			BudgetsService.updateBudgetsAPi(id, payload),
-		onSuccess: async () => {
+
+		onSuccess: async (_, variables) => {
 			await queryClient.invalidateQueries({
 				queryKey: ["get-budgets-list"],
 			});
+
+			await queryClient.invalidateQueries({
+				queryKey: ["get-budgets-By-Id", variables.id],
+			});
+
 			notifications.show({
 				title: t("Success"),
 				message: t("BudgetUpdatedSuccessfully"),
 				color: "green",
 			});
 		},
+
 		onError: () => {
 			notifications.show({
 				title: t("Failed"),

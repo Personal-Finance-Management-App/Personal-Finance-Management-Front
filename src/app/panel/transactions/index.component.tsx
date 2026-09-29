@@ -19,7 +19,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import TransactionCategory from "@/app/panel/transactions/components/transactionCategory";
+import ColoredLabel from "@/app/panel/components/coloredLabel";
 import TransactionForm from "@/app/panel/transactions/index.form";
 import { useTransactionsQueryApi } from "@/app/panel/transactions/index.hooks";
 
@@ -119,7 +119,7 @@ export function TransactionPage() {
 										</Text>
 									</Table.Td>
 									<Table.Td>
-										<TransactionCategory category={transaction.category} />
+										<ColoredLabel category={transaction.category} />
 									</Table.Td>
 									<Table.Td fw="bold">
 										{transaction.accountOption

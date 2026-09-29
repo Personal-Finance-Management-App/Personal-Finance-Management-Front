@@ -138,13 +138,13 @@
 	],
 	"transactions": [
 		{
-			"title": "hello",
+			"title": "hellooo",
 			"type": "expense",
-			"category": "Salary",
-			"account": "Digital Wallet",
-			"accountOption": "Apple Pay",
-			"date": "2026-09-08",
-			"amount": 2700,
+			"category": "Bills & Utilities",
+			"account": "Bank Account",
+			"accountOption": "Parsian",
+			"date": "2026-08-04",
+			"amount": 7000,
 			"id": "5Cm-wNTnl5k"
 		},
 		{
@@ -376,6 +376,36 @@
 			"date": "2026-09-02",
 			"amount": 200,
 			"id": "1hrjaGbB18I"
+		},
+		{
+			"title": "hii",
+			"type": "expense",
+			"category": "Donations",
+			"account": "Savings Account",
+			"accountOption": "Parsian",
+			"date": "2026-09-02",
+			"amount": 800,
+			"id": "5kchCxLJMOI"
+		},
+		{
+			"title": "liliii",
+			"type": "expense",
+			"category": "Rent",
+			"account": "Cash",
+			"accountOption": "",
+			"date": "2026-09-18",
+			"amount": 6200,
+			"id": "OgUqtV0jGIU"
+		},
+		{
+			"title": "pie",
+			"type": "expense",
+			"category": "Housing",
+			"account": "Digital Wallet",
+			"accountOption": "Apple Pay",
+			"date": "2026-09-15",
+			"amount": 900,
+			"id": "rNzXCEGzCS0"
 		}
 	],
 	"users": [
@@ -398,29 +428,49 @@
 	],
 	"budgets": [
 		{
-			"category": "Shopping",
-			"amount": 7000,
-			"id": "0Zoa2OjjkHs"
-		},
-		{
-			"category": "Bills & Utilities",
-			"amount": 3700,
-			"id": "ThiUWRjEpTY"
-		},
-		{
 			"category": "Health",
 			"amount": 500,
 			"id": "LfVnaOMDOgA"
 		},
 		{
 			"category": "Personal Care",
+			"amount": 780,
+			"id": "p3D0elVjglE"
+		},
+		{
+			"category": "Entertainment",
 			"amount": 9000,
-			"id": "TccuYdiB-40"
+			"id": "kgHOxs86SgI"
+		},
+		{
+			"category": "Taxes",
+			"amount": 9000,
+			"id": "Y9v9mSk9fM8"
+		},
+		{
+			"category": "Internet & Phone",
+			"amount": 6000,
+			"id": "xow2Z6fvJ7A"
+		},
+		{
+			"category": "Housing",
+			"amount": 7000,
+			"id": "s1mHnJZaky8"
+		},
+		{
+			"category": "Donations",
+			"amount": 6000,
+			"id": "4TPIS0IJR5s"
+		},
+		{
+			"category": "Food",
+			"amount": 5200,
+			"id": "RAs5OgD7zE4"
 		},
 		{
 			"category": "Transport",
-			"amount": 8000,
-			"id": "semQ3s1e9m8"
+			"amount": 8500,
+			"id": "dluz_MX76qE"
 		}
 	],
 	"$schema": "./node_modules/json-server/schema.json"

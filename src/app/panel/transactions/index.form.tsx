@@ -26,7 +26,7 @@ type Props = {
 export default function TransactionForm(props: Props) {
 	const t = useTranslations("");
 	const { postCreateTransactionMutationData, patchUpdateTransactionData, getTransactionsByIdQueryData } =
-		useTransactionsQueryApi();
+		useTransactionsQueryApi(props.id);
 	const { getTransactionsCategoryListQueryData } = useTransactionsCategoryQueryApi();
 	const { getTransactionsAccountListQueryData } = useTransactionsAccountQueryApi();
 
@@ -85,21 +85,20 @@ export default function TransactionForm(props: Props) {
 	};
 
 	useEffect(() => {
-		if (props.id) {
-			getTransactionsByIdQueryData.mutateAsync(props.id).then((data) => {
-				const transactionFormData = data.data;
-				form.setValues({
-					title: transactionFormData.title,
-					type: transactionFormData.type,
-					category: transactionFormData.category,
-					account: transactionFormData.account,
-					accountOption: transactionFormData.accountOption,
-					date: dayjs(transactionFormData.date).toDate(),
-					amount: transactionFormData.amount,
-				});
+		const transactionFormData = getTransactionsByIdQueryData.data?.data;
+
+		if (transactionFormData) {
+			form.setValues({
+				title: transactionFormData.title,
+				type: transactionFormData.type,
+				category: transactionFormData.category,
+				account: transactionFormData.account,
+				accountOption: transactionFormData.accountOption,
+				date: dayjs(transactionFormData.date).toDate(),
+				amount: transactionFormData.amount,
 			});
 		}
-	}, [props.id]);
+	}, [getTransactionsByIdQueryData.data]);
 
 	return (
 		<form onSubmit={form.onSubmit(handleSubmit)}>

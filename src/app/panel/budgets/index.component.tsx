@@ -16,8 +16,8 @@ export default function BudgetsPage() {
 
 	return (
 		<>
-			<Flex mb={"md"} mt={"md"} justify={"center"} align={"center"}>
-				<Button color={"layout"} variant="filled" onClick={modalHandler.open}>
+			<Flex justify={"center"} align={"center"}>
+				<Button color={"layout"} variant="filled" onClick={modalHandler.open} mb={"xl"} mt={"xl"}>
 					{t("AddBudgetButton")}
 				</Button>
 			</Flex>

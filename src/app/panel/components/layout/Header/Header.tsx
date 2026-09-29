@@ -7,7 +7,6 @@ import {
 	Drawer,
 	Flex,
 	Group,
-	Select,
 	Stack,
 	Text,
 	useMantineColorScheme,
@@ -15,10 +14,10 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect } from "react";
 import AuthButton from "@/app/panel/components/buttons/authButton";
-import { useCurrentPage, useDataRange } from "@/app/panel/components/layout/Header/index.hooks";
+import { useCurrentPage } from "@/app/panel/components/layout/Header/index.hooks";
 import Sidebar from "@/app/panel/components/layout/Sidebar";
 
 export default function Header() {
@@ -26,8 +25,15 @@ export default function Header() {
 	const [opened, { close, toggle }] = useDisclosure(false);
 	const pathname = usePathname();
 	const currentPage = useCurrentPage();
-	const { dateRange, setDateRange, dateLabel } = useDataRange();
+
 	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+	const locale = useLocale();
+
+	const dateLabel = new Intl.DateTimeFormat(locale === "fa" ? "fa-IR-u-ca-persian" : "en-GB", {
+		day: "numeric",
+		month: "long",
+		year: "numeric",
+	}).format(new Date());
 	useEffect(() => {
 		close();
 	}, [pathname]);
@@ -103,20 +109,7 @@ export default function Header() {
 				<Group visibleFrom="sm" gap="xs" wrap="nowrap">
 					<AuthButton />
 				</Group>
-				<Select
-					w={{
-						base: 80,
-						sm: 140,
-					}}
-					value={dateRange}
-					onChange={(value) => setDateRange(value ?? "this-month")}
-					data={[
-						{ value: "this-month", label: t("ThisMonth") },
-						{ value: "last-month", label: t("LastMonth") },
-						{ value: "this-year", label: t("ThisYear") },
-						{ value: "last-year", label: t("LastYear") },
-					]}
-				/>
+
 				<ActionIcon onClick={toggleColorScheme} variant="filled" size="lg" color={"layout"}>
 					{colorScheme === "dark" ? <IconSunFilled size={22} /> : <IconMoonFilled size={18} />}
 				</ActionIcon>

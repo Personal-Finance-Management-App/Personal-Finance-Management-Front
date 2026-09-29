@@ -21,7 +21,7 @@ export default function AccountsPage() {
 		<Box px="md">
 			<Card
 				bg="light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))"
-				mt={"md"}
+				mt={"xl"}
 				mb={"md"}
 				withBorder
 			>
