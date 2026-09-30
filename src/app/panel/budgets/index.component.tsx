@@ -1,11 +1,12 @@
 "use client";
-import { Button, Flex, Modal } from "@mantine/core";
+import { Modal } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import BudgetsCard from "@/app/panel/budgets/components/BudgetsCard";
 import BudgetsForm from "@/app/panel/budgets/index.form";
 import { useBudgetsQueryApi } from "@/app/panel/budgets/index.hooks";
+import AddingButton from "@/app/panel/components/buttons/AddingButton";
 
 export default function BudgetsPage() {
 	const t = useTranslations();
@@ -16,11 +17,7 @@ export default function BudgetsPage() {
 
 	return (
 		<>
-			<Flex justify={"center"} align={"center"}>
-				<Button color={"layout"} variant="filled" onClick={modalHandler.open} mb={"xl"} mt={"xl"}>
-					{t("AddBudgetButton")}
-				</Button>
-			</Flex>
+			<AddingButton title={t("AddBudgetButton")} modalHandler={modalHandler} />
 			<Modal
 				title={budgetId ? t("EditBudget") : t("AddBudget")}
 				withCloseButton={false}

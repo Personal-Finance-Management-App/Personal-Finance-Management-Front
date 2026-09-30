@@ -149,5 +149,10 @@
 	"SpendingByCategory": "Spending by category",
 	"SpendingByAccount": "Spending by account",
 	"IncomeByAccount": "Income by account",
-	"NoDataAvailable": "No Data Available."
+	"NoDataAvailable": "No Data Available.",
+	"IncomeVsExpenses": "Income Vs Expenses",
+	"ViewAll": "View All",
+	"SpendingOverview": "Spending Overview",
+	"RecentActivity": "Recent Activity",
+	"CurrentStatus": "Current Status"
 }

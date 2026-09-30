@@ -79,14 +79,14 @@ export default function AccountsCard({ accounts }: AccountsCardProps) {
 											</Group>
 
 											<Group mt="xs">
-												{option.income !== 0 && (
+												{!!option.income && (
 													<Text size="xs" c="gray.7">
 														{t("Income")}:{" "}
 														<NumberFormatter thousandSeparator prefix="$" value={option.income} />
 													</Text>
 												)}
 
-												{option.expense !== 0 && (
+												{!!option.expense && (
 													<Text size="xs" c="gray.7">
 														{t("Expense")}:{" "}
 														<NumberFormatter thousandSeparator prefix="$" value={option.expense} />

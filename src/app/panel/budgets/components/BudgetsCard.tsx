@@ -1,5 +1,4 @@
 import { Box, Group, NumberFormatter, Paper, Progress, ScrollArea, Text } from "@mantine/core";
-import { IconEdit, IconTrash } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 import type { Dispatch, SetStateAction } from "react";
 import {
@@ -8,6 +7,7 @@ import {
 	getTotalSpentAmount,
 } from "@/app/panel/budgets/index.helper";
 import { useBudgetsQueryApi } from "@/app/panel/budgets/index.hooks";
+import ActionButtons from "@/app/panel/components/buttons/ActionButtons";
 import ColoredLabel from "@/app/panel/components/coloredLabel";
 import { getLabelColor } from "@/app/panel/components/coloredLabel/index.helper";
 import { useTransactionsQueryApi } from "@/app/panel/transactions/index.hooks";
@@ -62,7 +62,7 @@ export default function BudgetsCard(props: Props) {
 					</Text>
 				)}
 			</Box>
-			<ScrollArea h={700}>
+			<ScrollArea h={650}>
 				{[...props.budgetsList]
 					.sort((a, b) => b.amount - a.amount)
 					.map((budget) => (
@@ -83,26 +83,15 @@ export default function BudgetsCard(props: Props) {
 											<NumberFormatter value={budget.amount} thousandSeparator />
 										</Text>
 									</Text>
-									<Group justify="center" gap="xs" wrap="nowrap">
-										{" "}
-										<IconTrash
-											style={{ cursor: "pointer" }}
-											color="light-dark(var(--mantine-color-red-6), var(--mantine-color-red-5) )"
-											onClick={() => {
-												deleteBudgetsData.mutate(budget.id);
-											}}
-											size={20}
-										></IconTrash>
-										<IconEdit
-											style={{ cursor: "pointer" }}
-											color="light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4) )"
-											onClick={() => {
-												props.modalHandler.open();
-												props.setBudgetId(budget.id);
-											}}
-											size={20}
-										></IconEdit>
-									</Group>
+									<ActionButtons
+										onDelete={() => {
+											deleteBudgetsData.mutate(budget.id);
+										}}
+										onEdit={() => {
+											props.modalHandler.open();
+											props.setBudgetId(budget.id);
+										}}
+									/>
 								</Group>
 							</Group>
 							<Progress

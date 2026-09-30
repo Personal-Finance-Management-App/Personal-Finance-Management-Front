@@ -1,12 +1,9 @@
 "use client";
 import {
-	Button,
 	Center,
-	Flex,
 	Group,
 	Loader,
 	Modal,
-	NumberFormatter,
 	Paper,
 	ScrollArea,
 	SegmentedControl,
@@ -16,10 +13,12 @@ import {
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 import { useDisclosure } from "@mantine/hooks";
-import { IconEdit, IconTrash } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import ColoredLabel from "@/app/panel/components/coloredLabel";
+import ActionButtons from "@/app/panel/components/buttons/ActionButtons";
+import AddingButton from "@/app/panel/components/buttons/AddingButton";
+import TransactionCardLabels from "@/app/panel/transactions/components/TransactionCardLabels";
+import TransactionRow from "@/app/panel/transactions/components/TransactionRow";
 import TransactionForm from "@/app/panel/transactions/index.form";
 import { useTransactionsQueryApi } from "@/app/panel/transactions/index.hooks";
 
@@ -49,11 +48,7 @@ export function TransactionPage() {
 
 	return (
 		<>
-			<Flex justify={"center"} align={"center"}>
-				<Button color={"layout"} onClick={modalHandler.open} mb={"xl"} mt={"xl"}>
-					{t("AddNewTransaction")}
-				</Button>
-			</Flex>
+			<AddingButton modalHandler={modalHandler} title={t("AddNewTransaction")} />
 			<Modal
 				withCloseButton={false}
 				closeOnClickOutside={false}
@@ -90,75 +85,28 @@ export function TransactionPage() {
 				<ScrollArea my={"md"} mx={"lg"} mb={"sm"} h={{ base: "1000", sm: "800" }} type="auto" mt={"md"}>
 					<Table verticalSpacing="md">
 						<Table.Thead>
-							<Table.Tr>
-								<Table.Th fz="md" fw={"bold"}>
-									{t("Title")}
-								</Table.Th>
-								<Table.Th fz="md" fw={"bold"}>
-									{t("Category")}
-								</Table.Th>
-								<Table.Th fz="md" fw={"bold"}>
-									{t("Account")}
-								</Table.Th>
-								<Table.Th fz="md" fw={"bold"}>
-									{t("Date")}
-								</Table.Th>
-								<Table.Th fz="md" fw={"bold"}>
-									{t("Amount")}
-								</Table.Th>
-							</Table.Tr>
+							<TransactionCardLabels />
 						</Table.Thead>
 
 						<Table.Tbody>
-							{filteredTransactions.map((transaction) => (
-								<Table.Tr key={transaction.id}>
-									<Table.Td>
-										{" "}
-										<Text size="md" fw={600}>
-											{transaction.title}
-										</Text>
-									</Table.Td>
-									<Table.Td>
-										<ColoredLabel category={transaction.category} />
-									</Table.Td>
-									<Table.Td fw="bold">
-										{transaction.accountOption
-											? `${t(transaction.account)}-${t(transaction.accountOption)}`
-											: t(transaction.account)}
-									</Table.Td>
-
-									<Table.Td>{transaction.date}</Table.Td>
-									<Table.Td fz={"md"} fw={"bold"} c={transaction.type === "income" ? "green" : "red.8"}>
-										<NumberFormatter
-											prefix={transaction.type === "income" ? "+$" : "$"}
-											value={transaction.type === "income" ? transaction.amount : -transaction.amount}
-											thousandSeparator
-										></NumberFormatter>
-									</Table.Td>
-									<Table.Td>
-										<Group justify="center" gap="xs" wrap="nowrap">
-											{" "}
-											<IconTrash
-												style={{ cursor: "pointer" }}
-												color="light-dark(var(--mantine-color-red-6), var(--mantine-color-red-5) )"
-												onClick={() => {
+							{[...filteredTransactions]
+								.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+								.map((transaction) => (
+									<Table.Tr key={transaction.id}>
+										<TransactionRow transaction={transaction} showDate />
+										<Table.Td>
+											<ActionButtons
+												onDelete={() => {
 													deleteTransactionData.mutate(transaction.id);
 												}}
-												size={20}
-											></IconTrash>
-											<IconEdit
-												style={{ cursor: "pointer" }}
-												color="light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4) )"
-												onClick={() => {
+												onEdit={() => {
 													modalHandler.open();
 													setTransactionId(transaction.id);
 												}}
-												size={20}
-											></IconEdit>
-										</Group>
-									</Table.Td>
-								</Table.Tr>
-							))}
+											/>
+										</Table.Td>
+									</Table.Tr>
+								))}
 						</Table.Tbody>
 					</Table>
 				</ScrollArea>

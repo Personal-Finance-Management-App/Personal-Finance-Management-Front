@@ -338,26 +338,6 @@
 			"id": "hiyMcCHjnfA"
 		},
 		{
-			"title": "gres",
-			"type": "income",
-			"category": "Health",
-			"account": "Debit Card",
-			"accountOption": "Visa Debit",
-			"date": "2026-09-01",
-			"amount": 30,
-			"id": "uX247uoOKj8"
-		},
-		{
-			"title": "srth",
-			"type": "income",
-			"category": "Transport",
-			"account": "Debit Card",
-			"accountOption": "Maestro",
-			"date": "2026-09-02",
-			"amount": 10,
-			"id": "paJf_6SniBE"
-		},
-		{
 			"title": "jj",
 			"type": "expense",
 			"category": "Shopping",
@@ -406,6 +386,26 @@
 			"date": "2026-09-15",
 			"amount": 900,
 			"id": "rNzXCEGzCS0"
+		},
+		{
+			"title": "kkk",
+			"type": "income",
+			"category": "Salary",
+			"account": "Debit Card",
+			"accountOption": "Maestro",
+			"date": "2026-09-01",
+			"amount": 700,
+			"id": "bimC5gFQ4M4"
+		},
+		{
+			"title": "hiii",
+			"type": "income",
+			"category": "Housing",
+			"account": "Credit Card",
+			"accountOption": "American Express",
+			"date": "2026-09-17",
+			"amount": 730,
+			"id": "OxXJkqcre6Y"
 		}
 	],
 	"users": [
@@ -429,13 +429,8 @@
 	"budgets": [
 		{
 			"category": "Health",
-			"amount": 500,
+			"amount": 1000,
 			"id": "LfVnaOMDOgA"
-		},
-		{
-			"category": "Personal Care",
-			"amount": 780,
-			"id": "p3D0elVjglE"
 		},
 		{
 			"category": "Entertainment",
@@ -471,6 +466,11 @@
 			"category": "Transport",
 			"amount": 8500,
 			"id": "dluz_MX76qE"
+		},
+		{
+			"category": "Personal Care",
+			"amount": 7090,
+			"id": "uVXdEcEkgdg"
 		}
 	],
 	"$schema": "./node_modules/json-server/schema.json"

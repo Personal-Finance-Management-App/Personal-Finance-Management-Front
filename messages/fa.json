@@ -149,5 +149,10 @@
 	"SpendingByCategory": "مخارج براساس دسته بندی",
 	"SpendingByAccount": "مخارج براساس حساب ها",
 	"IncomeByAccount": "درآمد بر اساس حساب",
-	"NoDataAvailable": "داده‌ای برای نمایش وجود ندارد."
+	"NoDataAvailable": "داده‌ای برای نمایش وجود ندارد.",
+	"IncomeVsExpenses": "درآمد در مقابل هزینه‌ها",
+	"ViewAll": "مشاهده همه",
+	"SpendingOverview": "خلاصه مخارج",
+	"RecentActivity": "فعالیت های اخیر",
+	"CurrentStatus": "وضعیت فعلی"
 }
