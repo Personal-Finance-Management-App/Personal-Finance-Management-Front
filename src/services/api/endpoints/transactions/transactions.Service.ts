@@ -8,7 +8,9 @@ import { httpService } from "@/services/httpService";
 const TRANSACTION_SERVICE_PATH = "/transactions";
 
 export async function getTransactionsListAPi() {
-	return await httpService.get<TransactionsRes>(TRANSACTION_SERVICE_PATH);
+	const response = await fetch("/api/transactions");
+
+	return (await response.json()) as TransactionsRes;
 }
 
 export async function getTransactionsByIdAPi(id: string) {
@@ -16,15 +18,47 @@ export async function getTransactionsByIdAPi(id: string) {
 }
 
 export async function postCreateTransactionAPi(payload: TransactionsReq) {
-	return await httpService.post(TRANSACTION_SERVICE_PATH, payload);
+	const response = await fetch("/api/transactions", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(payload),
+	});
+
+	if (!response.ok) {
+		throw new Error("Failed to create transaction");
+	}
+
+	return await response.json();
 }
 
 export async function updateTransactionAPi(id: string, payload: Partial<TransactionsReq>) {
-	return await httpService.patch(`${TRANSACTION_SERVICE_PATH}/${id}`, payload);
+	const response = await fetch(`/api/transactions/${id}`, {
+		method: "PATCH",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(payload),
+	});
+
+	if (!response.ok) {
+		throw new Error("Failed to update transaction");
+	}
+
+	return await response.json();
 }
 
 export async function deleteTransactionAPi(id: string) {
-	return await httpService.delete(`${TRANSACTION_SERVICE_PATH}/${id}`);
+	const response = await fetch(`/api/transactions/${id}`, {
+		method: "DELETE",
+	});
+
+	if (!response.ok) {
+		throw new Error("Failed to delete transaction");
+	}
+
+	return await response.json();
 }
 
 export const TransactionService = {

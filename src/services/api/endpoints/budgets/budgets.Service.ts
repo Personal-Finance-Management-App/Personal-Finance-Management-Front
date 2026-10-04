@@ -4,7 +4,9 @@ import { httpService } from "@/services/httpService";
 const BUDGETS_SERVICE_PATH = "/budgets";
 
 export async function getBudgetsListAPi() {
-	return await httpService.get<BudgetsRes>(BUDGETS_SERVICE_PATH);
+	const response = await fetch("/api/budgets");
+
+	return (await response.json()) as BudgetsRes;
 }
 
 export async function getBudgetsByIdAPi(id: string) {
@@ -12,15 +14,47 @@ export async function getBudgetsByIdAPi(id: string) {
 }
 
 export async function postBudgetsAPi(payload: BudgetsReq) {
-	return await httpService.post(BUDGETS_SERVICE_PATH, payload);
+	const response = await fetch("/api/budgets", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(payload),
+	});
+
+	if (!response.ok) {
+		throw new Error("Failed to create budget");
+	}
+
+	return await response.json();
 }
 
 export async function updateBudgetsAPi(id: string, payload: Partial<BudgetsReq>) {
-	return await httpService.patch(`${BUDGETS_SERVICE_PATH}/${id}`, payload);
+	const response = await fetch(`/api/budgets/${id}`, {
+		method: "PATCH",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(payload),
+	});
+
+	if (!response.ok) {
+		throw new Error("Failed to update budget");
+	}
+
+	return await response.json();
 }
 
 export async function deleteBudgetsAPi(id: string) {
-	return await httpService.delete(`${BUDGETS_SERVICE_PATH}/${id}`);
+	const response = await fetch(`/api/budgets/${id}`, {
+		method: "DELETE",
+	});
+
+	if (!response.ok) {
+		throw new Error("Failed to delete budget");
+	}
+
+	return await response.json();
 }
 
 export const BudgetsService = {

@@ -1,4 +1,159 @@
 {
+	"users": [
+		{
+			"firstName": "Mahzad",
+			"lastName": "Khosraviani",
+			"email": "bluemahzad@gmail.com",
+			"password": "123456A",
+			"id": "2Nr6DN2mZNU"
+		},
+		{
+			"firstName": "siavash",
+			"lastName": "pournarenji",
+			"email": "siavash@gmail.com",
+			"password": "123456A",
+			"id": "M3u-LMpfWb0"
+		},
+		{
+			"firstName": "Mahzad",
+			"lastName": "Khosravianiiiiii",
+			"email": "mahzad@gmail.com",
+			"password": "1234567",
+			"id": "DxPAP8vCY-c"
+		}
+	],
+	"sessions": [
+		{
+			"userId": "2Nr6DN2mZNU",
+			"expiresAt": 1791203196541,
+			"id": "jFXMfBugv0U"
+		},
+		{
+			"userId": "2Nr6DN2mZNU",
+			"expiresAt": 1791203725812,
+			"id": "3guAtzi7s5Q"
+		},
+		{
+			"userId": "2Nr6DN2mZNU",
+			"expiresAt": 1791203923317,
+			"id": "4TZf-Yy6qqE"
+		},
+		{
+			"userId": "2Nr6DN2mZNU",
+			"expiresAt": 1791203933815,
+			"id": "eSk-ITzpDpU"
+		},
+		{
+			"userId": "M3u-LMpfWb0",
+			"expiresAt": 1791227728785,
+			"id": "U7-l3DDeaac"
+		},
+		{
+			"id": "apkCPXoW6JA",
+			"userId": "6sTEVh4uKR8",
+			"expiresAt": 1791228534729
+		},
+		{
+			"userId": "2Nr6DN2mZNU",
+			"expiresAt": 1791228559511,
+			"id": "2dzNY9DgiyI"
+		},
+		{
+			"id": "gGJ1nSSjvFw",
+			"userId": "NvXw6X2DITI",
+			"expiresAt": 1791228595300
+		},
+		{
+			"userId": "NvXw6X2DITI",
+			"expiresAt": 1791228611467,
+			"id": "NJB_k4f-oj4"
+		},
+		{
+			"userId": "2Nr6DN2mZNU",
+			"expiresAt": 1791228696075,
+			"id": "k2jDsU-cqh8"
+		},
+		{
+			"userId": "2Nr6DN2mZNU",
+			"expiresAt": 1791228736140,
+			"id": "RkBFOwqVrOI"
+		},
+		{
+			"id": "Bh5dm92QJ-s",
+			"userId": "z4LrzzaJBM0",
+			"expiresAt": 1791228855669
+		},
+		{
+			"userId": "z4LrzzaJBM0",
+			"expiresAt": 1791228918138,
+			"id": "OQmaIGtEmLc"
+		},
+		{
+			"id": "qBQu05lQcKE",
+			"userId": "BZiPcj-3Um4",
+			"expiresAt": 1791229205502
+		},
+		{
+			"id": "bfB7pHGn4Ys",
+			"userId": "z-EmV6-6wjw",
+			"expiresAt": 1791229464740
+		},
+		{
+			"id": "Mj3ZlJbxH_s",
+			"userId": "7QIWN-TxIiU",
+			"expiresAt": 1791229634464
+		},
+		{
+			"id": "SzC5YmmkB78",
+			"userId": "PtUhhI1b8ic",
+			"expiresAt": 1791229929258
+		},
+		{
+			"userId": "PtUhhI1b8ic",
+			"expiresAt": 1791229964240,
+			"id": "H6XXVVctsEc"
+		},
+		{
+			"id": "8KQDvbt5Etw",
+			"userId": "3VyaQGdb0Aw",
+			"expiresAt": 1791230002652
+		},
+		{
+			"userId": "3VyaQGdb0Aw",
+			"expiresAt": 1791230041391,
+			"id": "ZcoZRzXwWAA"
+		},
+		{
+			"id": "zDN8qZ7b-qM",
+			"userId": "CO_BN-G2jM0",
+			"expiresAt": 1791230343658
+		},
+		{
+			"userId": "2Nr6DN2mZNU",
+			"expiresAt": 1791230350425,
+			"id": "Zno05r6w5es"
+		},
+		{
+			"id": "ubyKTBe7Wtc",
+			"userId": "gz_hqh1Kqcg",
+			"expiresAt": 1791230413958
+		},
+		{
+			"id": "C02TSZPp-D4",
+			"userId": "-A9Fg25E8Ao",
+			"expiresAt": 1791230867440
+		},
+		{
+			"id": "IPu-wnR9z7g",
+			"userId": "rDTO5gllFHE",
+			"expiresAt": 1791231158219
+		},
+		{
+			"userId": "2Nr6DN2mZNU",
+			"expiresAt": 1791314583112,
+			"id": "ywsXnE07YYU"
+		}
+	],
 	"transactionsCategories": [
 		{
 			"id": "1",
@@ -145,7 +300,8 @@
 			"accountOption": "Parsian",
 			"date": "2026-08-04",
 			"amount": 7000,
-			"id": "5Cm-wNTnl5k"
+			"id": "5Cm-wNTnl5k",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "drg",
@@ -155,7 +311,8 @@
 			"accountOption": "Mastercard",
 			"date": "2026-09-01",
 			"amount": 710,
-			"id": "HgSqSL2kOG0"
+			"id": "HgSqSL2kOG0",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "mahzad",
@@ -165,7 +322,8 @@
 			"accountOption": "Tejarat",
 			"date": "2026-09-02",
 			"amount": 700,
-			"id": "3ho5Cr8qg2o"
+			"id": "3ho5Cr8qg2o",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "marjan",
@@ -175,7 +333,8 @@
 			"accountOption": "Ethereum",
 			"date": "2026-09-06",
 			"amount": 800,
-			"id": "ExULpXmcI28"
+			"id": "ExULpXmcI28",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "health care",
@@ -185,7 +344,8 @@
 			"accountOption": "Mastercard",
 			"date": "2026-09-16",
 			"amount": 5000,
-			"id": "krI_b7_MeY4"
+			"id": "krI_b7_MeY4",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "official",
@@ -195,7 +355,8 @@
 			"accountOption": "Parsian",
 			"date": "2026-09-03",
 			"amount": 700,
-			"id": "aR4jTJZmBAw"
+			"id": "aR4jTJZmBAw",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "office",
@@ -205,7 +366,8 @@
 			"accountOption": "Tejarat",
 			"date": "2026-09-02",
 			"amount": 800,
-			"id": "YFcGCp5c-ro"
+			"id": "YFcGCp5c-ro",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "officeee",
@@ -215,7 +377,8 @@
 			"accountOption": "Home Loan",
 			"date": "2026-09-02",
 			"amount": 800,
-			"id": "P2gcJp76f9c"
+			"id": "P2gcJp76f9c",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "jilo",
@@ -225,7 +388,8 @@
 			"accountOption": "Visa Debit",
 			"date": "2026-09-02",
 			"amount": 9000,
-			"id": "jxGElg6aO2g"
+			"id": "jxGElg6aO2g",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "jeloo",
@@ -235,7 +399,8 @@
 			"accountOption": "American Express",
 			"date": "2026-09-10",
 			"amount": 700,
-			"id": "f7CJJEswD1s"
+			"id": "f7CJJEswD1s",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "n;",
@@ -245,7 +410,8 @@
 			"accountOption": "American Express",
 			"date": "2026-09-02",
 			"amount": 800,
-			"id": "zIUwYEPc9ss"
+			"id": "zIUwYEPc9ss",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "debit",
@@ -255,7 +421,8 @@
 			"accountOption": "Visa Debit",
 			"date": "2026-09-02",
 			"amount": 700,
-			"id": "hs4NDKsMWw8"
+			"id": "hs4NDKsMWw8",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "income",
@@ -265,7 +432,8 @@
 			"accountOption": "Google Pay",
 			"date": "2026-09-01",
 			"amount": 800,
-			"id": "3A2Ap7UeQv8"
+			"id": "3A2Ap7UeQv8",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "srh",
@@ -275,7 +443,8 @@
 			"accountOption": "",
 			"date": "2026-09-01",
 			"amount": 700,
-			"id": "nZfpHn--rYE"
+			"id": "nZfpHn--rYE",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "yyy",
@@ -285,7 +454,8 @@
 			"accountOption": "ETF",
 			"date": "2026-09-01",
 			"amount": 900,
-			"id": "OM67hSti0Jc"
+			"id": "OM67hSti0Jc",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "dhrht",
@@ -295,7 +465,8 @@
 			"accountOption": "Stock Portfolio",
 			"date": "2026-09-02",
 			"amount": 700,
-			"id": "zsoK5_E13U0"
+			"id": "zsoK5_E13U0",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "rtrt",
@@ -305,7 +476,8 @@
 			"accountOption": "Stock Portfolio",
 			"date": "2026-09-15",
 			"amount": 20,
-			"id": "kDLsPyOx_cM"
+			"id": "kDLsPyOx_cM",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "rth",
@@ -315,7 +487,8 @@
 			"accountOption": "ETF",
 			"date": "2026-09-02",
 			"amount": 800,
-			"id": "weUUV2IVkRc"
+			"id": "weUUV2IVkRc",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "rj76",
@@ -325,7 +498,8 @@
 			"accountOption": "Personal Loan",
 			"date": "2026-09-03",
 			"amount": 700,
-			"id": "LYKpZK1lVeA"
+			"id": "LYKpZK1lVeA",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "sg",
@@ -335,7 +509,8 @@
 			"accountOption": "Visa Debit",
 			"date": "2026-09-04",
 			"amount": 20,
-			"id": "hiyMcCHjnfA"
+			"id": "hiyMcCHjnfA",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "jj",
@@ -345,7 +520,8 @@
 			"accountOption": "Saman",
 			"date": "2026-09-03",
 			"amount": 700,
-			"id": "PGHIyZdwrLg"
+			"id": "PGHIyZdwrLg",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "mmm",
@@ -355,7 +531,8 @@
 			"accountOption": "Mastercard Debit",
 			"date": "2026-09-02",
 			"amount": 200,
-			"id": "1hrjaGbB18I"
+			"id": "1hrjaGbB18I",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "hii",
@@ -365,7 +542,8 @@
 			"accountOption": "Parsian",
 			"date": "2026-09-02",
 			"amount": 800,
-			"id": "5kchCxLJMOI"
+			"id": "5kchCxLJMOI",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "liliii",
@@ -375,7 +553,8 @@
 			"accountOption": "",
 			"date": "2026-09-18",
 			"amount": 6200,
-			"id": "OgUqtV0jGIU"
+			"id": "OgUqtV0jGIU",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "pie",
@@ -385,7 +564,8 @@
 			"accountOption": "Apple Pay",
 			"date": "2026-09-15",
 			"amount": 900,
-			"id": "rNzXCEGzCS0"
+			"id": "rNzXCEGzCS0",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "kkk",
@@ -395,7 +575,8 @@
 			"accountOption": "Maestro",
 			"date": "2026-09-01",
 			"amount": 700,
-			"id": "bimC5gFQ4M4"
+			"id": "bimC5gFQ4M4",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"title": "hiii",
@@ -405,72 +586,103 @@
 			"accountOption": "American Express",
 			"date": "2026-09-17",
 			"amount": 730,
-			"id": "OxXJkqcre6Y"
-		}
-	],
-	"users": [
-		{
-			"userName": "test-1",
-			"name": "test",
-			"email": "test@gmail.com",
-			"phoneNumber": "123",
-			"age": 1,
-			"id": "zWUOytd9AVw"
+			"id": "OxXJkqcre6Y",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"userName": "test-1",
-			"name": "test",
-			"email": "test@gmail.com",
-			"phoneNumber": "123",
-			"age": 1,
-			"id": "BoLuo0nuLxA"
+			"title": "hii",
+			"type": "expense",
+			"category": "Transport",
+			"account": "Bank Account",
+			"accountOption": "Parsian",
+			"date": "2026-10-02",
+			"amount": 400,
+			"userId": "3c2bHAx_P2w",
+			"id": "WaAAPbhHLLc"
+		},
+		{
+			"title": "sd",
+			"type": "income",
+			"category": "Transport",
+			"account": "Bank Account",
+			"accountOption": "Parsian",
+			"date": "2026-10-02",
+			"amount": 80,
+			"userId": "3c2bHAx_P2w",
+			"id": "aqJ2iBPLcFA"
 		}
 	],
 	"budgets": [
 		{
 			"category": "Health",
 			"amount": 1000,
-			"id": "LfVnaOMDOgA"
+			"id": "LfVnaOMDOgA",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"category": "Entertainment",
 			"amount": 9000,
-			"id": "kgHOxs86SgI"
+			"id": "kgHOxs86SgI",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"category": "Taxes",
 			"amount": 9000,
-			"id": "Y9v9mSk9fM8"
+			"id": "Y9v9mSk9fM8",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"category": "Internet & Phone",
 			"amount": 6000,
-			"id": "xow2Z6fvJ7A"
+			"id": "xow2Z6fvJ7A",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"category": "Housing",
 			"amount": 7000,
-			"id": "s1mHnJZaky8"
+			"id": "s1mHnJZaky8",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"category": "Donations",
 			"amount": 6000,
-			"id": "4TPIS0IJR5s"
+			"id": "4TPIS0IJR5s",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"category": "Food",
 			"amount": 5200,
-			"id": "RAs5OgD7zE4"
+			"id": "RAs5OgD7zE4",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"category": "Transport",
 			"amount": 8500,
-			"id": "dluz_MX76qE"
+			"id": "dluz_MX76qE",
+			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"category": "Personal Care",
 			"amount": 7090,
-			"id": "uVXdEcEkgdg"
+			"id": "uVXdEcEkgdg",
+			"userId": "2Nr6DN2mZNU"
+		},
+		{
+			"category": "Transport",
+			"amount": 2000,
+			"id": "QkEI45_ADyE"
+		},
+		{
+			"category": "Transport",
+			"amount": 800,
+			"userId": "3c2bHAx_P2w",
+			"id": "l1xg8L47Q0g"
+		},
+		{
+			"category": "Shopping",
+			"amount": 900,
+			"userId": "DxPAP8vCY-c",
+			"id": "J7acX6v2iH8"
 		}
 	],
 	"$schema": "./node_modules/json-server/schema.json"

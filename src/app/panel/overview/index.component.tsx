@@ -18,6 +18,7 @@ import { useTransactionsQueryApi } from "@/app/panel/transactions/index.hooks";
 
 export default function OverviewPage() {
 	const t = useTranslations();
+
 	const { getTransactionsListQueryData } = useTransactionsQueryApi();
 	const transactions = getTransactionsListQueryData.data ?? [];
 	const { totalIncome, totalExpense, totalBalance, totalInvestment, totalDebt, totalSaving } =

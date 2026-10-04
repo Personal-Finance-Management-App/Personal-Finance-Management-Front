@@ -23,9 +23,4 @@ export const headerConfig = {
 		title: "Budgets",
 		description: HEADER_CONFIG_ENUM.PLAN_AND_MANAGE_YOUR_SPENDING,
 	},
-
-	"/panel/profile": {
-		title: "Profile",
-		description: HEADER_CONFIG_ENUM.MANAGE_YOUR_PERSONAL_INFORMATION,
-	},
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import { BarChart } from "@mantine/charts";
-import { Box, Card, Grid } from "@mantine/core";
+import { Box, Card, Grid, Text } from "@mantine/core";
 import { useTranslations } from "next-intl";
 import AccountsSummary from "@/app/panel/accounts/components/AccountsSummary";
 import AccountsCard from "@/app/panel/accounts/components/accountsCard/AccountsCard";
@@ -25,18 +25,23 @@ export default function AccountsPage() {
 				mb={"md"}
 				withBorder
 			>
-				{" "}
-				<BarChart
-					h={250}
-					data={chartData}
-					dataKey="accountType"
-					orientation="vertical"
-					barProps={{ radius: 6 }}
-					gridAxis="none"
-					yAxisProps={{ width: 160 }}
-					getBarColor={(value) => (value < 0 ? "red.5" : "green.5")}
-					series={[{ name: "balance", color: "gray.0" }]}
-				/>{" "}
+				{chartData.length > 0 ? (
+					<BarChart
+						h={250}
+						data={chartData}
+						dataKey="accountType"
+						orientation="vertical"
+						barProps={{ radius: 6 }}
+						gridAxis="none"
+						yAxisProps={{ width: 160 }}
+						getBarColor={(value) => (value < 0 ? "red.5" : "green.5")}
+						series={[{ name: "balance", color: "gray.0" }]}
+					/>
+				) : (
+					<Text c="dimmed" ta="center" py="xl">
+						{t("NoDataAvailable")}
+					</Text>
+				)}
 			</Card>
 			<Grid mt="xl">
 				<AccountsCard accounts={groupedAccounts} />

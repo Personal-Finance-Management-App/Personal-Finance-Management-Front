@@ -10,7 +10,6 @@ export const useBudgetsQueryApi = (budgetId?: string) => {
 	const getBudgetsListAPiQueryData = useQuery({
 		queryKey: ["get-budgets-list"],
 		queryFn: BudgetsService.getBudgetsListAPi,
-		select: (response) => response.data,
 	});
 
 	const getBudgetsByIdAPiQueryData = useQuery({

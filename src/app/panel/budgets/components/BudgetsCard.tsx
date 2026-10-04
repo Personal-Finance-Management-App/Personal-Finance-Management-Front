@@ -34,12 +34,10 @@ export default function BudgetsCard(props: Props) {
 			radius={"lg"}
 			bg="light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))"
 		>
-			{" "}
 			<Text fw={"bold"} fz={"h4"}>
 				{t("categoryBudgets")}
 			</Text>
 			<Box mb={"xl"}>
-				{" "}
 				<Group mr={"lg"} justify={"space-between"} mt={"lg"}>
 					<Text c={"gray.7"}>{t("TotalSpent")}</Text>
 					<Text>
