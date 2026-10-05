@@ -6,5 +6,4 @@ export const AppRoutes = {
 	transactions: "/panel/transactions",
 	budgets: "/panel/budgets",
 	reports: "/panel/reports",
-	profile: "/panel/profile",
 };

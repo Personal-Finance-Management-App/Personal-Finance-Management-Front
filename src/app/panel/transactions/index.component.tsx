@@ -58,6 +58,7 @@ export function TransactionPage() {
 			>
 				<TransactionForm id={transactionId} modalHandler={modalHandler} setTransactionId={setTransactionId} />
 			</Modal>
+
 			<Paper
 				mx={{ base: "sm", sm: "lg" }}
 				radius={"lg"}

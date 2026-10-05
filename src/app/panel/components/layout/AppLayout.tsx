@@ -1,6 +1,6 @@
 "use client";
 import { AppShell } from "@mantine/core";
-import Header from "@/app/panel/components/layout/Header/Header";
+import Header from "@/app/panel/components/layout/Header/components/Header";
 import Sidebar from "@/app/panel/components/layout/Sidebar";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {

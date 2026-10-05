@@ -27,6 +27,7 @@ export default function SpentAmountByCategories(props: Props) {
 		}));
 	return (
 		<Paper
+			mih={235}
 			mt={"lg"}
 			mb={"lg"}
 			mx={{ base: "sm", sm: "lg" }}
@@ -40,10 +41,13 @@ export default function SpentAmountByCategories(props: Props) {
 					{t("SpendingOverview")}
 				</Text>
 			</Group>
-
-			<Grid align="center">
-				<Grid.Col span={{ base: 12, sm: 6 }}>
-					{DonutChartSpending.length > 0 ? (
+			{groupedCategories.length === 0 ? (
+				<Text c="dimmed" ta="center" py="xl">
+					{t("NoDataAvailable")}
+				</Text>
+			) : (
+				<Grid align="center">
+					<Grid.Col span={{ base: 12, sm: 6 }}>
 						<DonutChart
 							withTooltip={false}
 							withLabelsLine
@@ -53,31 +57,27 @@ export default function SpentAmountByCategories(props: Props) {
 							h={300}
 							data={DonutChartSpending}
 						/>
-					) : (
-						<Text c="dimmed" ta="center" py="xl">
-							{t("NoDataAvailable")}
-						</Text>
-					)}
-				</Grid.Col>
+					</Grid.Col>
 
-				<Grid.Col span={{ base: 12, sm: 6 }}>
-					<Stack>
-						{groupedCategories
-							.filter((category) => category.expense > 0)
-							.sort((a, b) => b.expense - a.expense)
-							.slice(0, 5)
-							.map((category) => (
-								<Group key={category.category} justify="space-between">
-									<ColoredLabel category={category.category} />
-									<Text c="gray.7">
-										$
-										<NumberFormatter thousandSeparator value={category.expense} />
-									</Text>
-								</Group>
-							))}
-					</Stack>
-				</Grid.Col>
-			</Grid>
+					<Grid.Col span={{ base: 12, sm: 6 }}>
+						<Stack>
+							{groupedCategories
+								.filter((category) => category.expense > 0)
+								.sort((a, b) => b.expense - a.expense)
+								.slice(0, 5)
+								.map((category) => (
+									<Group key={category.category} justify="space-between">
+										<ColoredLabel category={category.category} />
+										<Text c="gray.7">
+											$
+											<NumberFormatter thousandSeparator value={category.expense} />
+										</Text>
+									</Group>
+								))}
+						</Stack>
+					</Grid.Col>
+				</Grid>
+			)}
 			<ViewAllButton href="/panel/reports" />
 		</Paper>
 	);

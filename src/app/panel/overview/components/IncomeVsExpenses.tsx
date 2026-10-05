@@ -21,6 +21,7 @@ export default function IncomeVsExpenses(props: Props) {
 	];
 	return (
 		<Paper
+			mih={235}
 			mt={"lg"}
 			mb={"lg"}
 			mx={{ base: "sm", sm: "lg" }}

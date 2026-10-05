@@ -1,5 +1,5 @@
 import { PieChart } from "@mantine/charts";
-import { Group, NumberFormatter, Paper, Stack, Text } from "@mantine/core";
+import { Flex, Group, NumberFormatter, Paper, Stack, Text } from "@mantine/core";
 import { useTranslations } from "next-intl";
 import type { GroupedAccount } from "@/app/panel/accounts/components/accountsCard/index.types";
 import ColoredLabel from "@/app/panel/components/coloredLabel";
@@ -18,6 +18,8 @@ export default function AccountSpentAmount(props: Props) {
 		}));
 	return (
 		<Paper
+			h={500}
+			style={{ overflowY: "auto" }}
 			mt={"md"}
 			mb={"md"}
 			mx={{ base: "sm", sm: "lg" }}
@@ -38,9 +40,9 @@ export default function AccountSpentAmount(props: Props) {
 					data={PieChartSpendingByAccount}
 				/>
 			) : (
-				<Text c="dimmed" ta="center" py="xl">
-					{t("NoDataAvailable")}
-				</Text>
+				<Flex h="85%" justify={"center"} align={"center"}>
+					<Text c="dimmed">{t("NoDataAvailable")}</Text>
+				</Flex>
 			)}
 
 			<Stack mt="md">

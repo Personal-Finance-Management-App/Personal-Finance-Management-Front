@@ -1,5 +1,6 @@
 export type Transaction = {
 	id: string;
+	userId: string;
 	title: string;
 	type: "income" | "expense";
 	date: string;
@@ -21,4 +22,4 @@ export type TransactionsRes = Transaction[];
 
 export type TransactionsByIdRes = Transaction;
 
-export type TransactionsReq = Omit<Transaction, "id">;
+export type TransactionsReq = Omit<Transaction, "id" | "userId">;

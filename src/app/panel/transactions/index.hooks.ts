@@ -12,7 +12,6 @@ export const useTransactionsQueryApi = (id?: string) => {
 	const getTransactionsListQueryData = useQuery({
 		queryKey: ["get-transactions-list"],
 		queryFn: TransactionService.getTransactionsListAPi,
-		select: (response) => response.data,
 	});
 
 	const getTransactionsByIdQueryData = useQuery({

@@ -17,18 +17,18 @@ export default function ReportsPage() {
 
 	return (
 		<Grid>
-			<Grid.Col span={{ base: 12, md: 6 }} h={500} style={{ overflowY: "auto" }}>
+			<Grid.Col span={{ base: 12, md: 6 }}>
 				{" "}
 				<CategorySpentAmount transactions={transactions} />
 			</Grid.Col>
-			<Grid.Col span={{ base: 12, md: 6 }} h={500} style={{ overflowY: "auto" }}>
+			<Grid.Col span={{ base: 12, md: 6 }}>
 				<BudgetsReport BudgetsList={BudgetsList} />
 			</Grid.Col>{" "}
-			<Grid.Col span={{ base: 12, md: 6 }} h={500} style={{ overflowY: "auto" }}>
+			<Grid.Col span={{ base: 12, md: 6 }}>
 				{" "}
 				<AccountSpentAmount groupedAccounts={groupedAccounts} />
 			</Grid.Col>{" "}
-			<Grid.Col span={{ base: 12, md: 6 }} h={500} style={{ overflowY: "auto" }}>
+			<Grid.Col span={{ base: 12, md: 6 }}>
 				<AccountsIncome groupedAccounts={groupedAccounts} />{" "}
 			</Grid.Col>
 		</Grid>

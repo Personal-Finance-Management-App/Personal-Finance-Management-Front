@@ -3,7 +3,7 @@ import type { Transaction } from "@/services/api/models/transactions/transaction
 
 export const getCategoryAmount = (transactions: Transaction[], category: string) => {
 	return transactions
-		.filter((transaction) => transaction.category === category)
+		.filter((transaction) => transaction.type === "expense" && transaction.category === category)
 		.reduce((total, transaction) => total + transaction.amount, 0);
 };
 
@@ -13,6 +13,9 @@ export const getTotalBudgetAmount = (budgets: Budget[]) => {
 
 export const getTotalSpentAmount = (transactions: Transaction[], budgets: Budget[]) => {
 	return transactions
-		.filter((transaction) => budgets.some((budget) => budget.category === transaction.category))
+		.filter(
+			(transaction) =>
+				transaction.type === "expense" && budgets.some((budget) => budget.category === transaction.category),
+		)
 		.reduce((total, transaction) => total + transaction.amount, 0);
 };

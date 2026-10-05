@@ -4,7 +4,6 @@ import {
 	IconEye,
 	IconPercentage30,
 	IconReportAnalytics,
-	IconUserFilled,
 	IconWallet,
 } from "@tabler/icons-react";
 import Link from "next/link";
@@ -15,11 +14,11 @@ import { AppRoutes } from "@/constants/routes";
 export default function Sidebar() {
 	const t = useTranslations();
 	const pathname = usePathname();
-	const { overview, accounts, transactions, budgets, reports, profile } = AppRoutes;
+	const { overview, accounts, transactions, budgets, reports } = AppRoutes;
 	return (
 		<Stack>
 			<Text fw={700} ml={"md"} mt={"md"} size={"xl"}>
-				Menu
+				{t("Menu")}
 			</Text>
 			<Stack ml={"sm"}>
 				<Group className={pathname === overview ? "active" : "inactive"}>
@@ -43,10 +42,6 @@ export default function Sidebar() {
 					{" "}
 					<IconReportAnalytics />
 					<Link href={reports}>{t("Reports")}</Link>
-				</Group>
-				<Group className={pathname === profile ? "active" : "inactive"} hiddenFrom={"sm"}>
-					<IconUserFilled />
-					<Link href={profile}>{t("Profile")}</Link>
 				</Group>
 			</Stack>
 		</Stack>
