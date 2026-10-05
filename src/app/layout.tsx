@@ -7,6 +7,7 @@ import "./globals.css";
 import { Notifications } from "@mantine/notifications";
 import type { Metadata } from "next";
 import "@mantine/notifications/styles.css";
+import { cookies } from "next/headers";
 import { theme } from "@/theme/theme";
 
 export const metadata: Metadata = {
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
+	const cookieStore = await cookies();
+	const locale = cookieStore.get("locale")?.value === "fa" ? "fa" : "en";
 	const baseUrl = process.env["BASE_URL"];
 
 	if (!baseUrl) {
@@ -22,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	}
 
 	return (
-		<html lang="en" {...mantineHtmlProps}>
+		<html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} {...mantineHtmlProps}>
 			<head>
 				<ColorSchemeScript />
 			</head>

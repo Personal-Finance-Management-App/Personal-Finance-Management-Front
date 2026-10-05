@@ -16,6 +16,7 @@ import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect } from "react";
+import LanguageSwitcher from "@/app/panel/components/layout/Header/components/languageSwitcher";
 import Profile from "@/app/panel/components/layout/Header/components/profile/index.component";
 import { useCurrentPage } from "@/app/panel/components/layout/Header/index.hooks";
 import Sidebar from "@/app/panel/components/layout/Sidebar";
@@ -105,9 +106,19 @@ export default function Header() {
 				</Drawer>
 				<Profile />
 
-				<ActionIcon onClick={toggleColorScheme} variant="filled" size="lg" color={"layout"}>
-					{colorScheme === "dark" ? <IconSunFilled size={22} /> : <IconMoonFilled size={18} />}
-				</ActionIcon>
+				<Group visibleFrom={"sm"}>
+					<ActionIcon onClick={toggleColorScheme} variant="filled" size="lg" color={"layout"}>
+						{colorScheme === "dark" ? <IconSunFilled size={22} /> : <IconMoonFilled size={18} />}
+					</ActionIcon>
+					<LanguageSwitcher />
+				</Group>
+				<Stack hiddenFrom="sm">
+					{" "}
+					<ActionIcon onClick={toggleColorScheme} variant="filled" size="lg" color={"layout"}>
+						{colorScheme === "dark" ? <IconSunFilled size={22} /> : <IconMoonFilled size={18} />}
+					</ActionIcon>
+					<LanguageSwitcher />
+				</Stack>
 			</Group>
 		</Flex>
 	);

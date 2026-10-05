@@ -8,7 +8,7 @@ export async function POST(request: Request) {
 	const users = await usersResponse.json();
 
 	if (users.length > 0) {
-		return NextResponse.json({ message: "Email already exists" }, { status: 409 });
+		return NextResponse.json({ message: "EmailAlreadyExists" }, { status: 409 });
 	}
 
 	const userResponse = await fetch(`${process.env["BASE_URL"]}/users`, {

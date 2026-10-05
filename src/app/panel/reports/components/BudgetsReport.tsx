@@ -1,5 +1,5 @@
 import { DonutChart } from "@mantine/charts";
-import { Group, NumberFormatter, Paper, Stack, Text } from "@mantine/core";
+import { Flex, Group, NumberFormatter, Paper, Stack, Text } from "@mantine/core";
 import { useTranslations } from "next-intl";
 import ColoredLabel from "@/app/panel/components/coloredLabel";
 import { getLabelColor } from "@/app/panel/components/coloredLabel/index.helper";
@@ -17,6 +17,8 @@ export default function BudgetsReport(props: Props) {
 	}));
 	return (
 		<Paper
+			h={500}
+			style={{ overflowY: "auto" }}
 			mt={"md"}
 			mx={{ base: "sm", sm: "lg" }}
 			bg="light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))"
@@ -37,9 +39,9 @@ export default function BudgetsReport(props: Props) {
 					data={DonutChartBudget}
 				/>
 			) : (
-				<Text c="dimmed" ta="center" py="xl">
-					{t("NoDataAvailable")}
-				</Text>
+				<Flex h="85%" justify={"center"} align={"center"}>
+					<Text c="dimmed">{t("NoDataAvailable")}</Text>
+				</Flex>
 			)}
 
 			<Stack mt="md">

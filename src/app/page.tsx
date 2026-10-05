@@ -31,6 +31,7 @@ import {
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { FeatureCard } from "@/app/panel/components/demoCard/FeatureCard";
+import LanguageSwitcher from "@/app/panel/components/layout/Header/components/languageSwitcher";
 
 export default function Page() {
 	const t = useTranslations();
@@ -40,9 +41,13 @@ export default function Page() {
 		<Box mih="100vh" bg="light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8))">
 			<Container size="xl" py="lg">
 				<Flex justify="space-between" align="center" gap="md">
-					<ActionIcon onClick={toggleColorScheme} variant="filled" size="lg" color="layout">
-						{colorScheme === "dark" ? <IconSunFilled size={22} /> : <IconMoonFilled size={18} />}
-					</ActionIcon>
+					<Group>
+						{" "}
+						<ActionIcon onClick={toggleColorScheme} variant="filled" size="lg" color="layout">
+							{colorScheme === "dark" ? <IconSunFilled size={22} /> : <IconMoonFilled size={18} />}
+						</ActionIcon>
+						<LanguageSwitcher />
+					</Group>
 
 					<Link
 						href="/"
@@ -105,7 +110,7 @@ export default function Page() {
 							</Badge>
 
 							<Title order={1} fz={{ base: 42, sm: 52, md: 64 }} lh={1.05} fw={800}>
-								{t("TakeControlOf")}{" "}
+								{t("TakeControlOf")}
 								<Text component="span" inherit c="layout.5">
 									{t("YourFinances")}
 								</Text>

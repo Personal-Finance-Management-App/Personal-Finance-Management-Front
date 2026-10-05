@@ -10,7 +10,7 @@ export async function POST(request: Request) {
 	const user = users[0];
 
 	if (!user || user.password !== password) {
-		return NextResponse.json({ message: "Invalid email or password" }, { status: 401 });
+		return NextResponse.json({ message: "InvalidCredentials" }, { status: 401 });
 	}
 
 	let sessionId = request.headers.get("cookie")?.match(/sessionId=([^;]+)/)?.[1];
@@ -49,7 +49,7 @@ export async function POST(request: Request) {
 	}
 
 	if (!sessionId) {
-		return NextResponse.json({ message: "Failed to create session" }, { status: 500 });
+		return NextResponse.json({ message: "FailedToCreateSession" }, { status: 500 });
 	}
 
 	const result = NextResponse.json({

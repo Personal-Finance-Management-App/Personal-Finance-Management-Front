@@ -18,7 +18,7 @@ export default function Sidebar() {
 	return (
 		<Stack>
 			<Text fw={700} ml={"md"} mt={"md"} size={"xl"}>
-				Menu
+				{t("Menu")}
 			</Text>
 			<Stack ml={"sm"}>
 				<Group className={pathname === overview ? "active" : "inactive"}>

@@ -2,7 +2,8 @@ import { ActionIcon, Avatar, Group, Modal, Paper, Stack, Text } from "@mantine/c
 import { useDisclosure } from "@mantine/hooks";
 import { IconChevronDown } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
-import { useCurrentUserQuery } from "@/app/auth/sign-in/index.hooks";
+import { useCurrentUserQuery } from "@/app/auth/currentUser.hooks";
+import { getLabelColor } from "@/app/panel/components/coloredLabel/index.helper";
 import ProfileForm from "@/app/panel/components/layout/Header/components/profile/index.form";
 
 export default function Profile() {
@@ -22,8 +23,8 @@ export default function Profile() {
 					transition: "0.2s",
 				}}
 			>
-				<Group gap="sm">
-					<Avatar size={"md"} radius="xl">
+				<Group justify={"center"} gap="sm">
+					<Avatar color={getLabelColor(user?.email ?? "")} size={"md"} radius="xl">
 						{user?.firstName?.[0]?.toUpperCase()}
 						{user?.lastName?.[0]?.toUpperCase()}
 					</Avatar>

@@ -19,6 +19,9 @@ export const useSignUpQueryApi = () => {
 			await queryClient.invalidateQueries({
 				queryKey: ["get-signup-list"],
 			});
+			await queryClient.invalidateQueries({
+				queryKey: ["current-user"],
+			});
 			notifications.show({
 				title: t("Success"),
 				message: t("UserCreated"),
@@ -28,7 +31,7 @@ export const useSignUpQueryApi = () => {
 		onError: (error) => {
 			notifications.show({
 				title: t("Failed"),
-				message: error.message,
+				message: t(error.message),
 				color: "red",
 			});
 		},

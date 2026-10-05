@@ -1,5 +1,6 @@
 {
 	"welcomeToFinFlow": "welcome To FinFlow",
+	"Menu": "Menu",
 	"FinFlow": "FinFLow",
 	"SignUp": "Sign Up",
 	"SignIn": "Sign In",
@@ -203,5 +204,8 @@
 	"UnderstandYourMoney": "Understand your money",
 	"TurnFinancialDataIntoInsights": "Turn your financial data into clear and useful insights.",
 	"ReadyToTakeControl": "Ready to take control?",
-	"StartManagingYourFinancesWithFinFlow": "Start managing your finances with FinFlow"
+	"StartManagingYourFinancesWithFinFlow": "Start managing your finances with FinFlow",
+	"InvalidCredentials": "Invalid email or password.",
+	"FailedToCreateSession": "Failed to create session.",
+	"EmailAlreadyExists": "An account with this email already exists."
 }

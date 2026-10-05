@@ -8,8 +8,8 @@
 			"id": "2Nr6DN2mZNU"
 		},
 		{
-			"firstName": "siavash",
-			"lastName": "pournarenji",
+			"firstName": "siavashh",
+			"lastName": "pournarenjii",
 			"email": "siavash@gmail.com",
 			"password": "123456A",
 			"id": "M3u-LMpfWb0"
@@ -20,6 +20,27 @@
 			"email": "mahzad@gmail.com",
 			"password": "1234567",
 			"id": "DxPAP8vCY-c"
+		},
+		{
+			"firstName": "alex",
+			"lastName": "dunfy",
+			"email": "alex@gmail.com",
+			"password": "123456B",
+			"id": "6Ze5EZedQ0I"
+		},
+		{
+			"firstName": "jay",
+			"lastName": "pritchet",
+			"email": "jay@gmail.com",
+			"password": "1234567",
+			"id": "JQqmORaKqJQ"
+		},
+		{
+			"firstName": "luck",
+			"lastName": "dunphy",
+			"email": "luck@gmail.com",
+			"password": "123456",
+			"id": "ZqaIPVafACs"
 		}
 	],
 	"sessions": [
@@ -610,6 +631,17 @@
 			"amount": 80,
 			"userId": "3c2bHAx_P2w",
 			"id": "aqJ2iBPLcFA"
+		},
+		{
+			"title": "ddv",
+			"type": "income",
+			"category": "Shopping",
+			"account": "Credit Card",
+			"accountOption": "American Express",
+			"date": "2026-10-02",
+			"amount": 800,
+			"userId": "M3u-LMpfWb0",
+			"id": "V-Rbh0xMUjI"
 		}
 	],
 	"budgets": [
@@ -623,12 +655,6 @@
 			"category": "Entertainment",
 			"amount": 9000,
 			"id": "kgHOxs86SgI",
-			"userId": "2Nr6DN2mZNU"
-		},
-		{
-			"category": "Taxes",
-			"amount": 9000,
-			"id": "Y9v9mSk9fM8",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
@@ -683,6 +709,24 @@
 			"amount": 900,
 			"userId": "DxPAP8vCY-c",
 			"id": "J7acX6v2iH8"
+		},
+		{
+			"category": "Shopping",
+			"amount": 800,
+			"userId": "M3u-LMpfWb0",
+			"id": "NSk3wsMi33Q"
+		},
+		{
+			"category": "Bills & Utilities",
+			"amount": 800,
+			"userId": "M3u-LMpfWb0",
+			"id": "YiTnrFo3aSE"
+		},
+		{
+			"category": "Entertainment",
+			"amount": 7000,
+			"userId": "M3u-LMpfWb0",
+			"id": "4MVkdGfXhHM"
 		}
 	],
 	"$schema": "./node_modules/json-server/schema.json"
