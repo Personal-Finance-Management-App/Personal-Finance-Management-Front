@@ -242,7 +242,7 @@ FinFlow is a **completed personal finance management project** featuring:
 * [x] Profile management
 * [x] Financial overview & insights
 * [x] Interactive reports
-* [ ] Calculations
+* [*] Calculations
 * [x] Account summaries
 * [x] English / Persian localization
 * [x] RTL / LTR support
