@@ -6,7 +6,7 @@ FinFlow is a modern personal finance management application designed to bring yo
 
 Track transactions, manage budgets, explore financial insights, and get a deeper understanding of where your money goes — all in one place.
 
---- 
+
 ## 🚀 Project Status
 
 🎉 **Completed**
@@ -26,7 +26,6 @@ Use the demo account below and jump straight into the dashboard.
 
 ** Just sign in and explore.**
 
----
 🖥️ Demo Page — First Impression of FinFlow
 
 The Demo Page is one of the key parts of the FinFlow experience.
