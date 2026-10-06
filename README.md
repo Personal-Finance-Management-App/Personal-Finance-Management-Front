@@ -30,6 +30,24 @@ Use the demo account below and jump straight into the dashboard.
 
 ## ✨ Features
 
+🖥️ Demo Page — First Impression of FinFlow
+
+The Demo Page is one of the key parts of the FinFlow experience.
+
+Instead of asking users to immediately sign in or create an account, FinFlow first gives them a dedicated space to understand what the application is, what problems it solves, and what they can expect from it.
+
+The Demo Page provides a concise introduction to the main features of FinFlow and includes a small preview of the Financial Summary, giving users a real glimpse of how their financial information can be presented and understood inside the application.
+
+This first experience helps users:
+
+Understand the purpose of FinFlow
+Get familiar with the main features
+See how financial information is presented
+Preview a small part of the Financial Summary
+Understand what they can explore after creating an account
+Decide whether FinFlow is the right tool for them
+
+The idea is to show the value before asking for commitment. Users can explore the concept of the product first and then choose to continue with Sign In or Sign Up when they are ready.
 ### 🔐 Authentication & Profile
 
 * User registration and sign in
@@ -50,8 +68,10 @@ A detailed financial overview that turns raw financial data into useful insights
 * Spending by category
 * Financial summaries
 * Interactive charts
+* Comparing total income and expenses with chart
 * Deeper financial insights
 * Correct calculations
+* Showing the total balance and its current status
 
 ### 💳 Transactions
 
@@ -62,7 +82,6 @@ A complete transaction management experience:
 * Delete transactions
 * Income and expense tracking
 * Transaction categories
-* Sorted transactions by date
 * Date management
 * Filtering by transaction type such as income and expenses
 * having segmented control for scroll between transactions and their types
@@ -129,6 +148,7 @@ FinFlow is designed with a clean, polished, and consistent visual experience in 
 * 📱 Responsive layouts designed for different screen sizes
 * 📝 Clear and meaningful labels and descriptions throughout the application
 * 🎯 Strong visual hierarchy to make financial information easy to scan and understand
+* 🧩 Carefully designed empty states for situations where no data is available
 * 🌐 Language switcher in the header for quick English / Persian switching
 
 The interface is built to feel **modern, organized, and easy to navigate**, while keeping the financial data clear and visually engaging.
