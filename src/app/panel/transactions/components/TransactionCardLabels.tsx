@@ -20,6 +20,7 @@ export default function TransactionCardLabels() {
 			<Table.Th fz="md" fw={"bold"}>
 				{t("Amount")}
 			</Table.Th>
+			<Table.Th fz="md" fw={"bold"}></Table.Th>
 		</Table.Tr>
 	);
 }

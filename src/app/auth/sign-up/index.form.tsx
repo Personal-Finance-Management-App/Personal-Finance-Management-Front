@@ -19,6 +19,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useSignUpQueryApi } from "@/app/auth/sign-up/index.hooks";
+import { normalizeName } from "@/app/panel/components/layout/Header/components/profile/index.helper";
+import { AppRoutes } from "@/constants/routes";
 import type { SignUpFormValues, SignUpReq } from "@/services/api/models/auth/signUp.types";
 
 export default function SignUpForm() {
@@ -67,18 +69,17 @@ export default function SignUpForm() {
 	].filter(Boolean).length;
 
 	const passwordStrengthValue = passwordStrength * 25;
-	const handleSubmit = async (values: SignUpFormValues) => {
+	const handleSubmit = (values: SignUpFormValues) => {
 		const payload: SignUpReq = {
-			firstName: values.firstName,
-			lastName: values.lastName,
-			email: values.email,
+			firstName: normalizeName(values.firstName),
+			lastName: normalizeName(values.lastName),
+			email: values.email.trim().toLowerCase(),
 			password: values.password,
 		};
 
 		postSignUpAPiMutationData.mutate(payload, {
-			onSuccess: (data) => {
-				console.log(data);
-				router.push("/panel/overview");
+			onSuccess: () => {
+				router.push(AppRoutes.overview);
 			},
 		});
 	};

@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 import { useLogoutMutation, useUpdateCurrentUserMutation } from "@/app/auth/currentUser.hooks";
+import { normalizeName } from "@/app/panel/components/layout/Header/components/profile/index.helper";
+import { AppRoutes } from "@/constants/routes";
 import type { Disclosure } from "@/types/GeneralService.types";
 
 type ProfileProps = {
@@ -21,6 +23,7 @@ export default function ProfileForm({ user, modalHandler }: ProfileProps) {
 	const router = useRouter();
 	const updateCurrentUserMutation = useUpdateCurrentUserMutation();
 	const logOut = useLogoutMutation();
+
 	const form = useForm({
 		mode: "controlled",
 		initialValues: {
@@ -55,9 +58,9 @@ export default function ProfileForm({ user, modalHandler }: ProfileProps) {
 
 	const handleSubmit = async (values: typeof form.values) => {
 		const payload = {
-			firstName: values.firstName,
-			lastName: values.lastName,
-			email: values.email,
+			firstName: normalizeName(values.firstName),
+			lastName: normalizeName(values.lastName),
+			email: values.email.trim().toLowerCase(),
 			...(values.password && { password: values.password }),
 		};
 		await updateCurrentUserMutation.mutateAsync(payload);
@@ -68,7 +71,7 @@ export default function ProfileForm({ user, modalHandler }: ProfileProps) {
 	const handleLogout = async () => {
 		await logOut.mutateAsync();
 		modalHandler.close();
-		router.push("/");
+		router.push(AppRoutes.root);
 	};
 	useEffect(() => {
 		if (!user) return;

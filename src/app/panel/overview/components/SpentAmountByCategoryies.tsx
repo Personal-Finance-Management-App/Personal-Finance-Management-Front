@@ -40,6 +40,9 @@ export default function SpentAmountByCategories(props: Props) {
 				<Text fz={"h4"} fw={"bold"}>
 					{t("SpendingOverview")}
 				</Text>
+				<Text size={"md"} c={"gray.7"}>
+					{t("Top 5")}
+				</Text>
 			</Group>
 			{groupedCategories.length === 0 ? (
 				<Text c="dimmed" ta="center" py="xl">

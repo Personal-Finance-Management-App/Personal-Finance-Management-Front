@@ -24,7 +24,7 @@ export default function CategorySpentAmount(props: Props) {
 	return (
 		<Paper
 			h={500}
-			style={{ overflowY: "auto" }}
+			style={{ display: "flex", flexDirection: "column", overflowY: "auto" }}
 			mt={"md"}
 			mb={"md"}
 			mx={{ base: "sm", sm: "lg" }}
@@ -57,7 +57,7 @@ export default function CategorySpentAmount(props: Props) {
 				</Flex>
 			)}
 
-			<Stack mt="md">
+			<Stack style={{ overflowY: "auto", flex: 1 }} mt="md">
 				{groupedCategories
 					.filter((category) => category.expense > 0)
 					.sort((a, b) => b.expense - a.expense)

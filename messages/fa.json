@@ -207,5 +207,9 @@
 	"StartManagingYourFinancesWithFinFlow": "مدیریت امور مالی خود را با فاین فلو شروع کنید",
 	"InvalidCredentials": "ایمیل یا رمز عبور اشتباه است.",
 	"FailedToCreateSession": "ایجاد نشست با مشکل مواجه شد.",
-	"EmailAlreadyExists": "قبلاً با این ایمیل حسابی ایجاد شده است."
+	"EmailAlreadyExists": "قبلاً با این ایمیل حسابی ایجاد شده است.",
+	"Top 5": "۵ مورد برتر",
+	"ShowingTransactions": "نمایش {from}–{to} از {total} تراکنش",
+	"PageSize": "تعداد در هر صفحه",
+	"NoTransactions": "هیچ تراکنشی برای نمایش وجود ندارد."
 }

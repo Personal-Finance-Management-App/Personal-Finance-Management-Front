@@ -4,9 +4,11 @@ import {
 	Group,
 	Loader,
 	Modal,
+	Pagination,
 	Paper,
 	ScrollArea,
 	SegmentedControl,
+	Select,
 	Table,
 	Text,
 } from "@mantine/core";
@@ -27,8 +29,9 @@ export function TransactionPage() {
 	const [transactionId, setTransactionId] = useState<string | undefined>();
 	const [modalOpened, modalHandler] = useDisclosure(false);
 	const { deleteTransactionData, getTransactionsListQueryData } = useTransactionsQueryApi();
-
 	const [filter, setFilter] = useState<"all" | "income" | "expense">("all");
+	const [page, setPage] = useState(1);
+	const [pageSize, setPageSize] = useState(5);
 
 	if (
 		getTransactionsListQueryData.isPending ||
@@ -45,6 +48,12 @@ export function TransactionPage() {
 
 	const filteredTransactions =
 		filter === "all" ? transactions : transactions.filter((transaction) => transaction.type === filter);
+	const sortedTransactions = [...filteredTransactions].sort(
+		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+	);
+	const totalPages = Math.ceil(sortedTransactions.length / pageSize);
+	const startIndex = (page - 1) * pageSize;
+	const currentTransactions = sortedTransactions.slice(startIndex, startIndex + pageSize);
 
 	return (
 		<>
@@ -69,7 +78,10 @@ export function TransactionPage() {
 						mx={{ base: "sm", sm: "lg" }}
 						mt={{ base: "sm", sm: "lg" }}
 						value={filter}
-						onChange={(value) => setFilter(value as "all" | "income" | "expense")}
+						onChange={(value) => {
+							setFilter(value as "all" | "income" | "expense");
+							setPage(1);
+						}}
 						data={[
 							{ label: t("All"), value: "all" },
 							{ label: t("Income"), value: "income" },
@@ -83,34 +95,68 @@ export function TransactionPage() {
 						})}
 					</Text>
 				</Group>
-				<ScrollArea my={"md"} mx={"lg"} mb={"sm"} h={{ base: "1000", sm: "800" }} type="auto" mt={"md"}>
-					<Table verticalSpacing="md">
+				<ScrollArea my={"md"} mx={"lg"} mb={"sm"} h={{ base: "700", sm: "500" }} type="auto" mt={"md"}>
+					<Table stickyHeader verticalSpacing="md">
 						<Table.Thead>
 							<TransactionCardLabels />
 						</Table.Thead>
 
 						<Table.Tbody>
-							{[...filteredTransactions]
-								.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-								.map((transaction) => (
-									<Table.Tr key={transaction.id}>
-										<TransactionRow transaction={transaction} showDate />
-										<Table.Td>
-											<ActionButtons
-												onDelete={() => {
-													deleteTransactionData.mutate(transaction.id);
-												}}
-												onEdit={() => {
-													modalHandler.open();
-													setTransactionId(transaction.id);
-												}}
-											/>
-										</Table.Td>
-									</Table.Tr>
-								))}
+							{currentTransactions.map((transaction) => (
+								<Table.Tr key={transaction.id}>
+									<TransactionRow transaction={transaction} showDate />
+									<Table.Td>
+										<ActionButtons
+											onDelete={() => {
+												deleteTransactionData.mutate(transaction.id);
+											}}
+											onEdit={() => {
+												modalHandler.open();
+												setTransactionId(transaction.id);
+											}}
+										/>
+									</Table.Td>
+								</Table.Tr>
+							))}
 						</Table.Tbody>
 					</Table>
 				</ScrollArea>
+				<Group justify="center" mb="sm">
+					<Pagination total={totalPages} value={page} onChange={setPage} siblings={1} boundaries={1} />
+				</Group>
+
+				<Group px={"md"} justify="space-around" align="center" pb="md">
+					{sortedTransactions.length > 0 ? (
+						<Text c={"gray.6"} size="sm">
+							{t("ShowingTransactions", {
+								from: startIndex + 1,
+								to: startIndex + currentTransactions.length,
+								total: sortedTransactions.length,
+							})}
+						</Text>
+					) : (
+						<Text size="sm" c="dimmed">
+							{t("NoTransactions")}
+						</Text>
+					)}
+
+					<Group gap="xs">
+						<Text c={"gray.6"} size="sm">
+							{t("PageSize")}:
+						</Text>
+
+						<Select
+							allowDeselect={false}
+							data={["5", "10", "20"]}
+							value={String(pageSize)}
+							onChange={(value) => {
+								setPageSize(Number(value));
+								setPage(1);
+							}}
+							w={80}
+						/>
+					</Group>
+				</Group>
 			</Paper>
 		</>
 	);

@@ -20,9 +20,7 @@ export default function AccountsIncome(props: Props) {
 	return (
 		<Paper
 			h={500}
-			style={{ overflowY: "auto" }}
-			mt={"md"}
-			mb={"md"}
+			style={{ display: "flex", flexDirection: "column", overflowY: "auto" }}
 			mx={{ base: "sm", sm: "lg" }}
 			bg="light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))"
 			p="md"
@@ -33,7 +31,7 @@ export default function AccountsIncome(props: Props) {
 			</Text>
 			{BarChartIncomeByAccount.length > 0 ? (
 				<BarChart
-					h={250}
+					h={230}
 					data={BarChartIncomeByAccount}
 					dataKey="name"
 					orientation="vertical"
@@ -48,7 +46,7 @@ export default function AccountsIncome(props: Props) {
 				</Flex>
 			)}
 
-			<Stack mt="md">
+			<Stack style={{ overflowY: "auto", flex: 1 }} mt="md">
 				{[...props.groupedAccounts]
 					.filter((account) => !!account.income)
 					.sort((a, b) => b.income - a.income)

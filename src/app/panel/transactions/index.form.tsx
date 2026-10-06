@@ -148,6 +148,10 @@ export default function TransactionForm(props: Props) {
 					}) ?? []
 				}
 				{...form.getInputProps("account")}
+				onChange={(value) => {
+					form.setFieldValue("account", value);
+					form.setFieldValue("accountOption", "");
+				}}
 			/>
 			{selectedAccount && selectedAccount.options.length > 0 && (
 				<Select
