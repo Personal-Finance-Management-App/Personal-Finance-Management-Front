@@ -75,6 +75,7 @@ A complete transaction management experience:
 A clear view of the user's financial accounts:
 
 * Account balances
+* Comparing the account datas with chart
 * Income and expenses per account
 * Account-based financial summaries
 * Support for different account types
@@ -114,15 +115,23 @@ Go beyond simple totals and explore financial activity in more detail.
 * Cookie-based locale management
 * Clean URLs without locale prefixes
 
-### 🎨 UI & Experience
+## 🎨 Design
 
-* Responsive design
-* Mobile-first approach
-* Light and dark themes
-* Modern dashboard interface
-* Responsive navigation
-* Interactive data visualization
-* Consistent design system
+FinFlow is designed with a clean, polished, and consistent visual experience in mind.
+
+* ✨ Clean and well-organized layout
+* 🎨 Carefully structured and consistent color palette
+* 💰 Custom FinFlow logo and visual identity
+* 🧭 Clear and intuitive navigation
+* 📊 Purposeful data visualization and well-structured financial information
+* 🧩 Consistent spacing, typography, and UI components
+* 🌙 Light and dark theme support
+* 📱 Responsive layouts designed for different screen sizes
+* 📝 Clear and meaningful labels and descriptions throughout the application
+* 🎯 Strong visual hierarchy to make financial information easy to scan and understand
+* 🌐 Language switcher in the header for quick English / Persian switching
+
+The interface is built to feel **modern, organized, and easy to navigate**, while keeping the financial data clear and visually engaging.
 
 ---
 
