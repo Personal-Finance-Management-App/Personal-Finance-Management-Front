@@ -27,7 +27,7 @@ Use the demo account below and jump straight into the dashboard.
 ** Just sign in and explore.**
 
 🖥️ Demo Page — First Impression of FinFlow
-
+---
 The Demo Page is one of the key parts of the FinFlow experience.
 
 Instead of asking users to immediately sign in or create an account, FinFlow first gives them a dedicated space to understand what the application is, what problems it solves, and what they can expect from it.
