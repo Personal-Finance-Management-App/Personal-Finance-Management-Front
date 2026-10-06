@@ -207,5 +207,9 @@
 	"StartManagingYourFinancesWithFinFlow": "Start managing your finances with FinFlow",
 	"InvalidCredentials": "Invalid email or password.",
 	"FailedToCreateSession": "Failed to create session.",
-	"EmailAlreadyExists": "An account with this email already exists."
+	"EmailAlreadyExists": "An account with this email already exists.",
+	"Top 5": "Top 5",
+	"ShowingTransactions": "Showing {from}–{to} of {total} transactions",
+	"PageSize": "Page Size",
+	"NoTransactions": "No transactions to display"
 }

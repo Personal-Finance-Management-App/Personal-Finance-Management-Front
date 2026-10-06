@@ -43,7 +43,7 @@ export default function AccountsPage() {
 					</Text>
 				)}
 			</Card>
-			<Grid mt="xl">
+			<Grid gap={50} mt="xl">
 				<AccountsCard accounts={groupedAccounts} />
 				<AccountsSummary accounts={accounts} />
 			</Grid>

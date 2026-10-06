@@ -56,7 +56,8 @@ export default function BudgetsCard(props: Props) {
 				/>
 				{totalSpent > totalBudget && (
 					<Text mt={"sm"} c="red" size="sm">
-						{t("Overbudget")} ${totalSpent - totalBudget}
+						{t("Overbudget")}$
+						<NumberFormatter value={totalSpent - totalBudget} thousandSeparator></NumberFormatter>
 					</Text>
 				)}
 			</Box>

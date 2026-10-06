@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useSignInMutation } from "@/app/auth/sign-in/index.hooks";
+import { AppRoutes } from "@/constants/routes";
 import type { SignInFormValues } from "@/services/api/models/auth/signIn.types";
 
 export default function SignInForm() {
@@ -13,11 +14,10 @@ export default function SignInForm() {
 	const router = useRouter();
 	const form = useForm<SignInFormValues>({ mode: "controlled", initialValues: { email: "", password: "" } });
 	const signInMutation = useSignInMutation();
-	const handleSubmit = async (values: SignInFormValues) => {
+	const handleSubmit = (values: SignInFormValues) => {
 		signInMutation.mutate(values, {
-			onSuccess: (data) => {
-				console.log(data);
-				router.push("/panel/overview");
+			onSuccess: () => {
+				router.push(AppRoutes.overview);
 			},
 		});
 	};

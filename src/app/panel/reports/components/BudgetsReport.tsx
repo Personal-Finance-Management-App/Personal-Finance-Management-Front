@@ -18,7 +18,7 @@ export default function BudgetsReport(props: Props) {
 	return (
 		<Paper
 			h={500}
-			style={{ overflowY: "auto" }}
+			style={{ display: "flex", flexDirection: "column", overflowY: "auto" }}
 			mt={"md"}
 			mx={{ base: "sm", sm: "lg" }}
 			bg="light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))"
@@ -35,7 +35,7 @@ export default function BudgetsReport(props: Props) {
 					labelsType="name"
 					withLabels
 					paddingAngle={14}
-					h={300}
+					h={250}
 					data={DonutChartBudget}
 				/>
 			) : (
@@ -44,7 +44,7 @@ export default function BudgetsReport(props: Props) {
 				</Flex>
 			)}
 
-			<Stack mt="md">
+			<Stack style={{ overflowY: "auto", flex: 1 }} mt="md">
 				{[...props.BudgetsList]
 					.sort((a, b) => b.amount - a.amount)
 					.map((budget) => (

@@ -1,22 +1,22 @@
 {
 	"users": [
 		{
-			"firstName": "Mahzad",
-			"lastName": "Khosraviani",
-			"email": "bluemahzad@gmail.com",
+			"firstName": "Demo",
+			"lastName": "User",
+			"email": "finance@gmail.com",
 			"password": "123456A",
 			"id": "2Nr6DN2mZNU"
 		},
 		{
-			"firstName": "siavashh",
-			"lastName": "pournarenjii",
-			"email": "siavash@gmail.com",
+			"firstName": "Test",
+			"lastName": "Test2",
+			"email": "testtt@gmail.com",
 			"password": "123456A",
 			"id": "M3u-LMpfWb0"
 		},
 		{
 			"firstName": "Mahzad",
-			"lastName": "Khosravianiiiiii",
+			"lastName": "Khosraviani",
 			"email": "mahzad@gmail.com",
 			"password": "1234567",
 			"id": "DxPAP8vCY-c"
@@ -41,6 +41,20 @@
 			"email": "luck@gmail.com",
 			"password": "123456",
 			"id": "ZqaIPVafACs"
+		},
+		{
+			"firstName": "Test",
+			"lastName": "Test.",
+			"email": "test@gmail.com",
+			"password": "123456",
+			"id": "RLMaUB0rmUM"
+		},
+		{
+			"firstName": "Test 2",
+			"lastName": "Test2",
+			"email": "test2@gmail.com",
+			"password": "123455",
+			"id": "vlEiJBlS870"
 		}
 	],
 	"sessions": [
@@ -314,41 +328,30 @@
 	],
 	"transactions": [
 		{
-			"title": "hellooo",
+			"title": "Sushi",
 			"type": "expense",
-			"category": "Bills & Utilities",
-			"account": "Bank Account",
-			"accountOption": "Parsian",
-			"date": "2026-08-04",
-			"amount": 7000,
-			"id": "5Cm-wNTnl5k",
-			"userId": "2Nr6DN2mZNU"
-		},
-		{
-			"title": "drg",
-			"type": "income",
 			"category": "Food",
 			"account": "Credit Card",
-			"accountOption": "Mastercard",
+			"accountOption": "American Express",
 			"date": "2026-09-01",
 			"amount": 710,
 			"id": "HgSqSL2kOG0",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "mahzad",
+			"title": "Bus",
 			"type": "expense",
 			"category": "Transport",
 			"account": "Bank Account",
 			"accountOption": "Tejarat",
 			"date": "2026-09-02",
-			"amount": 700,
+			"amount": 200,
 			"id": "3ho5Cr8qg2o",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "marjan",
-			"type": "income",
+			"title": "Nails",
+			"type": "expense",
 			"category": "Personal Care",
 			"account": "Cryptocurrency",
 			"accountOption": "Ethereum",
@@ -358,8 +361,8 @@
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "health care",
-			"type": "income",
+			"title": "Health care",
+			"type": "expense",
 			"category": "Health",
 			"account": "Credit Card",
 			"accountOption": "Mastercard",
@@ -369,40 +372,40 @@
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "official",
+			"title": "Grocceries",
 			"type": "expense",
 			"category": "Shopping",
 			"account": "Savings Account",
 			"accountOption": "Parsian",
 			"date": "2026-09-03",
-			"amount": 700,
+			"amount": 1200,
 			"id": "aR4jTJZmBAw",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "office",
+			"title": "Gas bill",
 			"type": "expense",
 			"category": "Bills & Utilities",
-			"account": "Savings Account",
-			"accountOption": "Tejarat",
+			"account": "Loan",
+			"accountOption": "Home Loan",
 			"date": "2026-09-02",
 			"amount": 800,
 			"id": "YFcGCp5c-ro",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "officeee",
+			"title": "Netflix",
 			"type": "expense",
 			"category": "Subscriptions",
-			"account": "Loan",
-			"accountOption": "Home Loan",
+			"account": "Debit Card",
+			"accountOption": "Mastercard Debit",
 			"date": "2026-09-02",
 			"amount": 800,
 			"id": "P2gcJp76f9c",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "jilo",
+			"title": "Claude",
 			"type": "income",
 			"category": "Subscriptions",
 			"account": "Debit Card",
@@ -413,8 +416,8 @@
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "jeloo",
-			"type": "income",
+			"title": "Dental care",
+			"type": "expense",
 			"category": "Health",
 			"account": "Credit Card",
 			"accountOption": "American Express",
@@ -424,7 +427,7 @@
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "n;",
+			"title": "Car reparing money taken from mom",
 			"type": "income",
 			"category": "Transport",
 			"account": "Credit Card",
@@ -435,30 +438,19 @@
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "debit",
+			"title": "Phone bill",
 			"type": "expense",
 			"category": "Internet & Phone",
-			"account": "Debit Card",
-			"accountOption": "Visa Debit",
+			"account": "Cash",
+			"accountOption": "",
 			"date": "2026-09-02",
 			"amount": 700,
 			"id": "hs4NDKsMWw8",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "income",
-			"type": "income",
-			"category": "Internet & Phone",
-			"account": "Digital Wallet",
-			"accountOption": "Google Pay",
-			"date": "2026-09-01",
-			"amount": 800,
-			"id": "3A2Ap7UeQv8",
-			"userId": "2Nr6DN2mZNU"
-		},
-		{
-			"title": "srh",
-			"type": "income",
+			"title": "Office taxes",
+			"type": "expense",
 			"category": "Taxes",
 			"account": "Cash",
 			"accountOption": "",
@@ -468,63 +460,63 @@
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "yyy",
+			"title": "water bill",
 			"type": "expense",
 			"category": "Bills & Utilities",
-			"account": "Investment Account",
-			"accountOption": "ETF",
+			"account": "Cash",
+			"accountOption": "",
 			"date": "2026-09-01",
 			"amount": 900,
 			"id": "OM67hSti0Jc",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "dhrht",
-			"type": "income",
+			"title": "Uber",
+			"type": "expense",
 			"category": "Transport",
-			"account": "Investment Account",
-			"accountOption": "Stock Portfolio",
+			"account": "Digital Wallet",
+			"accountOption": "Venmo",
 			"date": "2026-09-02",
 			"amount": 700,
 			"id": "zsoK5_E13U0",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "rtrt",
-			"type": "income",
+			"title": "Electricity",
+			"type": "expense",
 			"category": "Bills & Utilities",
 			"account": "Investment Account",
 			"accountOption": "Stock Portfolio",
 			"date": "2026-09-15",
-			"amount": 20,
+			"amount": 1000,
 			"id": "kDLsPyOx_cM",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "rth",
+			"title": "Cosmetics",
 			"type": "expense",
 			"category": "Shopping",
-			"account": "Investment Account",
-			"accountOption": "ETF",
+			"account": "Cash",
+			"accountOption": "",
 			"date": "2026-09-02",
 			"amount": 800,
 			"id": "weUUV2IVkRc",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "rj76",
+			"title": "Gaming purchase",
 			"type": "expense",
 			"category": "Entertainment",
-			"account": "Loan",
-			"accountOption": "Personal Loan",
+			"account": "Digital Wallet",
+			"accountOption": "Google Pay",
 			"date": "2026-09-03",
-			"amount": 700,
+			"amount": 800,
 			"id": "LYKpZK1lVeA",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "sg",
-			"type": "income",
+			"title": "Cereal",
+			"type": "expense",
 			"category": "Shopping",
 			"account": "Debit Card",
 			"accountOption": "Visa Debit",
@@ -534,7 +526,7 @@
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "jj",
+			"title": "New jacket",
 			"type": "expense",
 			"category": "Shopping",
 			"account": "Bank Account",
@@ -545,40 +537,29 @@
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "mmm",
-			"type": "income",
+			"title": "Tesla",
+			"type": "expense",
 			"category": "Taxes",
-			"account": "Debit Card",
-			"accountOption": "Mastercard Debit",
+			"account": "Loan",
+			"accountOption": "Car Loan",
 			"date": "2026-09-02",
 			"amount": 200,
 			"id": "1hrjaGbB18I",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "hii",
-			"type": "expense",
+			"title": "Charity",
+			"type": "income",
 			"category": "Donations",
-			"account": "Savings Account",
-			"accountOption": "Parsian",
+			"account": "Bank Account",
+			"accountOption": "Saman",
 			"date": "2026-09-02",
 			"amount": 800,
 			"id": "5kchCxLJMOI",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "liliii",
-			"type": "expense",
-			"category": "Rent",
-			"account": "Cash",
-			"accountOption": "",
-			"date": "2026-09-18",
-			"amount": 6200,
-			"id": "OgUqtV0jGIU",
-			"userId": "2Nr6DN2mZNU"
-		},
-		{
-			"title": "pie",
+			"title": "Home internet",
 			"type": "expense",
 			"category": "Housing",
 			"account": "Digital Wallet",
@@ -589,25 +570,14 @@
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"title": "kkk",
+			"title": "Monthly salary",
 			"type": "income",
 			"category": "Salary",
 			"account": "Debit Card",
 			"accountOption": "Maestro",
 			"date": "2026-09-01",
-			"amount": 700,
+			"amount": 5000,
 			"id": "bimC5gFQ4M4",
-			"userId": "2Nr6DN2mZNU"
-		},
-		{
-			"title": "hiii",
-			"type": "income",
-			"category": "Housing",
-			"account": "Credit Card",
-			"accountOption": "American Express",
-			"date": "2026-09-17",
-			"amount": 730,
-			"id": "OxXJkqcre6Y",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
@@ -642,30 +612,431 @@
 			"amount": 800,
 			"userId": "M3u-LMpfWb0",
 			"id": "V-Rbh0xMUjI"
+		},
+		{
+			"title": "Annual bonus",
+			"type": "income",
+			"category": "Salary",
+			"account": "Debit Card",
+			"accountOption": "Maestro",
+			"date": "2026-10-02",
+			"amount": 1000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "SouI0f2-RTQ"
+		},
+		{
+			"title": "Ui design project",
+			"type": "income",
+			"category": "Freelance",
+			"account": "Bank Account",
+			"accountOption": "Parsian",
+			"date": "2026-10-02",
+			"amount": 800,
+			"userId": "2Nr6DN2mZNU",
+			"id": "8ZCrchnh5fo"
+		},
+		{
+			"title": "coffee with friends",
+			"type": "expense",
+			"category": "Food",
+			"account": "Credit Card",
+			"accountOption": "Mastercard",
+			"date": "2026-10-02",
+			"amount": 50,
+			"userId": "2Nr6DN2mZNU",
+			"id": "LXi1PZuym08"
+		},
+		{
+			"title": "Home repair",
+			"type": "expense",
+			"category": "Housing",
+			"account": "Debit Card",
+			"accountOption": "Visa Debit",
+			"date": "2026-10-03",
+			"amount": 700,
+			"userId": "2Nr6DN2mZNU",
+			"id": "svJecN66g4U"
+		},
+		{
+			"title": "Movie tickets",
+			"type": "expense",
+			"category": "Entertainment",
+			"account": "Digital Wallet",
+			"accountOption": "Apple Pay",
+			"date": "2026-10-04",
+			"amount": 500,
+			"userId": "2Nr6DN2mZNU",
+			"id": "BchWML3O9Zk"
+		},
+		{
+			"title": "Pharmacy",
+			"type": "expense",
+			"category": "Health",
+			"account": "Cash",
+			"accountOption": "",
+			"date": "2026-10-01",
+			"amount": 100,
+			"userId": "2Nr6DN2mZNU",
+			"id": "XYNSebCA57o"
+		},
+		{
+			"title": "Bought Apple Shares",
+			"type": "expense",
+			"category": "Investment",
+			"account": "Investment Account",
+			"accountOption": "Stock Portfolio",
+			"date": "2026-10-02",
+			"amount": 2000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "ck2SeMlbj_s"
+		},
+		{
+			"title": "Birthday gift",
+			"type": "income",
+			"category": "Gift",
+			"account": "Cash",
+			"accountOption": "",
+			"date": "2026-10-03",
+			"amount": 2000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "S37ifyEOSMw"
+		},
+		{
+			"title": "Tax refund",
+			"type": "income",
+			"category": "Other",
+			"account": "Bank Account",
+			"accountOption": "Pasargad",
+			"date": "2026-10-06",
+			"amount": 800,
+			"userId": "2Nr6DN2mZNU",
+			"id": "gQrEVk7Q4RY"
+		},
+		{
+			"title": "Gift from friends",
+			"type": "income",
+			"category": "Gift",
+			"account": "Debit Card",
+			"accountOption": "Mastercard Debit",
+			"date": "2026-10-01",
+			"amount": 550,
+			"userId": "2Nr6DN2mZNU",
+			"id": "Z7b290B7NXg"
+		},
+		{
+			"title": "Added money to portfolio",
+			"type": "expense",
+			"category": "Investment",
+			"account": "Investment Account",
+			"accountOption": "Stock Portfolio",
+			"date": "2026-10-02",
+			"amount": 3000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "xRgD1QP5Ngc"
+		},
+		{
+			"title": "ETF divinded",
+			"type": "expense",
+			"category": "Investment",
+			"account": "Investment Account",
+			"accountOption": "ETF",
+			"date": "2026-10-01",
+			"amount": 800,
+			"userId": "2Nr6DN2mZNU",
+			"id": "tFw3b0-7ImQ"
+		},
+		{
+			"title": "CashBack reward",
+			"type": "income",
+			"category": "Other",
+			"account": "Credit Card",
+			"accountOption": "Mastercard",
+			"date": "2026-10-01",
+			"amount": 800,
+			"userId": "2Nr6DN2mZNU",
+			"id": "qOC6sfi0mXs"
+		},
+		{
+			"title": "Student loan payment",
+			"type": "expense",
+			"category": "Other",
+			"account": "Loan",
+			"accountOption": "Student Loan",
+			"date": "2026-10-02",
+			"amount": 2500,
+			"userId": "2Nr6DN2mZNU",
+			"id": "_7kjqGpI0C8"
+		},
+		{
+			"title": "Bought bitcoin",
+			"type": "expense",
+			"category": "Investment",
+			"account": "Cryptocurrency",
+			"accountOption": "Bitcoin",
+			"date": "2026-10-03",
+			"amount": 5000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "ZGJs94THIxE"
+		},
+		{
+			"title": "Bought BNB",
+			"type": "expense",
+			"category": "Investment",
+			"account": "Cryptocurrency",
+			"accountOption": "BNB",
+			"date": "2026-10-04",
+			"amount": 650,
+			"userId": "2Nr6DN2mZNU",
+			"id": "0PUArQ9CmcY"
+		},
+		{
+			"title": "Bought USDT",
+			"type": "expense",
+			"category": "Investment",
+			"account": "Cryptocurrency",
+			"accountOption": "USDT",
+			"date": "2026-10-06",
+			"amount": 1000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "b-pn6BvDMG8"
+		},
+		{
+			"title": "Bitcoin profit",
+			"type": "income",
+			"category": "Investment",
+			"account": "Cryptocurrency",
+			"accountOption": "Bitcoin",
+			"date": "2026-10-05",
+			"amount": 800,
+			"userId": "2Nr6DN2mZNU",
+			"id": "wvQb-_VetrI"
+		},
+		{
+			"title": "Stock divinded",
+			"type": "income",
+			"category": "Investment",
+			"account": "Investment Account",
+			"accountOption": "Stock Portfolio",
+			"date": "2026-09-06",
+			"amount": 700,
+			"userId": "2Nr6DN2mZNU",
+			"id": "TVmJrm1f_tc"
+		},
+		{
+			"title": "Apartment Rent",
+			"type": "expense",
+			"category": "Rent",
+			"account": "Bank Account",
+			"accountOption": "Melli",
+			"date": "2026-10-01",
+			"amount": 800,
+			"userId": "2Nr6DN2mZNU",
+			"id": "WlE1iAugrgU"
+		},
+		{
+			"title": "Flight ticket",
+			"type": "expense",
+			"category": "Travel",
+			"account": "Credit Card",
+			"accountOption": "Visa",
+			"date": "2026-10-02",
+			"amount": 500,
+			"userId": "2Nr6DN2mZNU",
+			"id": "rDTfb_CqNHQ"
+		},
+		{
+			"title": "University tuition",
+			"type": "expense",
+			"category": "Education",
+			"account": "Credit Card",
+			"accountOption": "Mastercard",
+			"date": "2026-10-01",
+			"amount": 800,
+			"userId": "2Nr6DN2mZNU",
+			"id": "DBLrXMCMXwg"
+		},
+		{
+			"title": "Programming book",
+			"type": "expense",
+			"category": "Education",
+			"account": "Credit Card",
+			"accountOption": "Mastercard",
+			"date": "2026-10-03",
+			"amount": 200,
+			"userId": "2Nr6DN2mZNU",
+			"id": "JKyPErq-3l4"
+		},
+		{
+			"title": "Fuel",
+			"type": "expense",
+			"category": "Transport",
+			"account": "Cash",
+			"accountOption": "",
+			"date": "2026-10-06",
+			"amount": 50,
+			"userId": "2Nr6DN2mZNU",
+			"id": "er3N6a8EjWw"
+		},
+		{
+			"title": "Bowling night",
+			"type": "expense",
+			"category": "Entertainment",
+			"account": "Credit Card",
+			"accountOption": "American Express",
+			"date": "2026-10-01",
+			"amount": 900,
+			"userId": "2Nr6DN2mZNU",
+			"id": "_5kptmoFNVE"
+		},
+		{
+			"title": "Yoga class",
+			"type": "expense",
+			"category": "Exercise",
+			"account": "Debit Card",
+			"accountOption": "Mastercard Debit",
+			"date": "2026-10-03",
+			"amount": 100,
+			"userId": "2Nr6DN2mZNU",
+			"id": "odXhw1G9WeY"
+		},
+		{
+			"title": "Performance bonus",
+			"type": "income",
+			"category": "Salary",
+			"account": "Bank Account",
+			"accountOption": "Saman",
+			"date": "2026-10-02",
+			"amount": 500,
+			"userId": "2Nr6DN2mZNU",
+			"id": "CYabwe51mqc"
+		},
+		{
+			"title": "Client payment",
+			"type": "income",
+			"category": "Freelance",
+			"account": "Credit Card",
+			"accountOption": "Mastercard",
+			"date": "2026-10-02",
+			"amount": 800,
+			"userId": "2Nr6DN2mZNU",
+			"id": "tw8m4dXEkE4"
+		},
+		{
+			"title": "Wedding gift",
+			"type": "income",
+			"category": "Gift",
+			"account": "Debit Card",
+			"accountOption": "Maestro",
+			"date": "2026-10-03",
+			"amount": 700,
+			"userId": "2Nr6DN2mZNU",
+			"id": "N2zWfuGzxG8"
+		},
+		{
+			"title": "Haircut",
+			"type": "expense",
+			"category": "Personal Care",
+			"account": "Bank Account",
+			"accountOption": "Tejarat",
+			"date": "2026-10-04",
+			"amount": 60,
+			"userId": "2Nr6DN2mZNU",
+			"id": "9jNd--iOp_I"
+		},
+		{
+			"title": "Animal shelter ",
+			"type": "expense",
+			"category": "Donations",
+			"account": "Credit Card",
+			"accountOption": "Mastercard",
+			"date": "2026-10-02",
+			"amount": 500,
+			"userId": "2Nr6DN2mZNU",
+			"id": "naolSUC1rDI"
+		},
+		{
+			"title": "ATM fee",
+			"type": "expense",
+			"category": "Fees & Charges",
+			"account": "Bank Account",
+			"accountOption": "Tejarat",
+			"date": "2026-10-02",
+			"amount": 800,
+			"userId": "2Nr6DN2mZNU",
+			"id": "SVoE5WAprmg"
+		},
+		{
+			"title": "Refund received",
+			"type": "income",
+			"category": "Other",
+			"account": "Savings Account",
+			"accountOption": "Tejarat",
+			"date": "2026-10-06",
+			"amount": 7000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "hUtR2mFa_os"
+		},
+		{
+			"title": "Bonus",
+			"type": "income",
+			"category": "Other",
+			"account": "Savings Account",
+			"accountOption": "Tejarat",
+			"date": "2026-10-02",
+			"amount": 2000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "7gyXEYUm4sw"
+		},
+		{
+			"title": "Freelance development",
+			"type": "income",
+			"category": "Freelance",
+			"account": "Bank Account",
+			"accountOption": "Mellat",
+			"date": "2026-10-02",
+			"amount": 4000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "wHst6trFtno"
+		},
+		{
+			"title": "YouTube Premium",
+			"type": "expense",
+			"category": "Subscriptions",
+			"account": "Digital Wallet",
+			"accountOption": "PayPal",
+			"date": "2026-10-03",
+			"amount": 900,
+			"userId": "2Nr6DN2mZNU",
+			"id": "kX6kJe6r5CA"
+		},
+		{
+			"title": "Restaurant ",
+			"type": "expense",
+			"category": "Food",
+			"account": "Bank Account",
+			"accountOption": "Parsian",
+			"date": "2026-10-02",
+			"amount": 700,
+			"userId": "2Nr6DN2mZNU",
+			"id": "DPc2em75kFY"
 		}
 	],
 	"budgets": [
 		{
-			"category": "Health",
-			"amount": 1000,
-			"id": "LfVnaOMDOgA",
-			"userId": "2Nr6DN2mZNU"
-		},
-		{
 			"category": "Entertainment",
-			"amount": 9000,
+			"amount": 5000,
 			"id": "kgHOxs86SgI",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"category": "Internet & Phone",
-			"amount": 6000,
+			"amount": 2000,
 			"id": "xow2Z6fvJ7A",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
 			"category": "Housing",
-			"amount": 7000,
+			"amount": 5500,
 			"id": "s1mHnJZaky8",
 			"userId": "2Nr6DN2mZNU"
 		},
@@ -676,21 +1047,9 @@
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
-			"category": "Food",
-			"amount": 5200,
-			"id": "RAs5OgD7zE4",
-			"userId": "2Nr6DN2mZNU"
-		},
-		{
 			"category": "Transport",
 			"amount": 8500,
 			"id": "dluz_MX76qE",
-			"userId": "2Nr6DN2mZNU"
-		},
-		{
-			"category": "Personal Care",
-			"amount": 7090,
-			"id": "uVXdEcEkgdg",
 			"userId": "2Nr6DN2mZNU"
 		},
 		{
@@ -727,6 +1086,36 @@
 			"amount": 7000,
 			"userId": "M3u-LMpfWb0",
 			"id": "4MVkdGfXhHM"
+		},
+		{
+			"category": "Bills & Utilities",
+			"amount": 6000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "4AyBjaZX2tI"
+		},
+		{
+			"category": "Health",
+			"amount": 2000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "glvRea15Ahk"
+		},
+		{
+			"category": "Investment",
+			"amount": 5000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "qwhh5N0XlLg"
+		},
+		{
+			"category": "Shopping",
+			"amount": 3000,
+			"userId": "2Nr6DN2mZNU",
+			"id": "dMwHkc8iJAs"
+		},
+		{
+			"category": "Education",
+			"amount": 1500,
+			"userId": "2Nr6DN2mZNU",
+			"id": "JGv5w6LioyI"
 		}
 	],
 	"$schema": "./node_modules/json-server/schema.json"

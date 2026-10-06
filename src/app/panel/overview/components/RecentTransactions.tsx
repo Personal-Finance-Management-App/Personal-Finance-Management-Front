@@ -24,6 +24,9 @@ export default function RecentTransactions(props: Props) {
 				<Text fz={"h4"} fw={"bold"}>
 					{t("RecentActivity")}
 				</Text>
+				<Text size={"md"} c={"gray.7"}>
+					{t("Top 5")}
+				</Text>
 			</Group>
 			{props.transactions.length > 0 ? (
 				<Table.ScrollContainer minWidth={700}>
