@@ -51,6 +51,7 @@ A detailed financial overview that turns raw financial data into useful insights
 * Financial summaries
 * Interactive charts
 * Deeper financial insights
+* Correct calculations
 
 ### 💳 Transactions
 
@@ -242,7 +243,6 @@ FinFlow is a **completed personal finance management project** featuring:
 * [x] Profile management
 * [x] Financial overview & insights
 * [x] Interactive reports
-* [*] Calculations
 * [x] Account summaries
 * [x] English / Persian localization
 * [x] RTL / LTR support
